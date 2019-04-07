@@ -31,7 +31,8 @@
     "start": "next start",
     "lint": "eslint . --fix",
     "export": "next export",
-    "deploy": "npm run build && npm run export"
+    "predeploy": "npm run build",
+    "deploy": "npm run export"
   },
   "browserslist": [
     ">0.2%",
