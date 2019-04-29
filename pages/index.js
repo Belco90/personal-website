@@ -1,4 +1,11 @@
 import Head from 'next/head';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Index = () => (
   <div>
@@ -16,7 +23,22 @@ const Index = () => (
       <div className="wrapper">
         <img src="/static/avatar.png" alt="avatar" className="avatar" />
         <div className="main-box">
-          <h1>Mario Beltrán Alarcón</h1>
+          <h1 className="main-heading">Mario Beltrán Alarcón</h1>
+        </div>
+
+        <div className="social-networks">
+          <a href="mailto:belco90@gmail.com" target="_blank">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
+          <a href="https://github.com/Belco90" target="_blank">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a href="https://www.linkedin.com/in/mario-ba-90/" target="_blank">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a href="https://twitter.com/Belco90" target="_blank">
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
         </div>
       </div>
     </div>
@@ -48,6 +70,10 @@ const Index = () => (
         text-align: center;
       }
 
+      .wrapper > *:not(:first-child) {
+        margin-top: 4rem;
+      }
+
       .avatar {
         width: 150px;
         height: 150px;
@@ -55,14 +81,37 @@ const Index = () => (
       }
 
       .main-box {
-        margin-top: 4rem;
         padding: 0 4rem;
         border-top: solid 1px white;
         border-bottom: solid 1px white;
       }
 
-      .main-box h1 {
+      .main-heading {
         margin: 4rem 0;
+      }
+
+      .social-networks {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+      }
+
+      .social-networks a {
+        color: white;
+        font-size: 2rem;
+        transition: transform 0.2s;
+      }
+
+      .social-networks a:hover {
+        transform: scale(1.2);
+      }
+
+      @media screen and (max-width: 736px) {
+        .main-heading {
+          font-size: 1.75rem;
+          line-height: 1.4;
+        }
       }
     `}</style>
   </div>
