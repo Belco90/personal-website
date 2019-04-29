@@ -13,6 +13,10 @@ const Index = () => (
       <title>Mario Beltrán Alarcón</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
+      <meta name="description" content="Mario's Portfolio" />
+      <meta name="keywords" content="Web Developer" />
+      <meta name="author" content="Mario Beltrán Alarcón" />
+
       <link
         href="https://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
