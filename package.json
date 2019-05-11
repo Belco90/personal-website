@@ -27,14 +27,6 @@
   "devDependencies": {
     "prettier": "1.16.4"
   },
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "predeploy": "npm run build",
-    "deploy": "npm run export"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -46,5 +38,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export"
   }
 }
