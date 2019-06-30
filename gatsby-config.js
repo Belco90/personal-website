@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Mario Personal Website`,
+    title: `Mario Beltrán Alarcón`,
     description: `Mario Beltrán Alarcón Personal Website`,
     author: `Mario Beltrán Alarcón`,
+    twitter: `@belco90`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
