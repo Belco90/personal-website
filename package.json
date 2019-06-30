@@ -1,31 +1,46 @@
 {
   "name": "mario-web",
+  "private": true,
   "version": "1.0.0",
-  "description": "Personal Website",
-  "repository": "https://github.com/Belco90/mario-web",
+  "description": "Mario Beltrán Alarcón Personal Website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Belco90/mario-web"
+  },
   "homepage": "https://mario.dev",
   "main": "index.js",
   "keywords": [
     "website",
     "personal",
+    "portfolio",
     "developer",
+    "engineer",
     "react",
-    "nextjs",
+    "gatsby",
     "frontend"
   ],
-  "author": "Mario Beltrán Alarcón",
+  "author": "Mario Beltrán Alarcón <belco90@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-brands-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "next": "^8.0.4",
+    "gatsby": "^2.10.4",
+    "gatsby-image": "^2.2.3",
+    "gatsby-plugin-manifest": "^2.2.0",
+    "gatsby-plugin-offline": "^2.2.0",
+    "gatsby-plugin-react-helmet": "^3.1.0",
+    "gatsby-plugin-sharp": "^2.2.1",
+    "gatsby-source-filesystem": "^2.1.0",
+    "gatsby-transformer-sharp": "^2.2.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "1.16.4"
+    "prettier": "1.18.2"
   },
   "browserslist": {
     "production": [
@@ -40,9 +55,11 @@
     ]
   },
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "npm run build && next export"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo 'Write tests! -> https://gatsby.dev/unit-testing'"
   }
 }
