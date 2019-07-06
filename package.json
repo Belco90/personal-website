@@ -40,17 +40,24 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "1.18.2"
+    "husky": "^3.0.0",
+    "prettier": "1.18.2",
+    "pretty-quick": "^1.11.1"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not op_mini all"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write src/**/*.{js,jsx,css}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo 'Write tests! -> https://gatsby.dev/unit-testing'"

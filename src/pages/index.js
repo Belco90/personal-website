@@ -7,23 +7,25 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
-import SEO from '../components/Seo';
-import Avatar from '../components/Avatar';
+import SEO from '../components/seo';
+import Avatar from '../components/avatar';
+import Layout from '../components/layout';
 
-import './index.css';
+import styles from './index.module.css';
 
 const Index = () => (
-  <React.Fragment>
+  <Layout>
     <SEO title="Home" />
 
-    <div className="root">
-      <div className="wrapper">
+    <div className={styles.root}>
+      <div className={styles.wrapper}>
         <Avatar />
-        <div className="main-box">
-          <h1 className="main-heading">Mario Beltrán Alarcón</h1>
+        <div className={styles.mainBox}>
+          <h1>Mario Beltrán Alarcón</h1>
+          <h3 className={styles.subHeading}>Frontend Web Engineer</h3>
         </div>
 
-        <div className="social-networks">
+        <div className={styles.socialNetworks}>
           <a
             href="mailto:belco90@gmail.com"
             target="_blank"
@@ -55,7 +57,7 @@ const Index = () => (
         </div>
       </div>
     </div>
-  </React.Fragment>
+  </Layout>
 );
 
 export default Index;

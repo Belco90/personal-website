@@ -48,15 +48,8 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
-          name: `viewport`,
-          content: `width=device-width, initial-scale=1, shrink-to-fit=no`,
-        },
-        {
-          charset: `utf-8`,
-        },
-        {
           name: `keywords`,
-          content: `Web Developer`,
+          content: `Frontend Web Engineer`,
         },
         {
           property: `og:title`,
@@ -89,7 +82,7 @@ function SEO({ description, lang, meta, title }) {
       ].concat(meta)}
     >
       <link
-        href="https://fonts.googleapis.com/css?family=Roboto"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap"
         rel="stylesheet"
       />
     </Helmet>

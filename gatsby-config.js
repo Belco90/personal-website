@@ -19,13 +19,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `mario-beltran-dev`,
+        short_name: `mario-dev`,
         start_url: `/`,
         background_color: `#1b1f22`,
-        theme_color: `#1b1f22`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
+        icon: `src/images/avatar.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-offline`,
   ],
 };
