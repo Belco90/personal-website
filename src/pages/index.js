@@ -20,7 +20,8 @@ const Index = () => (
     <div className={styles.root}>
       <div className={styles.wrapper}>
         <Avatar />
-        <div className={styles.mainBox}>
+
+        <div className={`${styles.mainBox} ${styles.fadeInUp}`}>
           <h1>Mario Beltrán Alarcón</h1>
           <h3 className={styles.subHeading}>Frontend Web Engineer</h3>
         </div>
