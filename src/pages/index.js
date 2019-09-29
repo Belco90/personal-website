@@ -49,7 +49,7 @@ const Index = () => (
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
           <a
-            href="https://twitter.com/Belco90"
+            href="https://twitter.com/belcoDev"
             target="_blank"
             rel="noopener noreferrer"
           >
