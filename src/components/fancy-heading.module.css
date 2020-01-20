@@ -1,0 +1,8 @@
+.fullName {
+  display: none;
+}
+
+.nickname {
+  display: initial;
+  color: red; /* FIXME update this color */
+}
