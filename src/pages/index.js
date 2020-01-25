@@ -10,7 +10,6 @@ import {
 import SEO from '../components/seo';
 import Avatar from '../components/avatar';
 import Layout from '../components/layout';
-import FancyHeading from '../components/fancy-heading';
 
 import styles from './index.module.css';
 
@@ -23,7 +22,7 @@ const Index = () => (
         <Avatar />
 
         <div className={`${styles.mainBox} ${styles.fadeInUp}`}>
-          <FancyHeading />
+          <h1>Mario Beltrán Alarcón</h1>
           <h3 className={styles.subHeading}>Frontend Web Engineer</h3>
         </div>
 
