@@ -21,6 +21,14 @@
   ],
   "author": "Mario Beltrán Alarcón <belco90@gmail.com>",
   "license": "ISC",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx,css}",
+    "start": "yarn develop",
+    "serve": "gatsby serve",
+    "test": "echo 'Write tests! -> https://gatsby.dev/unit-testing'"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
@@ -53,13 +61,5 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx,css}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo 'Write tests! -> https://gatsby.dev/unit-testing'"
   }
 }
