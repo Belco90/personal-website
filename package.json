@@ -30,12 +30,17 @@
     "test": "echo 'Write tests! -> https://gatsby.dev/unit-testing'"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.7.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
+    "emotion-theming": "^10.0.27",
     "gatsby": "^2.19.23",
     "gatsby-image": "^2.2.41",
+    "gatsby-plugin-chakra-ui": "^0.1.4",
     "gatsby-plugin-manifest": "^2.2.42",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sharp": "^2.4.5",
