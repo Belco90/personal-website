@@ -81,8 +81,9 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
+      {/* TODO: move this to better place*/}
       <link
-        href="https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
         rel="stylesheet"
       />
     </Helmet>

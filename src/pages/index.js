@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -6,59 +7,88 @@ import {
   faLinkedin,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/core';
+import styled from '@emotion/styled';
+import { css, jsx, keyframes } from '@emotion/core';
 
 import SEO from '../components/seo';
-import Avatar from '../components/avatar';
-import Layout from '../components/layout';
+import ProfilePicture from '../components/profile-picture';
 
-import styles from './index.module.css';
+const StyledLink = styled(Link)`
+  transition: transform 0.3s;
+  :hover {
+    transform: scale(1.3);
+  }
+`;
+
+const fadeInUp = keyframes`
+    from {
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+`;
+
+const cssFadeInUp = css`
+  opacity: 0;
+  animation: ${fadeInUp} 1s both;
+`;
 
 const Index = () => (
-  <Layout>
+  <>
     <SEO title="Home" />
 
-    <div className={styles.root}>
-      <div className={styles.wrapper}>
-        <Avatar />
+    <Flex justify="center" aligh="center" minHeight="100vh">
+      <Stack
+        direction="column"
+        py={8}
+        px={4}
+        align="center"
+        alignSelf="center"
+        maxWidth="100%"
+        textAlign="center"
+        spacing={12}
+      >
+        <Box>
+          <ProfilePicture />
+        </Box>
 
-        <div className={`${styles.mainBox} ${styles.fadeInUp}`}>
-          <h1>Mario Beltrán Alarcón</h1>
-          <h3 className={styles.subHeading}>Frontend Web Engineer</h3>
-        </div>
+        <Box
+          borderY="solid 1px"
+          borderTopColor="gray.500"
+          borderBottomColor="gray.500"
+          px={{ base: 2, md: 8 }}
+          py={5}
+          css={cssFadeInUp}
+        >
+          <Heading as="h1" mb={4}>
+            Mario Beltrán Alarcón
+          </Heading>
+          <Heading as="h4" fontSize="lg" fontWeight="normal">
+            Frontend Web Engineer
+          </Heading>
+        </Box>
 
-        <div className={styles.socialNetworks}>
-          <a
-            href="mailto:belco90@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
+          <StyledLink href="mailto:belco90@gmail.com">
             <FontAwesomeIcon icon={faEnvelope} />
-          </a>
-          <a
-            href="https://github.com/Belco90"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </StyledLink>
+          <StyledLink href="https://github.com/Belco90">
             <FontAwesomeIcon icon={faGithub} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mario-ba-90/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </StyledLink>
+          <StyledLink href="https://www.linkedin.com/in/mario-ba-90/">
             <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          <a
-            href="https://twitter.com/belcoDev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </StyledLink>
+          <StyledLink href="https://twitter.com/belcoDev">
             <FontAwesomeIcon icon={faTwitter} />
-          </a>
-        </div>
-      </div>
-    </div>
-  </Layout>
+          </StyledLink>
+        </Flex>
+      </Stack>
+    </Flex>
+  </>
 );
 
 export default Index;

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Mario Beltrán Alarcón`,
-    description: `Mario Beltrán Alarcón Personal Website`,
+    description: `Mario Beltrán Alarcón - Frontend Web Engineer`,
     author: `Mario Beltrán Alarcón`,
     twitter: `@belco90`,
   },
@@ -22,12 +22,13 @@ module.exports = {
         name: `mario-beltran-dev`,
         short_name: `mario-dev`,
         start_url: `/`,
-        background_color: `#1b1f22`,
-        theme_color: `#ffffff`,
+        background_color: `#ffffff`,
+        theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/images/avatar.png`, // This path is relative to the root of the site.
+        icon: `src/images/profile-picture.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-chakra-ui',
+    'gatsby-plugin-layout',
   ],
 };
