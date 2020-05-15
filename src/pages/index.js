@@ -1,15 +1,9 @@
 /** @jsx jsx */
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
 import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 import { css, jsx, keyframes } from '@emotion/core';
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 import SEO from '../components/seo';
 import ProfilePicture from '../components/profile-picture';
@@ -74,16 +68,16 @@ const Index = () => (
 
         <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
           <StyledLink href="mailto:belco90@gmail.com">
-            <FontAwesomeIcon icon={faEnvelope} />
+            <Box as={FaEnvelope} />
           </StyledLink>
           <StyledLink href="https://github.com/Belco90">
-            <FontAwesomeIcon icon={faGithub} />
+            <Box as={FaGithub} />
           </StyledLink>
           <StyledLink href="https://www.linkedin.com/in/mario-ba-90/">
-            <FontAwesomeIcon icon={faLinkedin} />
+            <Box as={FaLinkedin} />
           </StyledLink>
           <StyledLink href="https://twitter.com/belcoDev">
-            <FontAwesomeIcon icon={faTwitter} />
+            <Box as={FaTwitter} />
           </StyledLink>
         </Flex>
       </Stack>
