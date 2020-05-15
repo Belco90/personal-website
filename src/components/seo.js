@@ -80,13 +80,7 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-      {/* TODO: move this to better place*/}
-      <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
-        rel="stylesheet"
-      />
-    </Helmet>
+    ></Helmet>
   );
 }
 
