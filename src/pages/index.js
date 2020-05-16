@@ -35,7 +35,7 @@ const Index = () => (
   <>
     <SEO title="Home" />
 
-    <Flex justify="center" aligh="center" minHeight="100vh">
+    <Flex justify="center" aligh="center" height="100%">
       <Stack
         direction="column"
         py={8}

@@ -11,7 +11,7 @@ const propTypes = {
 };
 
 const MainLayout = ({ children }) => (
-  <Flex>
+  <Flex height="100%">
     <Global styles={globalStyles} />
     <Box flex={1}>{children}</Box>
   </Flex>
