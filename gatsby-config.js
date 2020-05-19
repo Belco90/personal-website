@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/images/profile-picture.jpeg`, // This path is relative to the root of the site.
+        icon: `src/images/profile-picture.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-chakra-ui',
