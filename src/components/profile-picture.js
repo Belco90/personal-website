@@ -5,9 +5,9 @@ import Img from 'gatsby-image';
 const ProfilePicture = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "profile-picture.png" }) {
+      file(relativePath: { eq: "profile-picture.jpg" }) {
         childImageSharp {
-          fixed(width: 150, height: 150) {
+          fixed(width: 150, height: 150, quality: 95) {
             ...GatsbyImageSharpFixed_withWebp
           }
         }
