@@ -1,9 +1,12 @@
+const SITE_URL = 'https://mario.dev';
+
 module.exports = {
   siteMetadata: {
     title: `Mario Beltrán Alarcón`,
     description: `Mario Beltrán Alarcón - Frontend Web Engineer`,
     author: `Mario Beltrán Alarcón`,
     twitter: `@belco90`,
+    siteUrl: SITE_URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,5 +33,11 @@ module.exports = {
     },
     'gatsby-plugin-chakra-ui',
     'gatsby-plugin-layout',
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: SITE_URL,
+      },
+    },
   ],
 };
