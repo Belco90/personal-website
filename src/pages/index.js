@@ -4,6 +4,7 @@ import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 import { css, jsx, keyframes } from '@emotion/core';
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import SEO from '../components/seo';
 import ProfilePicture from '../components/profile-picture';
@@ -31,67 +32,88 @@ const cssFadeInUp = css`
   animation: ${fadeInUp} 1s both;
 `;
 
-const Index = () => (
-  <>
-    <SEO title="Home" />
+const Index = () => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            email
+            github
+            linkedin
+            twitter
+          }
+        }
+      }
+    `
+  );
 
-    <Flex justify="center" aligh="center" height="100%">
-      <Stack
-        direction="column"
-        py={8}
-        px={4}
-        align="center"
-        alignSelf="center"
-        maxWidth="100%"
-        textAlign="center"
-        spacing={12}
-      >
-        <Box>
-          <Box
-            backgroundImage="radial-gradient(currentColor 1px, transparent 1px)"
-            backgroundSize="calc(10 * 1px) calc(10 * 1px)"
-            color="gray.500"
-            rounded="full"
-          >
-            <Box transform="translate(30px, -30px)">
-              <ProfilePicture />
+  return (
+    <>
+      <SEO title="Home" />
+
+      <Flex justify="center" aligh="center" height="100%">
+        <Stack
+          direction="column"
+          py={8}
+          px={4}
+          align="center"
+          alignSelf="center"
+          maxWidth="100%"
+          textAlign="center"
+          spacing={12}
+        >
+          <Box>
+            <Box
+              backgroundImage="radial-gradient(currentColor 1px, transparent 1px)"
+              backgroundSize="calc(10 * 1px) calc(10 * 1px)"
+              color="gray.500"
+              rounded="full"
+            >
+              <Box transform="translate(30px, -30px)">
+                <ProfilePicture />
+              </Box>
             </Box>
           </Box>
-        </Box>
 
-        <Box
-          borderY="solid 1px"
-          borderTopColor="gray.500"
-          borderBottomColor="gray.500"
-          px={{ base: 2, md: 8 }}
-          py={5}
-          css={cssFadeInUp}
-        >
-          <Heading as="h1" mb={4}>
-            Mario Beltrán Alarcón
-          </Heading>
-          <Heading as="h4" fontSize="lg" fontWeight="normal">
-            Frontend Web Engineer
-          </Heading>
-        </Box>
+          <Box
+            borderY="solid 1px"
+            borderTopColor="gray.500"
+            borderBottomColor="gray.500"
+            px={{ base: 2, md: 8 }}
+            py={5}
+            css={cssFadeInUp}
+          >
+            <Heading as="h1" mb={4}>
+              Mario Beltrán Alarcón
+            </Heading>
+            <Heading as="h4" fontSize="lg" fontWeight="normal">
+              Frontend Web Engineer
+            </Heading>
+          </Box>
 
-        <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
-          <StyledLink href="mailto:belco90@gmail.com">
-            <Box as={FaEnvelope} />
-          </StyledLink>
-          <StyledLink href="https://github.com/Belco90">
-            <Box as={FaGithub} />
-          </StyledLink>
-          <StyledLink href="https://www.linkedin.com/in/mario-ba-90/">
-            <Box as={FaLinkedin} />
-          </StyledLink>
-          <StyledLink href="https://twitter.com/belcoDev">
-            <Box as={FaTwitter} />
-          </StyledLink>
-        </Flex>
-      </Stack>
-    </Flex>
-  </>
-);
+          <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
+            <StyledLink href={`mailto:${site.siteMetadata.email}`}>
+              <Box as={FaEnvelope} />
+            </StyledLink>
+            <StyledLink href={`https://github.com/${site.siteMetadata.github}`}>
+              <Box as={FaGithub} />
+            </StyledLink>
+            <StyledLink
+              href={`https://www.linkedin.com/in/${site.siteMetadata.linkedin}`}
+            >
+              <Box as={FaLinkedin} />
+            </StyledLink>
+            <StyledLink
+              href={`https://twitter.com/${site.siteMetadata.twitter}`}
+            >
+              <Box as={FaTwitter} />
+            </StyledLink>
+          </Flex>
+        </Stack>
+      </Flex>
+    </>
+  );
+};
 
 export default Index;

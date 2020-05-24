@@ -5,8 +5,12 @@ module.exports = {
     title: `Mario Beltrán Alarcón`,
     description: `Mario Beltrán Alarcón - Frontend Web Engineer`,
     author: `Mario Beltrán Alarcón`,
-    twitter: `@belco90`,
+    email: `belco90@gmail.com`,
+    twitter: `belcoDev`,
+    github: `Belco90`,
+    linkedin: `mario-ba-90`,
     siteUrl: SITE_URL,
+    profilePicture: `https://en.gravatar.com/userimage/2579648/589fd5525e1be579480a610887aa79df.png?size=200`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -26,6 +26,7 @@ function SEO({ description, lang, meta, title }) {
             description
             author
             twitter
+            profilePicture
           }
         }
       }
@@ -33,6 +34,9 @@ function SEO({ description, lang, meta, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const fullTitle = [title, site.siteMetadata.title]
+    .filter(Boolean)
+    .join(' | ');
 
   return (
     <Helmet
@@ -53,7 +57,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: fullTitle,
         },
         {
           property: `og:description`,
@@ -69,15 +73,19 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.twitter,
+          content: `@${site.siteMetadata.twitter}`,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: fullTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: site.siteMetadata.profilePicture,
         },
       ].concat(meta)}
     />
