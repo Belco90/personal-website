@@ -5,7 +5,9 @@ import { Link as RouteLink } from 'gatsby';
 import Container from '../components/container';
 
 const HeaderLink = ({ to, ...props }) => {
-  const isActive = window && window.location.pathname === to;
+  const isActive =
+    typeof window !== 'undefined' && window.location.pathname === to;
+
   return (
     <Link
       as={RouteLink}
