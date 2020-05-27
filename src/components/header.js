@@ -20,7 +20,7 @@ const HeaderLink = ({ to, ...props }) => (
           _hover={{
             textDecoration: 'none',
             borderBottomWidth: '4px',
-            borderColor: 'primary.100',
+            borderColor: !isActive ? 'primary.100' : undefined,
           }}
         />
       );
