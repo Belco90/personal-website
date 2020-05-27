@@ -1,29 +1,32 @@
 import React from 'react';
 import { Box, Link, Stack } from '@chakra-ui/core';
 import { Link as RouteLink } from 'gatsby';
+import { Location } from '@reach/router'; // gatsby dependency
 
 import Container from '../components/container';
 
-const HeaderLink = ({ to, ...props }) => {
-  const isActive =
-    typeof window !== 'undefined' && window.location.pathname === to;
-
-  return (
-    <Link
-      as={RouteLink}
-      to={to}
-      {...props}
-      borderBottomWidth={isActive ? '4px' : 'none'}
-      borderColor={isActive ? 'primary.400' : 'none'}
-      fontSize="lg"
-      _hover={{
-        textDecoration: 'none',
-        borderBottomWidth: '4px',
-        borderColor: 'primary.100',
-      }}
-    />
-  );
-};
+const HeaderLink = ({ to, ...props }) => (
+  <Location>
+    {({ location }) => {
+      const isActive = location.pathname === to;
+      return (
+        <Link
+          as={RouteLink}
+          to={to}
+          {...props}
+          borderBottomWidth={isActive ? '4px' : 'none'}
+          borderColor={isActive ? 'primary.400' : 'none'}
+          fontSize="lg"
+          _hover={{
+            textDecoration: 'none',
+            borderBottomWidth: '4px',
+            borderColor: 'primary.100',
+          }}
+        />
+      );
+    }}
+  </Location>
+);
 
 const Header = (...props) => {
   return (

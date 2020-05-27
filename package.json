@@ -23,9 +23,11 @@
   "license": "ISC",
   "scripts": {
     "build": "gatsby build",
+    "predevelop": "gatsby clean",
     "develop": "gatsby develop",
     "format": "prettier --write src",
     "start": "yarn develop",
+    "preserve": "yarn build",
     "serve": "gatsby serve",
     "test": "echo 'Write tests! -> https://gatsby.dev/unit-testing'"
   },
