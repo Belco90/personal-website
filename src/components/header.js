@@ -15,7 +15,7 @@ const HeaderLink = ({ to, ...props }) => (
           to={to}
           {...props}
           borderBottomWidth={isActive ? '4px' : 'none'}
-          borderColor={isActive ? 'primary.400' : 'none'}
+          borderColor={isActive ? 'primary.500' : 'none'}
           fontSize="lg"
           _hover={{
             textDecoration: 'none',
