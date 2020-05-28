@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Flex,
-  Heading,
-  Icon,
-  Link,
-  Stack,
-  Tag,
-  Text,
-} from '@chakra-ui/core';
+import { Box, Flex, Heading, Link, Stack, Tag, Text } from '@chakra-ui/core';
 import PropTypes from 'prop-types';
 import { FaRegStar } from 'react-icons/fa';
 
