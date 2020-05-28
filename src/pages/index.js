@@ -93,21 +93,29 @@ const Index = () => {
           </Box>
 
           <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
-            <StyledLink href={`mailto:${site.siteMetadata.email}`}>
-              <Box as={FaEnvelope} />
+            <StyledLink
+              href={`mailto:${site.siteMetadata.email}`}
+              aria-label="Email"
+            >
+              <Box as={FaEnvelope} aria-label="Email icon" />
             </StyledLink>
-            <StyledLink href={`https://github.com/${site.siteMetadata.github}`}>
-              <Box as={FaGithub} />
+            <StyledLink
+              href={`https://github.com/${site.siteMetadata.github}`}
+              aria-label="GitHub"
+            >
+              <Box as={FaGithub} aria-label="GitHub icon" />
             </StyledLink>
             <StyledLink
               href={`https://www.linkedin.com/in/${site.siteMetadata.linkedin}`}
+              aria-label="Linkedin"
             >
-              <Box as={FaLinkedin} />
+              <Box as={FaLinkedin} aria-label="Linkedin icon" />
             </StyledLink>
             <StyledLink
               href={`https://twitter.com/${site.siteMetadata.twitter}`}
+              aria-label="Twitter"
             >
-              <Box as={FaTwitter} />
+              <Box as={FaTwitter} aria-label="Twitter icon" />
             </StyledLink>
           </Flex>
         </Stack>
