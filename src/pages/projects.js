@@ -19,7 +19,7 @@ const PROJECTS = [
       'ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library',
     language: 'TypeScript',
     url: 'https://github.com/testing-library/eslint-plugin-testing-library',
-    stars: 176,
+    stars: 186,
   },
   {
     title: 'mastodonte-js',
