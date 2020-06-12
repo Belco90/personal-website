@@ -34,7 +34,7 @@ const Header = (...props) => {
       <Container py={5}>
         <Flex alignItems="center" justifyContent="space-between">
           <Box width={1 / 3}>
-            <Image src="/logo.svg" height={100} width="auto" />
+            <Image src="/logo.png" height="auto" width="130px" margin="-40px" />
           </Box>
           <Flex
             width={{ base: '100%', md: 2 / 3 }}
