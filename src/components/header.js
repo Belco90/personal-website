@@ -39,7 +39,8 @@ const Header = (...props) => {
               alt="MBA"
               height="auto"
               width="130px"
-              margin="-40px"
+              marginY="-40px"
+              marginX="-20px"
             />
           </Box>
           <Flex
