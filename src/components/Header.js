@@ -1,31 +1,29 @@
 import { Box, Link, Stack, Image, Flex } from '@chakra-ui/core';
-import { Link as RouteLink } from 'gatsby';
-import { Location } from '@reach/router'; // gatsby dependency
+import NextLink from 'next/link';
 
 import Container from './Container';
 
-const HeaderLink = ({ to, ...props }) => (
-  <Location>
-    {({ location }) => {
-      const isActive = location.pathname === to;
-      return (
-        <Link
-          as={RouteLink}
-          to={to}
-          {...props}
-          borderBottomWidth={isActive ? '4px' : 'none'}
-          borderColor={isActive ? 'primary.500' : 'none'}
-          fontSize="lg"
-          _hover={{
-            textDecoration: 'none',
-            borderBottomWidth: '4px',
-            borderColor: !isActive ? 'primary.100' : undefined,
-          }}
-        />
-      );
-    }}
-  </Location>
-);
+const HeaderLink = ({ href, children, ...remaining }) => {
+  // TODO: check if link is active one
+  const isActive = false;
+  return (
+    <NextLink href={href} passHref>
+      <Link
+        {...remaining}
+        borderBottomWidth={isActive ? '4px' : 'none'}
+        borderColor={isActive ? 'primary.500' : 'none'}
+        fontSize="lg"
+        _hover={{
+          textDecoration: 'none',
+          borderBottomWidth: '4px',
+          borderColor: !isActive ? 'primary.100' : undefined,
+        }}
+      >
+        {children}
+      </Link>
+    </NextLink>
+  );
+};
 
 const Header = (...props) => {
   return (
@@ -55,8 +53,8 @@ const Header = (...props) => {
               justify="center"
               shouldWrapChildren
             >
-              <HeaderLink to="/">Home</HeaderLink>
-              <HeaderLink to="/projects">Projects</HeaderLink>
+              <HeaderLink href="/">Home</HeaderLink>
+              <HeaderLink href="/projects">Projects</HeaderLink>
             </Stack>
           </Flex>
         </Flex>
