@@ -2,7 +2,7 @@ import { Box, Link, Stack, Image, Flex } from '@chakra-ui/core';
 import { Link as RouteLink } from 'gatsby';
 import { Location } from '@reach/router'; // gatsby dependency
 
-import Container from '../components/container';
+import Container from './Container';
 
 const HeaderLink = ({ to, ...props }) => (
   <Location>
