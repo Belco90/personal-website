@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react';
 import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 import { css, jsx, keyframes } from '@emotion/core';

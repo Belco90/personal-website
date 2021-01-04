@@ -1,4 +1,3 @@
-import React from 'react';
 import SEO from '../components/seo';
 import Container from '../components/container';
 import { SimpleGrid } from '@chakra-ui/core';
