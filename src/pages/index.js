@@ -5,8 +5,8 @@ import { css, jsx, keyframes } from '@emotion/core';
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import SEO from '../components/seo';
-import ProfilePicture from '../components/profile-picture';
+import Seo from '../components/Seo';
+import ProfilePicture from '../components/ProfilePicture';
 
 const StyledLink = styled(Link)`
   transition: transform 0.3s;
@@ -49,7 +49,7 @@ const Index = () => {
 
   return (
     <>
-      <SEO title="Home" />
+      <Seo title="Home" />
 
       <Flex justify="center" aligh="center" height="100%">
         <Stack

@@ -1,7 +1,7 @@
-import SEO from '../components/seo';
-import Container from '../components/container';
+import Seo from '../components/Seo';
+import Container from '../components/Container';
 import { SimpleGrid } from '@chakra-ui/core';
-import ProjectCard from '../components/project-card';
+import ProjectCard from '../components/ProjectCard';
 
 const PROJECTS = [
   {
@@ -40,7 +40,7 @@ const PROJECTS = [
 const Projects = () => {
   return (
     <>
-      <SEO title="Projects" />
+      <Seo title="Projects" />
       <Container>
         <SimpleGrid minChildWidth="300px" spacing={10}>
           {PROJECTS.map((project) => (
