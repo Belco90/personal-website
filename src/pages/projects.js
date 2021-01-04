@@ -1,6 +1,5 @@
-import Seo from '../components/Seo';
-import Container from '../components/Container';
 import { SimpleGrid } from '@chakra-ui/core';
+import Container from '../components/Container';
 import ProjectCard from '../components/ProjectCard';
 
 const PROJECTS = [
@@ -39,16 +38,13 @@ const PROJECTS = [
 
 const Projects = () => {
   return (
-    <>
-      <Seo title="Projects" />
-      <Container>
-        <SimpleGrid minChildWidth="300px" spacing={10}>
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.url} {...project} />
-          ))}
-        </SimpleGrid>
-      </Container>
-    </>
+    <Container>
+      <SimpleGrid minChildWidth="300px" spacing={10}>
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.url} {...project} />
+        ))}
+      </SimpleGrid>
+    </Container>
   );
 };
 
