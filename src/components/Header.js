@@ -31,7 +31,7 @@ const Header = (...props) => {
   return (
     <Box as="header" zIndex="banner" {...props}>
       <Container py={5}>
-        <Flex width="full" justifyContent={{ base: 'center', md: 'end' }}>
+        <Flex width="full" justifyContent={{ base: 'center', md: 'flex-end' }}>
           <Stack
             as="nav"
             isInline
