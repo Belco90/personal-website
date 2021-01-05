@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
-import { Box, Flex } from '@chakra-ui/core';
+import PropTypes from 'prop-types'
+import { Box, Flex } from '@chakra-ui/core'
 
-import Header from './Header';
+import Header from './Header'
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
 const MainLayout = ({ children }) => (
   <Flex height="100%" direction="column">
@@ -14,8 +14,8 @@ const MainLayout = ({ children }) => (
       {children}
     </Box>
   </Flex>
-);
+)
 
-MainLayout.propTypes = propTypes;
+MainLayout.propTypes = propTypes
 
-export default MainLayout;
+export default MainLayout

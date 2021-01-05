@@ -1,14 +1,14 @@
-import Head from 'next/head';
-import PropTypes from 'prop-types';
-import config from '../config';
+import Head from 'next/head'
+import PropTypes from 'prop-types'
+import config from '../config'
 
 const propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-};
+}
 
 function SEO({ description = config.description, title }) {
-  const defaultTitle = config.title;
+  const defaultTitle = config.title
   return (
     <Head>
       <title>{`${title} | ${defaultTitle}`}</title>
@@ -28,9 +28,9 @@ function SEO({ description = config.description, title }) {
         content="https://en.gravatar.com/userimage/2579648/589fd5525e1be579480a610887aa79df.png?size=200"
       />
     </Head>
-  );
+  )
 }
 
-SEO.propTypes = propTypes;
+SEO.propTypes = propTypes
 
-export default SEO;
+export default SEO

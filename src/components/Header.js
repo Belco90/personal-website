@@ -1,12 +1,12 @@
-import { Box, Link, Stack, Flex } from '@chakra-ui/core';
-import NextLink from 'next/link';
+import { Box, Link, Stack, Flex } from '@chakra-ui/core'
+import NextLink from 'next/link'
 
-import Container from './Container';
-import { useRouter } from 'next/router';
+import Container from './Container'
+import { useRouter } from 'next/router'
 
 const HeaderLink = ({ href, children, ...remaining }) => {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+  const router = useRouter()
+  const isActive = router.asPath === href
 
   return (
     <NextLink href={href} passHref>
@@ -24,8 +24,8 @@ const HeaderLink = ({ href, children, ...remaining }) => {
         {children}
       </Link>
     </NextLink>
-  );
-};
+  )
+}
 
 const Header = (...props) => {
   return (
@@ -46,7 +46,7 @@ const Header = (...props) => {
         </Flex>
       </Container>
     </Box>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

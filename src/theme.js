@@ -1,4 +1,4 @@
-import { theme } from '@chakra-ui/core';
+import { theme } from '@chakra-ui/core'
 
 const primaryColor = {
   50: '#ffefdb',
@@ -11,7 +11,7 @@ const primaryColor = {
   700: '#813a00',
   800: '#4f2300',
   900: '#200900',
-};
+}
 
 const customTheme = {
   ...theme,
@@ -23,6 +23,6 @@ const customTheme = {
     ...theme.fonts,
     heading: 'Open Sans, sans-serif;',
   },
-};
+}
 
-export default customTheme;
+export default customTheme

@@ -1,18 +1,18 @@
-import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/core';
-import styled from '@emotion/styled';
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/core'
+import styled from '@emotion/styled'
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
-import ProfilePicture from '../components/ProfilePicture';
-import MainLayout from '../components/MainLayout';
-import SEO from '../components/SEO';
-import config from '../config';
+import ProfilePicture from '../components/ProfilePicture'
+import MainLayout from '../components/MainLayout'
+import SEO from '../components/SEO'
+import config from '../config'
 
 const StyledLink = styled(Link)`
   transition: transform 0.3s;
   :hover {
     transform: scale(1.3);
   }
-`;
+`
 
 // TODO: get this animation back on Chakra v1
 //const fadeInUp = keyframes`
@@ -103,7 +103,7 @@ const Index = () => {
         </Stack>
       </Flex>
     </MainLayout>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

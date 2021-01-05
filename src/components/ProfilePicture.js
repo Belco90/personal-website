@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import styles from './ProfilePicture.module.css';
+import Image from 'next/image'
+import styles from './ProfilePicture.module.css'
 
 const ProfilePicture = () => {
   return (
@@ -11,7 +11,7 @@ const ProfilePicture = () => {
       quality={95}
       className={styles.root}
     />
-  );
-};
+  )
+}
 
-export default ProfilePicture;
+export default ProfilePicture

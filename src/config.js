@@ -11,4 +11,4 @@ export default {
     github: 'Belco90',
     linkedin: 'mario-ba-90',
   },
-};
+}

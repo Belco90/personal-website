@@ -1,6 +1,6 @@
-import { Box, Flex, Heading, Link, Stack, Tag, Text } from '@chakra-ui/core';
-import PropTypes from 'prop-types';
-import { FaRegStar } from 'react-icons/fa';
+import { Box, Flex, Heading, Link, Stack, Tag, Text } from '@chakra-ui/core'
+import PropTypes from 'prop-types'
+import { FaRegStar } from 'react-icons/fa'
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -8,7 +8,7 @@ const propTypes = {
   language: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   stars: PropTypes.number.isRequired,
-};
+}
 
 const ProjectCard = ({ title, description, language, url, stars, ...rest }) => {
   return (
@@ -29,9 +29,9 @@ const ProjectCard = ({ title, description, language, url, stars, ...rest }) => {
         </Flex>
       </Stack>
     </Flex>
-  );
-};
+  )
+}
 
-ProjectCard.propTypes = propTypes;
+ProjectCard.propTypes = propTypes
 
-export default ProjectCard;
+export default ProjectCard

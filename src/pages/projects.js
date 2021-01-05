@@ -1,9 +1,9 @@
-import { SimpleGrid } from '@chakra-ui/core';
-import Container from '../components/Container';
-import ProjectCard from '../components/ProjectCard';
-import MainLayout from '../components/MainLayout';
-import SEO from '../components/SEO';
-import config from '../config';
+import { SimpleGrid } from '@chakra-ui/core'
+import Container from '../components/Container'
+import ProjectCard from '../components/ProjectCard'
+import MainLayout from '../components/MainLayout'
+import SEO from '../components/SEO'
+import config from '../config'
 
 const PROJECTS = [
   {
@@ -37,7 +37,7 @@ const PROJECTS = [
     url: 'https://github.com/Belco90/react-advanced-patterns-components',
     stars: 5,
   },
-];
+]
 
 const Projects = () => {
   return (
@@ -51,7 +51,7 @@ const Projects = () => {
         </SimpleGrid>
       </Container>
     </MainLayout>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
