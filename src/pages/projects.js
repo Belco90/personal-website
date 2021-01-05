@@ -1,6 +1,9 @@
 import { SimpleGrid } from '@chakra-ui/core';
 import Container from '../components/Container';
 import ProjectCard from '../components/ProjectCard';
+import MainLayout from '../components/MainLayout';
+import SEO from '../components/SEO';
+import config from '../config';
 
 const PROJECTS = [
   {
@@ -38,13 +41,16 @@ const PROJECTS = [
 
 const Projects = () => {
   return (
-    <Container>
-      <SimpleGrid minChildWidth="300px" spacing={10}>
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.url} {...project} />
-        ))}
-      </SimpleGrid>
-    </Container>
+    <MainLayout>
+      <SEO title="Projects" description={`${config.author.name}'s Projects`} />
+      <Container>
+        <SimpleGrid minChildWidth="300px" spacing={10}>
+          {PROJECTS.map((project) => (
+            <ProjectCard key={project.url} {...project} />
+          ))}
+        </SimpleGrid>
+      </Container>
+    </MainLayout>
   );
 };
 

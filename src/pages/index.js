@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 import ProfilePicture from '../components/ProfilePicture';
+import MainLayout from '../components/MainLayout';
+import SEO from '../components/SEO';
 
 const StyledLink = styled(Link)`
   transition: transform 0.3s;
@@ -29,89 +31,77 @@ const StyledLink = styled(Link)`
 //`;
 
 const Index = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            email
-            github
-            linkedin
-            twitter
-          }
-        }
-      }
-    `
-  );
-
   return (
-    <Flex justify="center" aligh="center" height="100%">
-      <Stack
-        direction="column"
-        py={8}
-        px={4}
-        align="center"
-        alignSelf="center"
-        maxWidth="100%"
-        textAlign="center"
-        spacing={12}
-      >
-        <Box>
-          <Box
-            backgroundImage="radial-gradient(currentColor 1px, transparent 1px)"
-            backgroundSize="calc(10 * 1px) calc(10 * 1px)"
-            color="gray.500"
-            rounded="full"
-          >
-            <Box transform="translate(30px, -30px)">
-              <ProfilePicture />
+    <MainLayout>
+      <SEO title="Home" />
+      <Flex justify="center" aligh="center" height="100%">
+        <Stack
+          direction="column"
+          py={8}
+          px={4}
+          align="center"
+          alignSelf="center"
+          maxWidth="100%"
+          textAlign="center"
+          spacing={12}
+        >
+          <Box>
+            <Box
+              backgroundImage="radial-gradient(currentColor 1px, transparent 1px)"
+              backgroundSize="calc(10 * 1px) calc(10 * 1px)"
+              color="gray.500"
+              rounded="full"
+            >
+              <Box transform="translate(30px, -30px)">
+                <ProfilePicture />
+              </Box>
             </Box>
           </Box>
-        </Box>
 
-        <Box
-          borderY="solid 1px"
-          borderTopColor="gray.500"
-          borderBottomColor="gray.500"
-          px={{ base: 2, md: 8 }}
-          py={5}
-        >
-          <Heading as="h1" mb={4}>
-            Mario Beltrán Alarcón
-          </Heading>
-          <Heading as="h4" fontSize="lg" fontWeight="normal">
-            Frontend Web Engineer
-          </Heading>
-        </Box>
+          <Box
+            borderY="solid 1px"
+            borderTopColor="gray.500"
+            borderBottomColor="gray.500"
+            px={{ base: 2, md: 8 }}
+            py={5}
+          >
+            <Heading as="h1" mb={4}>
+              Mario Beltrán Alarcón
+            </Heading>
+            <Heading as="h4" fontSize="lg" fontWeight="normal">
+              Frontend Web Engineer
+            </Heading>
+          </Box>
 
-        <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
-          <StyledLink
-            href={`mailto:${site.siteMetadata.email}`}
-            aria-label="Email"
-          >
-            <Box as={FaEnvelope} aria-label="Email icon" />
-          </StyledLink>
-          <StyledLink
-            href={`https://github.com/${site.siteMetadata.github}`}
-            aria-label="GitHub"
-          >
-            <Box as={FaGithub} aria-label="GitHub icon" />
-          </StyledLink>
-          <StyledLink
-            href={`https://www.linkedin.com/in/${site.siteMetadata.linkedin}`}
-            aria-label="Linkedin"
-          >
-            <Box as={FaLinkedin} aria-label="Linkedin icon" />
-          </StyledLink>
-          <StyledLink
-            href={`https://twitter.com/${site.siteMetadata.twitter}`}
-            aria-label="Twitter"
-          >
-            <Box as={FaTwitter} aria-label="Twitter icon" />
-          </StyledLink>
-        </Flex>
-      </Stack>
-    </Flex>
+          <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
+            <StyledLink
+              href={`mailto:${site.siteMetadata.email}`}
+              aria-label="Email"
+            >
+              <Box as={FaEnvelope} aria-label="Email icon" />
+            </StyledLink>
+            <StyledLink
+              href={`https://github.com/${site.siteMetadata.github}`}
+              aria-label="GitHub"
+            >
+              <Box as={FaGithub} aria-label="GitHub icon" />
+            </StyledLink>
+            <StyledLink
+              href={`https://www.linkedin.com/in/${site.siteMetadata.linkedin}`}
+              aria-label="Linkedin"
+            >
+              <Box as={FaLinkedin} aria-label="Linkedin icon" />
+            </StyledLink>
+            <StyledLink
+              href={`https://twitter.com/${site.siteMetadata.twitter}`}
+              aria-label="Twitter"
+            >
+              <Box as={FaTwitter} aria-label="Twitter icon" />
+            </StyledLink>
+          </Flex>
+        </Stack>
+      </Flex>
+    </MainLayout>
   );
 };
 
