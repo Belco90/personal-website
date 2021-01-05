@@ -1,26 +1,13 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import Image from 'next/image';
 
 const ProfilePicture = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "profile-picture.jpg" }) {
-        childImageSharp {
-          fixed(width: 150, height: 150, quality: 95) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
-        }
-      }
-    }
-  `);
-
   return (
-    <Img
-      fixed={data.file.childImageSharp.fixed}
+    <Image
+      src="/profile-picture.jpg"
       alt="Mario profile picture"
-      imgStyle={{
-        borderRadius: '100%',
-      }}
+      width={150}
+      height={150}
+      quality={95}
     />
   );
 };
