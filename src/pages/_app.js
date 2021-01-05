@@ -5,7 +5,7 @@ import { Global } from '@emotion/core'
 import customTheme from '../theme'
 import globalStyles from '../globalStyles'
 import * as gtag from '../lib/gtag'
-import 'typeface-open-sans'
+import '@fontsource/open-sans'
 
 const App = ({ Component, pageProps }) => {
   const router = useRouter()

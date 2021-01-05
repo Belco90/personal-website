@@ -32,13 +32,13 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@fontsource/open-sans": "^4.1.0",
     "emotion-theming": "^10.0.27",
     "next": "^10.0.4",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-icons": "^3.10.0",
-    "typeface-open-sans": "^0.0.75"
+    "react-icons": "^3.10.0"
   },
   "devDependencies": {
     "husky": "^4.2.5",
