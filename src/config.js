@@ -4,7 +4,7 @@ export default {
     name: 'Mario Beltrán',
     summary: 'JavaScript Engineer',
   },
-  description: `${this.author.name} - ${this.author.summary}`,
+  description: 'Mario Beltrán - JavaScript Engineer',
   social: {
     email: 'belco90@gmail.com',
     twitter: 'belcoDev',

@@ -5,6 +5,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import ProfilePicture from '../components/ProfilePicture';
 import MainLayout from '../components/MainLayout';
 import SEO from '../components/SEO';
+import config from '../config';
 
 const StyledLink = styled(Link)`
   transition: transform 0.3s;
@@ -75,25 +76,25 @@ const Index = () => {
 
           <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
             <StyledLink
-              href={`mailto:${site.siteMetadata.email}`}
+              href={`mailto:${config.social.email}`}
               aria-label="Email"
             >
               <Box as={FaEnvelope} aria-label="Email icon" />
             </StyledLink>
             <StyledLink
-              href={`https://github.com/${site.siteMetadata.github}`}
+              href={`https://github.com/${config.social.github}`}
               aria-label="GitHub"
             >
               <Box as={FaGithub} aria-label="GitHub icon" />
             </StyledLink>
             <StyledLink
-              href={`https://www.linkedin.com/in/${site.siteMetadata.linkedin}`}
+              href={`https://www.linkedin.com/in/${config.social.linkedin}`}
               aria-label="Linkedin"
             >
               <Box as={FaLinkedin} aria-label="Linkedin icon" />
             </StyledLink>
             <StyledLink
-              href={`https://twitter.com/${site.siteMetadata.twitter}`}
+              href={`https://twitter.com/${config.social.twitter}`}
               aria-label="Twitter"
             >
               <Box as={FaTwitter} aria-label="Twitter icon" />
