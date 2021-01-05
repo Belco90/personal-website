@@ -1,11 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { Global } from '@emotion/core';
 import { Box, Flex } from '@chakra-ui/core';
-import 'typeface-open-sans';
 
-import globalStyles from '../globalStyles';
-import Header from '../components/header';
+import Header from './Header';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -13,7 +9,6 @@ const propTypes = {
 
 const MainLayout = ({ children }) => (
   <Flex height="100%" direction="column">
-    <Global styles={globalStyles} />
     <Header />
     <Box flex={1} mt={8}>
       {children}

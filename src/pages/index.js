@@ -1,13 +1,11 @@
-/** @jsx jsx */
-import React from 'react';
 import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/core';
 import styled from '@emotion/styled';
-import { css, jsx, keyframes } from '@emotion/core';
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { graphql, useStaticQuery } from 'gatsby';
 
-import SEO from '../components/seo';
-import ProfilePicture from '../components/profile-picture';
+import ProfilePicture from '../components/ProfilePicture';
+import MainLayout from '../components/MainLayout';
+import SEO from '../components/SEO';
+import config from '../config';
 
 const StyledLink = styled(Link)`
   transition: transform 0.3s;
@@ -16,42 +14,27 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const fadeInUp = keyframes`
-    from {
-    transform: translate3d(0, 20px, 0);
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-`;
-
-const cssFadeInUp = css`
-  opacity: 0;
-  animation: ${fadeInUp} 1s both;
-`;
+// TODO: get this animation back on Chakra v1
+//const fadeInUp = keyframes`
+//    from {
+//    transform: translate3d(0, 20px, 0);
+//  }
+//
+//  to {
+//    transform: translate3d(0, 0, 0);
+//    opacity: 1;
+//  }
+//`;
+//
+//const cssFadeInUp = css`
+//  opacity: 0;
+//  animation: ${fadeInUp} 1s both;
+//`;
 
 const Index = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            email
-            github
-            linkedin
-            twitter
-          }
-        }
-      }
-    `
-  );
-
   return (
-    <>
+    <MainLayout>
       <SEO title="Home" />
-
       <Flex justify="center" aligh="center" height="100%">
         <Stack
           direction="column"
@@ -82,7 +65,6 @@ const Index = () => {
             borderBottomColor="gray.500"
             px={{ base: 2, md: 8 }}
             py={5}
-            css={cssFadeInUp}
           >
             <Heading as="h1" mb={4}>
               Mario Beltrán Alarcón
@@ -94,25 +76,25 @@ const Index = () => {
 
           <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
             <StyledLink
-              href={`mailto:${site.siteMetadata.email}`}
+              href={`mailto:${config.social.email}`}
               aria-label="Email"
             >
               <Box as={FaEnvelope} aria-label="Email icon" />
             </StyledLink>
             <StyledLink
-              href={`https://github.com/${site.siteMetadata.github}`}
+              href={`https://github.com/${config.social.github}`}
               aria-label="GitHub"
             >
               <Box as={FaGithub} aria-label="GitHub icon" />
             </StyledLink>
             <StyledLink
-              href={`https://www.linkedin.com/in/${site.siteMetadata.linkedin}`}
+              href={`https://www.linkedin.com/in/${config.social.linkedin}`}
               aria-label="Linkedin"
             >
               <Box as={FaLinkedin} aria-label="Linkedin icon" />
             </StyledLink>
             <StyledLink
-              href={`https://twitter.com/${site.siteMetadata.twitter}`}
+              href={`https://twitter.com/${config.social.twitter}`}
               aria-label="Twitter"
             >
               <Box as={FaTwitter} aria-label="Twitter icon" />
@@ -120,7 +102,7 @@ const Index = () => {
           </Flex>
         </Stack>
       </Flex>
-    </>
+    </MainLayout>
   );
 };
 
