@@ -5,4 +5,3 @@ Built with:
 - React
 - Next.js + Vercel
 - Chakra UI
--
