@@ -29,10 +29,9 @@ const Header = (...props) => {
   return (
     <Box as="header" zIndex="banner" {...props}>
       <Container py={5}>
-        <Flex width="full" justifyContent={{ base: 'end', md: 'initial' }}>
+        <Flex width="full" justifyContent={{ base: 'center', md: 'end' }}>
           <Stack
             as="nav"
-            width="50%"
             isInline
             spacing={8}
             align="center"
