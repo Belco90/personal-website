@@ -1,5 +1,4 @@
 import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/core'
-import styled from '@emotion/styled'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 import ProfilePicture from '../components/ProfilePicture'
@@ -7,12 +6,13 @@ import MainLayout from '../components/MainLayout'
 import SEO from '../components/SEO'
 import config from '../config'
 
-const StyledLink = styled(Link)`
-  transition: transform 0.3s;
-  :hover {
-    transform: scale(1.3);
-  }
-`
+const SocialLink = (props) => (
+  <Link
+    {...props}
+    transition="transform 0.3s"
+    _hover={{ transform: 'scale(1.3)' }}
+  />
+)
 
 // TODO: get this animation back on Chakra v1
 //const fadeInUp = keyframes`
@@ -75,30 +75,30 @@ const Index = () => {
           </Box>
 
           <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
-            <StyledLink
+            <SocialLink
               href={`mailto:${config.social.email}`}
               aria-label="Email"
             >
               <Box as={FaEnvelope} aria-label="Email icon" />
-            </StyledLink>
-            <StyledLink
+            </SocialLink>
+            <SocialLink
               href={`https://github.com/${config.social.github}`}
               aria-label="GitHub"
             >
               <Box as={FaGithub} aria-label="GitHub icon" />
-            </StyledLink>
-            <StyledLink
+            </SocialLink>
+            <SocialLink
               href={`https://www.linkedin.com/in/${config.social.linkedin}`}
               aria-label="Linkedin"
             >
               <Box as={FaLinkedin} aria-label="Linkedin icon" />
-            </StyledLink>
-            <StyledLink
+            </SocialLink>
+            <SocialLink
               href={`https://twitter.com/${config.social.twitter}`}
               aria-label="Twitter"
             >
               <Box as={FaTwitter} aria-label="Twitter icon" />
-            </StyledLink>
+            </SocialLink>
           </Flex>
         </Stack>
       </Flex>
