@@ -2,10 +2,12 @@ import { Box, Link, Stack, Flex } from '@chakra-ui/core';
 import NextLink from 'next/link';
 
 import Container from './Container';
+import { useRouter } from 'next/router';
 
 const HeaderLink = ({ href, children, ...remaining }) => {
-  // TODO: check if link is active one
-  const isActive = false;
+  const router = useRouter();
+  const isActive = router.asPath === href;
+
   return (
     <NextLink href={href} passHref>
       <Link
