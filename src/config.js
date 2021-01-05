@@ -2,9 +2,9 @@ export default {
   title: 'Mario Beltrán Website',
   author: {
     name: 'Mario Beltrán',
-    summary: 'JavaScript Engineer',
+    summary: 'Frontend Web Engineer',
   },
-  description: 'Mario Beltrán - JavaScript Engineer',
+  description: 'Mario Beltrán - Frontend Web Engineer',
   social: {
     email: 'belco90@gmail.com',
     twitter: 'belcoDev',
