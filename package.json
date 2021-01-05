@@ -16,7 +16,7 @@
     "developer",
     "engineer",
     "react",
-    "gatsby",
+    "nextjs",
     "frontend"
   ],
   "author": "Mario Beltrán Alarcón <belco90@gmail.com>",
@@ -26,8 +26,7 @@
     "dev": "next",
     "build": "next build",
     "serve": "next start",
-    "format": "prettier --write src",
-    "test": "echo 'Write tests! -> https://gatsby.dev/unit-testing'"
+    "format": "prettier --write src"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
