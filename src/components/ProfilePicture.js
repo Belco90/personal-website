@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import styles from './ProfilePicture.module.css';
 
 const ProfilePicture = () => {
   return (
@@ -8,6 +9,7 @@ const ProfilePicture = () => {
       width={150}
       height={150}
       quality={95}
+      className={styles.root}
     />
   );
 };
