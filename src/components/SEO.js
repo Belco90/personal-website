@@ -23,7 +23,10 @@ function SEO({ description = config.description, title }) {
       <meta property="twitter:creator" content={config.social.twitter} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content="/profile-picture.jpg" />
+      <meta
+        property="twitter:image"
+        content="https://en.gravatar.com/userimage/2579648/589fd5525e1be579480a610887aa79df.png?size=200"
+      />
     </Head>
   );
 }
