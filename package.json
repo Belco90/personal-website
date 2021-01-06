@@ -29,11 +29,11 @@
     "format": "prettier --write src"
   },
   "dependencies": {
-    "@chakra-ui/core": "^0.8.0",
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
+    "@chakra-ui/react": "^1.1.1",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "@fontsource/open-sans": "^4.1.0",
-    "emotion-theming": "^10.0.27",
+    "framer-motion": "^3.1.4",
     "next": "^10.0.4",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

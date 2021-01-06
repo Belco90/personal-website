@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/core'
+import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/react'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 import ProfilePicture from '../components/ProfilePicture'

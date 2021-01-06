@@ -1,4 +1,4 @@
-import { SimpleGrid } from '@chakra-ui/core'
+import { SimpleGrid } from '@chakra-ui/react'
 import Container from '../components/Container'
 import ProjectCard from '../components/ProjectCard'
 import MainLayout from '../components/MainLayout'

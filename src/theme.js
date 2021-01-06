@@ -1,4 +1,4 @@
-import { theme } from '@chakra-ui/core'
+import { extendTheme } from '@chakra-ui/react'
 
 const primaryColor = {
   50: '#ffefdb',
@@ -13,16 +13,16 @@ const primaryColor = {
   900: '#200900',
 }
 
-const customTheme = {
-  ...theme,
+export default extendTheme({
   colors: {
-    ...theme.colors,
     primary: primaryColor,
   },
   fonts: {
-    ...theme.fonts,
     heading: 'Open Sans, sans-serif;',
   },
-}
-
-export default customTheme
+  styles: {
+    global: {
+      'html, body, #__next': { height: '100%' },
+    },
+  },
+})

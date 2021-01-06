@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Box, Flex } from '@chakra-ui/core'
+import { Box, Flex } from '@chakra-ui/react'
 
 import Header from './Header'
 
