@@ -24,7 +24,7 @@ const ProjectCard = ({ title, description, language, url, stars, ...rest }) => {
       <HStack spacing={8}>
         <Tag size="md">{language}</Tag>
         <Flex align="center">
-          <Icon as={FaRegStar} aria-label="Stars icon" mr={1} />
+          <Icon as={FaRegStar} aria-label="Stars" mr={1} />
           <Text>{stars}</Text>
         </Flex>
       </HStack>
