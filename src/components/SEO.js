@@ -14,7 +14,7 @@ function SEO({ description = config.description, title }) {
       <title>{`${title} | ${defaultTitle}`}</title>
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
-      <meta name="keywords" content="JavaScript Engineer" />
+      <meta name="keywords" content="Frontend Software Engineer" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

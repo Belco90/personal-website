@@ -76,7 +76,7 @@ const Index = () => {
                 Mario Beltrán Alarcón
               </Heading>
               <Heading as="h2" fontSize="lg" fontWeight="normal">
-                Frontend Web Engineer
+                Frontend Software Engineer
               </Heading>
             </Box>
           </motion.div>
