@@ -754,15 +754,15 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@fontsource/open-sans@^4.1.0":
+"@fontsource/karla@^4.1.0":
   version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-4.1.0.tgz#d44b4495bd23d78018675e4e79973894e393c0ed"
-  integrity sha512-sWDAAr6ESHJdBKXse6njvZem4sTZLILkugaEfAvpdFiaKBh2RnXTa4DJllDh5LzP0MLMUrfj/JAjMbKxWFo6pQ==
+  resolved "https://registry.yarnpkg.com/@fontsource/karla/-/karla-4.1.0.tgz#83f1c1b09bcc6fb3f6f4df6e47c76526ea19bff6"
+  integrity sha512-O2WqLUibRs7+eeTSOKCH21pACB7r1/Yt6YshlrFt86RJ1vFanmVqi7tkk5aX8xzJU+mMp0ZIWgw8eoyg6q+fwQ==
 
-"@fontsource/raleway@^4.1.0":
+"@fontsource/rubik@^4.1.0":
   version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/raleway/-/raleway-4.1.0.tgz#561cfac61b828b9580371d30e943d49dba5247c7"
-  integrity sha512-eFA/+PEQ/avDDxMSlYEifPDh7fNlgZCIvVrKmm1eUB6oYT27OQOtVgC5LcG4QbWvNDr2zTEnDA0dltUZIljT+w==
+  resolved "https://registry.yarnpkg.com/@fontsource/rubik/-/rubik-4.1.0.tgz#2e7064ff22b588690bb1190bdbf36c4396c05798"
+  integrity sha512-hjLbittC4UeHwcHZSYke3G4R2mJQnsApaY+39W2QjJQayGmXc5MADlyapdukqxcHnyciJHYhdSZRKzV0Lb7elw==
 
 "@hapi/accept@5.0.1":
   version "5.0.1"
