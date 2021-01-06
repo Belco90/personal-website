@@ -22,7 +22,8 @@ export default extendTheme({
     primary: primaryColor,
   },
   fonts: {
-    heading: 'Open Sans, sans-serif;',
+    heading: '"Open Sans", sans-serif;',
+    body: '"Raleway", sans-serif',
   },
   styles: {
     global: {

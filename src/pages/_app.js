@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import theme from '../theme'
 import * as gtag from '../lib/gtag'
 import '@fontsource/open-sans'
+import '@fontsource/raleway'
 import 'focus-visible/dist/focus-visible'
 
 const App = ({ Component, pageProps }) => {
