@@ -69,7 +69,7 @@ const Index = () => {
             <Heading as="h1" mb={4}>
               Mario Beltrán Alarcón
             </Heading>
-            <Heading as="h4" fontSize="lg" fontWeight="normal">
+            <Heading as="h2" fontSize="lg" fontWeight="normal">
               Frontend Web Engineer
             </Heading>
           </Box>
