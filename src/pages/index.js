@@ -15,23 +15,6 @@ const SocialLink = (props) => (
   />
 )
 
-// TODO: get this animation back on Chakra v1
-//const fadeInUp = keyframes`
-//    from {
-//    transform: translate3d(0, 20px, 0);
-//  }
-//
-//  to {
-//    transform: translate3d(0, 0, 0);
-//    opacity: 1;
-//  }
-//`;
-//
-//const cssFadeInUp = css`
-//  opacity: 0;
-//  animation: ${fadeInUp} 1s both;
-//`;
-
 const Index = () => {
   return (
     <MainLayout>
