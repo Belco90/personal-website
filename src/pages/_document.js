@@ -1,8 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { ColorModeScript } from '@chakra-ui/react'
 
 import { GA_TRACKING_ID } from '../lib/gtag'
 
-export default class MyDocument extends Document {
+class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
@@ -26,6 +27,7 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
+          <ColorModeScript />
           <Main />
           <NextScript />
         </body>
@@ -33,3 +35,5 @@ export default class MyDocument extends Document {
     )
   }
 }
+
+export default MyDocument
