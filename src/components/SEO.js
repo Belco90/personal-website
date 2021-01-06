@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import PropTypes from 'prop-types'
-import config from '../config'
+import config from '~/config'
 
 const propTypes = {
   title: PropTypes.string.isRequired,

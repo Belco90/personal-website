@@ -1,10 +1,9 @@
 import { Box, Flex, Heading, Link, VStack, Icon } from '@chakra-ui/react'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-
-import ProfilePicture from '../components/ProfilePicture'
-import MainLayout from '../components/MainLayout'
-import SEO from '../components/SEO'
-import config from '../config'
+import MainLayout from '~/components/MainLayout'
+import ProfilePicture from '~/components/ProfilePicture'
+import SEO from '~/components/SEO'
+import config from '~/config'
 
 const SocialLink = (props) => (
   <Link

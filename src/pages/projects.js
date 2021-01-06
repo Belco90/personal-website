@@ -1,9 +1,9 @@
 import { SimpleGrid } from '@chakra-ui/react'
-import Container from '../components/Container'
-import ProjectCard from '../components/ProjectCard'
-import MainLayout from '../components/MainLayout'
-import SEO from '../components/SEO'
-import config from '../config'
+import Container from '~/components/Container'
+import ProjectCard from '~/components/ProjectCard'
+import MainLayout from '~/components/MainLayout'
+import SEO from '~/components/SEO'
+import config from '~/config'
 
 const PROJECTS = [
   {
