@@ -4,54 +4,54 @@ import ProjectCard from '~/components/ProjectCard'
 import MainLayout from '~/components/MainLayout'
 import SEO from '~/components/SEO'
 import config from '~/config'
+import octokit from '~/octokit'
 
-const PROJECTS = [
-  {
-    title: 'eslint-plugin-testing-library',
-    description:
-      'ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library',
-    language: 'TypeScript',
-    url: 'https://github.com/testing-library/eslint-plugin-testing-library',
-    stars: 334,
-  },
-  {
-    title: 'octoclairvoyant',
-    description:
-      '🔮 Filter and group GitHub repository releases to compare changes with ease ',
-    language: 'TypeScript',
-    url: 'https://github.com/Belco90/octoclairvoyant',
-    stars: 24,
-  },
-  {
-    title: 'mastodonte-js',
-    description:
-      '🐘 Un generador de palabras para los mastodontes, cracks y figuras como tú. ',
-    language: 'TypeScript',
-    url: 'https://github.com/Belco90/mastodonte-js',
-    stars: 1,
-  },
-  {
-    title: 'react-advanced-patterns-components',
-    description: 'Iterating through component with advanced React patterns',
-    language: 'JavaScript',
-    url: 'https://github.com/Belco90/react-advanced-patterns-components',
-    stars: 5,
-  },
+const GITHUB_REPOS = [
+  'testing-library/eslint-plugin-testing-library',
+  'Belco90/octoclairvoyant',
+  'Belco90/react-advanced-patterns-components',
+  'Belco90/mastodonte-js',
 ]
 
-const Projects = () => {
+const Projects = ({ repositories }) => {
   return (
     <MainLayout>
       <SEO title="Projects" description={`${config.author.name}'s Projects`} />
       <Container>
         <SimpleGrid minChildWidth="300px" spacing={10}>
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.url} {...project} />
+          {repositories.map((repo) => (
+            <ProjectCard
+              key={repo.id}
+              title={repo.name}
+              description={repo.description}
+              language={repo.language}
+              url={repo.url}
+              stars={repo.stargazers_count}
+            />
           ))}
         </SimpleGrid>
       </Container>
     </MainLayout>
   )
+}
+
+export async function getStaticProps() {
+  const responses = await Promise.all(
+    GITHUB_REPOS.map((repoString) => {
+      const [owner, repo] = repoString.split('/')
+      return octokit.repos.get({ owner, repo })
+    })
+  )
+
+  const repositories = responses
+    .map((response) => response?.data)
+    .filter(Boolean)
+
+  return {
+    props: {
+      repositories,
+    },
+  }
 }
 
 export default Projects
