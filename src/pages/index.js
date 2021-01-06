@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Link, Stack } from '@chakra-ui/react'
+import { Box, Flex, Heading, Link, VStack, Icon } from '@chakra-ui/react'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 import ProfilePicture from '../components/ProfilePicture'
@@ -36,7 +36,7 @@ const Index = () => {
     <MainLayout>
       <SEO title="Home" />
       <Flex justify="center" aligh="center" height="100%">
-        <Stack
+        <VStack
           direction="column"
           py={8}
           px={4}
@@ -79,28 +79,28 @@ const Index = () => {
               href={`mailto:${config.social.email}`}
               aria-label="Email"
             >
-              <Box as={FaEnvelope} aria-label="Email icon" />
+              <Icon as={FaEnvelope} aria-label="Email icon" />
             </SocialLink>
             <SocialLink
               href={`https://github.com/${config.social.github}`}
               aria-label="GitHub"
             >
-              <Box as={FaGithub} aria-label="GitHub icon" />
+              <Icon as={FaGithub} aria-label="GitHub icon" />
             </SocialLink>
             <SocialLink
               href={`https://www.linkedin.com/in/${config.social.linkedin}`}
               aria-label="Linkedin"
             >
-              <Box as={FaLinkedin} aria-label="Linkedin icon" />
+              <Icon as={FaLinkedin} aria-label="Linkedin icon" />
             </SocialLink>
             <SocialLink
               href={`https://twitter.com/${config.social.twitter}`}
               aria-label="Twitter"
             >
-              <Box as={FaTwitter} aria-label="Twitter icon" />
+              <Icon as={FaTwitter} aria-label="Twitter icon" />
             </SocialLink>
           </Flex>
-        </Stack>
+        </VStack>
       </Flex>
     </MainLayout>
   )

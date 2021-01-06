@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Link, Stack, Tag, Text } from '@chakra-ui/react'
+import { Flex, Heading, Link, HStack, Tag, Text, Icon } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import { FaRegStar } from 'react-icons/fa'
 
@@ -21,13 +21,13 @@ const ProjectCard = ({ title, description, language, url, stars, ...rest }) => {
       <Text flex={1} my={4}>
         {description}
       </Text>
-      <Stack isInline spacing={8}>
+      <HStack spacing={8}>
         <Tag size="md">{language}</Tag>
         <Flex align="center">
-          <Box as={FaRegStar} aria-label="Stars icon" mr={1} />
+          <Icon as={FaRegStar} aria-label="Stars icon" mr={1} />
           <Text>{stars}</Text>
         </Flex>
-      </Stack>
+      </HStack>
     </Flex>
   )
 }

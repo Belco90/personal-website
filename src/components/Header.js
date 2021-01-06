@@ -1,4 +1,4 @@
-import { Box, Link, Stack, Flex } from '@chakra-ui/react'
+import { Box, Link, HStack, Flex } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
 import Container from './Container'
@@ -27,14 +27,13 @@ const HeaderLink = ({ href, children, ...remaining }) => {
   )
 }
 
-const Header = (...props) => {
+const Header = () => {
   return (
-    <Box as="header" zIndex="banner" {...props}>
+    <Box as="header" zIndex="banner">
       <Container py={5}>
         <Flex width="full" justifyContent={{ base: 'center', md: 'flex-end' }}>
-          <Stack
+          <HStack
             as="nav"
-            isInline
             spacing={8}
             align="center"
             justify="center"
@@ -42,7 +41,7 @@ const Header = (...props) => {
           >
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/projects">Projects</HeaderLink>
-          </Stack>
+          </HStack>
         </Flex>
       </Container>
     </Box>
