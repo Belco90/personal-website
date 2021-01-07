@@ -3,6 +3,7 @@ import NextLink from 'next/link'
 
 import FluidContainer from './FluidContainer'
 import { useRouter } from 'next/router'
+import ColorModeButton from '~/components/ColorModeButton'
 
 const HeaderLink = ({ href, children, ...remaining }) => {
   const router = useRouter()
@@ -41,6 +42,7 @@ const Header = () => {
           >
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/projects">Projects</HeaderLink>
+            <ColorModeButton />
           </HStack>
         </Flex>
       </FluidContainer>
