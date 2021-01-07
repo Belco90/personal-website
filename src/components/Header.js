@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <Box as="header" zIndex="banner">
       <FluidContainer py={5}>
-        <Flex width="full" justifyContent={{ base: 'center', md: 'flex-end' }}>
+        <Flex width="full" justifyContent="flex-end">
           <HStack
             as="nav"
             spacing={8}
