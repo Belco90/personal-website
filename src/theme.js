@@ -16,7 +16,7 @@ const primaryColor = {
 export default extendTheme({
   config: {
     useSystemColorMode: true,
-    initialColorMode: undefined,
+    initialColorMode: 'light',
   },
   colors: {
     primary: primaryColor,
