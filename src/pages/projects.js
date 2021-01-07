@@ -13,6 +13,8 @@ const GITHUB_REPOS = [
   'Belco90/mastodonte-js',
 ]
 
+const REVALIDATE_SECONDS = 60
+
 const Projects = ({ repositories }) => {
   return (
     <MainLayout>
@@ -51,6 +53,7 @@ export async function getStaticProps() {
     props: {
       repositories,
     },
+    revalidate: REVALIDATE_SECONDS,
   }
 }
 
