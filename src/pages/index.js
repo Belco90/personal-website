@@ -32,9 +32,8 @@ const Index = () => {
         >
           <Box>
             <Box
-              backgroundImage="radial-gradient(currentColor 1px, transparent 1px)"
+              bgGradient="radial(primary.600 1px, transparent 1px)"
               backgroundSize="calc(10 * 1px) calc(10 * 1px)"
-              color="gray.500"
               rounded="full"
             >
               <Box transform="translate(30px, -30px)">
