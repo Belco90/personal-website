@@ -4,7 +4,6 @@ import ProjectCard from '~/components/ProjectCard'
 import MainLayout from '~/components/MainLayout'
 import SEO from '~/components/SEO'
 import config from '~/config'
-import octokit from '~/octokit'
 
 const GITHUB_REPOS = [
   'testing-library/eslint-plugin-testing-library',
@@ -41,13 +40,17 @@ export async function getStaticProps() {
   const responses = await Promise.all(
     GITHUB_REPOS.map((repoString) => {
       const [owner, repo] = repoString.split('/')
-      return octokit.repos.get({ owner, repo })
+      return fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+        headers: { accept: 'application/vnd.github.v3+json' },
+      })
     })
   )
 
-  const repositories = responses
-    .map((response) => response?.data)
-    .filter(Boolean)
+  const repositories = await Promise.all(
+    responses
+      .filter((response) => response.status === 200)
+      .map((response) => response.json())
+  )
 
   return {
     props: {
