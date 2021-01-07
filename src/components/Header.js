@@ -1,7 +1,7 @@
 import { Box, Link, HStack, Flex } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
-import Container from './Container'
+import FluidContainer from './FluidContainer'
 import { useRouter } from 'next/router'
 
 const HeaderLink = ({ href, children, ...remaining }) => {
@@ -30,7 +30,7 @@ const HeaderLink = ({ href, children, ...remaining }) => {
 const Header = () => {
   return (
     <Box as="header" zIndex="banner">
-      <Container py={5}>
+      <FluidContainer py={5}>
         <Flex width="full" justifyContent={{ base: 'center', md: 'flex-end' }}>
           <HStack
             as="nav"
@@ -43,7 +43,7 @@ const Header = () => {
             <HeaderLink href="/projects">Projects</HeaderLink>
           </HStack>
         </Flex>
-      </Container>
+      </FluidContainer>
     </Box>
   )
 }

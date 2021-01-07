@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 
-const Container = (props) => (
+const FluidContainer = (props) => (
   <Box
     width="full"
     maxWidth="1280px"
@@ -10,4 +10,4 @@ const Container = (props) => (
   />
 )
 
-export default Container
+export default FluidContainer

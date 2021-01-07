@@ -1,5 +1,5 @@
 import { SimpleGrid } from '@chakra-ui/react'
-import Container from '~/components/Container'
+import FluidContainer from '~/components/FluidContainer'
 import ProjectCard from '~/components/ProjectCard'
 import MainLayout from '~/components/MainLayout'
 import SEO from '~/components/SEO'
@@ -18,7 +18,7 @@ const Projects = ({ repositories }) => {
   return (
     <MainLayout>
       <SEO title="Projects" description={`${config.author.name}'s Projects`} />
-      <Container>
+      <FluidContainer>
         <SimpleGrid minChildWidth="300px" spacing={10}>
           {repositories.map((repo) => (
             <ProjectCard
@@ -31,7 +31,7 @@ const Projects = ({ repositories }) => {
             />
           ))}
         </SimpleGrid>
-      </Container>
+      </FluidContainer>
     </MainLayout>
   )
 }
