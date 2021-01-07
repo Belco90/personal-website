@@ -27,7 +27,7 @@ const Projects = ({ repositories }) => {
               title={repo.name}
               description={repo.description}
               language={repo.language}
-              url={repo.url}
+              url={repo.html_url}
               stars={repo.stargazers_count}
             />
           ))}
