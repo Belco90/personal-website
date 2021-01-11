@@ -1,10 +1,10 @@
 import { Box, Flex, Heading, Link, VStack, Icon } from '@chakra-ui/react'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import { NextSeo } from 'next-seo'
 
 import MainLayout from '~/components/MainLayout'
 import ProfilePicture from '~/components/ProfilePicture'
-import SEO from '~/components/SEO'
 import config from '~/config'
 
 const SocialLink = (props) => (
@@ -18,7 +18,7 @@ const SocialLink = (props) => (
 const Index = () => {
   return (
     <MainLayout>
-      <SEO title="Home" />
+      <NextSeo title="Home" />
       <Flex justify="center" aligh="center" height="100%">
         <VStack
           direction="column"
@@ -68,25 +68,16 @@ const Index = () => {
               href={`mailto:${config.social.email}`}
               aria-label="Email"
             >
-              <Icon as={FaEnvelope} aria-label="Email icon" />
+              <Icon as={FaEnvelope} aria-label="Email" />
             </SocialLink>
-            <SocialLink
-              href={`https://github.com/${config.social.github}`}
-              aria-label="GitHub"
-            >
-              <Icon as={FaGithub} aria-label="GitHub icon" />
+            <SocialLink href={config.social.github} aria-label="GitHub">
+              <Icon as={FaGithub} aria-label="GitHub" />
             </SocialLink>
-            <SocialLink
-              href={`https://www.linkedin.com/in/${config.social.linkedin}`}
-              aria-label="Linkedin"
-            >
-              <Icon as={FaLinkedin} aria-label="Linkedin icon" />
+            <SocialLink href={config.social.linkedin} aria-label="LinkedIn">
+              <Icon as={FaLinkedin} aria-label="LinkedIn" />
             </SocialLink>
-            <SocialLink
-              href={`https://twitter.com/${config.social.twitter}`}
-              aria-label="Twitter"
-            >
-              <Icon as={FaTwitter} aria-label="Twitter icon" />
+            <SocialLink href={config.social.twitter} aria-label="Twitter">
+              <Icon as={FaTwitter} aria-label="Twitter" />
             </SocialLink>
           </Flex>
         </VStack>

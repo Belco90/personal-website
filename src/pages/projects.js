@@ -2,8 +2,8 @@ import { SimpleGrid } from '@chakra-ui/react'
 import FluidContainer from '~/components/FluidContainer'
 import ProjectCard from '~/components/ProjectCard'
 import MainLayout from '~/components/MainLayout'
-import SEO from '~/components/SEO'
 import config from '~/config'
+import { NextSeo } from 'next-seo'
 
 const GITHUB_REPOS = [
   'testing-library/eslint-plugin-testing-library',
@@ -17,7 +17,11 @@ const REVALIDATE_SECONDS = 60
 const Projects = ({ repositories }) => {
   return (
     <MainLayout>
-      <SEO title="Projects" description={`${config.author.name}'s Projects`} />
+      <NextSeo
+        title="Projects"
+        description={`${config.author.name}'s Projects`}
+        openGraph={{ description: `${config.author.name}'s Projects` }}
+      />
       <FluidContainer>
         <SimpleGrid minChildWidth="300px" spacing={10}>
           {repositories.map((repo) => (

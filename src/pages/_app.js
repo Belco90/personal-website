@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ChakraProvider } from '@chakra-ui/react'
+import { DefaultSeo } from 'next-seo'
+
+import SEO from '~/next-seo.config'
 import '@fontsource/karla/400.css'
 import '@fontsource/karla/500.css'
 import '@fontsource/karla/700.css'
@@ -26,6 +29,7 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <ChakraProvider theme={theme}>
+      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </ChakraProvider>
   )
