@@ -1,11 +1,12 @@
+const description = 'Mario Beltrán Alarcón - Frontend Software Engineer'
+
 export default {
   titleTemplate: '%s | Mario Beltrán',
-  description: 'Mario Beltrán Alarcón - Frontend Software Engineer',
+  description,
   openGraph: {
     type: 'website',
     url: 'https://mario.dev',
-    title: 'Mario Beltrán',
-    description: 'Mario Beltrán Alarcón - Frontend Software Engineer',
+    title: description,
     images: [
       {
         url:
