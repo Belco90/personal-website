@@ -4,9 +4,11 @@ import NextLink from 'next/link'
 import FluidContainer from './FluidContainer'
 import { useRouter } from 'next/router'
 import ColorModeButton from '~/components/ColorModeButton'
+import { useTheme } from '@emotion/react'
 
 const HeaderLink = ({ href, children, ...remaining }) => {
   const router = useRouter()
+  const theme = useTheme()
   const isActive = router.asPath === href
 
   return (
@@ -14,9 +16,12 @@ const HeaderLink = ({ href, children, ...remaining }) => {
       <Link
         {...remaining}
         borderBottomWidth={isActive ? '4px' : 'none'}
-        borderColor={isActive ? 'primary.500' : 'none'}
+        sx={{
+          borderImage: `linear-gradient(to top right, ${theme.colors.primary[500]}, ${theme.colors.primaryAlt[300]}) 1`,
+        }}
         fontSize="lg"
         _hover={{
+          borderImage: `linear-gradient(to top right, ${theme.colors.primaryAlt[400]}, ${theme.colors.primaryAlt[100]}) 1`,
           textDecoration: 'none',
           borderBottomWidth: '4px',
           borderColor: !isActive ? 'primary.100' : undefined,
