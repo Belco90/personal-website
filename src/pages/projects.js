@@ -5,16 +5,19 @@ import MainLayout from '~/components/MainLayout'
 import config from '~/config'
 import { NextSeo } from 'next-seo'
 
-const GITHUB_REPOS = [
-  'testing-library/eslint-plugin-testing-library',
-  'Belco90/octoclairvoyant',
-  'Belco90/react-advanced-patterns-components',
-  'Belco90/mastodonte-js',
+const PROJECTS = [
+  {
+    githubRepo: 'testing-library/eslint-plugin-testing-library',
+    packageName: 'eslint-plugin-testing-library',
+  },
+  { githubRepo: 'Belco90/octoclairvoyant' },
+  { githubRepo: 'Belco90/react-advanced-patterns-components' },
+  { githubRepo: 'Belco90/mastodonte-js' },
 ]
 
 const REVALIDATE_SECONDS = 60
 
-const Projects = ({ repositories }) => {
+const Projects = ({ projects }) => {
   return (
     <MainLayout>
       <NextSeo
@@ -23,8 +26,8 @@ const Projects = ({ repositories }) => {
         openGraph={{ description: `${config.author.name}'s Projects` }}
       />
       <FluidContainer>
-        <SimpleGrid minChildWidth="300px" spacing={10}>
-          {repositories.map((repo) => (
+        <SimpleGrid minChildWidth="300px" spacing={6}>
+          {projects.map(({ repo, npmPackage }) => (
             <ProjectCard
               key={repo.id}
               title={repo.name}
@@ -32,6 +35,7 @@ const Projects = ({ repositories }) => {
               language={repo.language}
               url={repo.html_url}
               stars={repo.stargazers_count}
+              downloads={npmPackage?.downloads}
             />
           ))}
         </SimpleGrid>
@@ -40,25 +44,73 @@ const Projects = ({ repositories }) => {
   )
 }
 
+const isSuccessfulResponse = (response) =>
+  response.status >= 200 && response.status < 300
+
 export async function getStaticProps() {
-  const responses = await Promise.all(
-    GITHUB_REPOS.map((repoString) => {
-      const [owner, repo] = repoString.split('/')
-      return fetch(`https://api.github.com/repos/${owner}/${repo}`, {
-        headers: { accept: 'application/vnd.github.v3+json' },
-      })
+  const repos = await Promise.all(
+    PROJECTS.map(async ({ githubRepo }) => {
+      const [owner, repo] = githubRepo.split('/')
+
+      const response = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}`,
+        {
+          headers: {
+            Accept: 'application/vnd.github.v3+json',
+            Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+          },
+        }
+      )
+
+      if (isSuccessfulResponse(response)) {
+        const repo = await response.json()
+        return { url: githubRepo, data: repo }
+      }
     })
   )
 
-  const repositories = await Promise.all(
-    responses
-      .filter((response) => response.status === 200)
-      .map((response) => response.json())
+  const packages = await Promise.all(
+    PROJECTS.filter((project) => !!project.packageName).map(async (project) => {
+      // TODO: get dates dynamically
+      const response = await fetch(
+        `https://npm-stat.com/api/download-counts?package=${project.packageName}&from=2021-01-05&until=2021-01-11`
+      )
+
+      if (isSuccessfulResponse(response)) {
+        const packageDownloads = await response.json()
+        const total = Object.values(
+          packageDownloads[project.packageName]
+        ).reduce((acc, currentValue) => acc + currentValue, 0)
+
+        return { url: project.githubRepo, data: { downloads: total } }
+      }
+    })
   )
+
+  const reposCollection = {}
+  repos
+    .filter((item) => !!item)
+    .forEach(({ url, data }) => {
+      reposCollection[url] = data
+    })
+
+  const packagesCollection = {}
+  packages
+    .filter((item) => !!item)
+    .forEach(({ url, data }) => {
+      packagesCollection[url] = data
+    })
+
+  const projects = PROJECTS.map(({ githubRepo }) => {
+    return {
+      repo: reposCollection[githubRepo],
+      npmPackage: packagesCollection[githubRepo] ?? null,
+    }
+  }).filter(({ repo }) => !!repo)
 
   return {
     props: {
-      repositories,
+      projects,
     },
     revalidate: REVALIDATE_SECONDS,
   }
