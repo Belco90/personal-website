@@ -47,6 +47,18 @@ const Projects = ({ projects }) => {
 const isSuccessfulResponse = (response) =>
   response.status >= 200 && response.status < 300
 
+const mapDataArrayToObjectCollection = (arr) => {
+  const collection = {}
+
+  arr
+    .filter((item) => !!item)
+    .forEach(({ url, data }) => {
+      collection[url] = data
+    })
+
+  return collection
+}
+
 export async function getStaticProps() {
   const repos = await Promise.all(
     PROJECTS.map(async ({ githubRepo }) => {
@@ -87,19 +99,8 @@ export async function getStaticProps() {
     })
   )
 
-  const reposCollection = {}
-  repos
-    .filter((item) => !!item)
-    .forEach(({ url, data }) => {
-      reposCollection[url] = data
-    })
-
-  const packagesCollection = {}
-  packages
-    .filter((item) => !!item)
-    .forEach(({ url, data }) => {
-      packagesCollection[url] = data
-    })
+  const reposCollection = mapDataArrayToObjectCollection(repos)
+  const packagesCollection = mapDataArrayToObjectCollection(packages)
 
   const projects = PROJECTS.map(({ githubRepo }) => {
     return {
