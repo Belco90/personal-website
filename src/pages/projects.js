@@ -4,6 +4,7 @@ import ProjectCard from '~/components/ProjectCard'
 import MainLayout from '~/components/MainLayout'
 import config from '~/config'
 import { NextSeo } from 'next-seo'
+import { subDays, format } from 'date-fns'
 
 const PROJECTS = [
   {
@@ -81,11 +82,12 @@ export async function getStaticProps() {
     })
   )
 
+  const downloadsFromDate = format(subDays(new Date(), 7), 'y-MM-dd')
+  const downloadsToDate = format(new Date(), 'y-MM-dd')
   const packages = await Promise.all(
     PROJECTS.filter((project) => !!project.packageName).map(async (project) => {
-      // TODO: get dates dynamically
       const response = await fetch(
-        `https://npm-stat.com/api/download-counts?package=${project.packageName}&from=2021-01-05&until=2021-01-11`
+        `https://npm-stat.com/api/download-counts?package=${project.packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`
       )
 
       if (isSuccessfulResponse(response)) {

@@ -34,6 +34,7 @@
     "@emotion/styled": "^11.0.0",
     "@fontsource/karla": "^4.1.0",
     "@fontsource/rubik": "^4.1.0",
+    "date-fns": "^2.16.1",
     "focus-visible": "^5.2.0",
     "framer-motion": "^3.1.4",
     "next": "^10.0.5",
