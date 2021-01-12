@@ -21,6 +21,7 @@ const HeaderLink = ({ href, children, ...remaining }) => {
           borderBottomWidth: '4px',
           borderColor: !isActive ? 'primary.100' : undefined,
         }}
+        aria-current={isActive ? 'page' : undefined}
       >
         {children}
       </Link>
