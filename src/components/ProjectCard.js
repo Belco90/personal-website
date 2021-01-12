@@ -22,35 +22,52 @@ const ProjectCard = ({ repo, npmPackage, ...rest }) => {
     : null
 
   return (
-    <Flex direction="column" p={5} shadow="md" borderWidth="1px" {...rest}>
-      <Heading fontSize="xl">
-        <Link href={repo.url} color="primary.500">
+    <Flex
+      direction="column"
+      shadow="md"
+      borderWidth="1px"
+      borderRadius="lg"
+      {...rest}
+    >
+      <Heading
+        borderTopRadius="lg"
+        fontSize="xl"
+        bgGradient="linear(to-tr, secondaryAlt.600, secondary.400)"
+        py={2}
+        px={4}
+        height={16}
+        display="flex"
+        alignItems="center"
+      >
+        <Link href={repo.url} color="gray.50">
           {repo.name}
         </Link>
       </Heading>
-      <Text flex={1} my={4}>
-        {repo.description}
-      </Text>
-      <HStack spacing={8}>
-        <Tag size="md">{repo.language}</Tag>
-        <Flex align="center">
-          <Icon as={FaRegStar} aria-label="Stars" mr={1} />
-          <Text as="span">{repo.stargazers_count}</Text>
-        </Flex>
-        {!!npmPackage && (
-          <Link href={npmPackage.url}>
-            <Flex align="center">
-              <Icon
-                as={FaNpm}
-                aria-label="Weekly npm downloads"
-                mr={1}
-                boxSize={6}
-              />
-              <Text as="span">{formattedDownloads}</Text>
-            </Flex>
-          </Link>
-        )}
-      </HStack>
+      <Flex py={2} px={4} direction="column" height="full">
+        <Text flex={1} mb={4}>
+          {repo.description}
+        </Text>
+        <HStack spacing={8}>
+          <Tag size="md">{repo.language}</Tag>
+          <Flex align="center">
+            <Icon as={FaRegStar} aria-label="Stars" mr={1} />
+            <Text as="span">{repo.stargazers_count}</Text>
+          </Flex>
+          {!!npmPackage && (
+            <Link href={npmPackage.url}>
+              <Flex align="center">
+                <Icon
+                  as={FaNpm}
+                  aria-label="Weekly npm downloads"
+                  mr={1}
+                  boxSize={6}
+                />
+                <Text as="span">{formattedDownloads}</Text>
+              </Flex>
+            </Link>
+          )}
+        </HStack>
+      </Flex>
     </Flex>
   )
 }

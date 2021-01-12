@@ -1,4 +1,4 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, theme } from '@chakra-ui/react'
 
 const primaryColor = {
   50: '#ffefdb',
@@ -20,6 +20,9 @@ export default extendTheme({
   },
   colors: {
     primary: primaryColor,
+    primaryAlt: theme.colors.yellow,
+    secondary: theme.colors.purple,
+    secondaryAlt: theme.colors.pink,
   },
   fonts: {
     heading: '"Rubik", sans-serif;',
