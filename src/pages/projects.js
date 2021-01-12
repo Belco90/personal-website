@@ -9,7 +9,7 @@ import { subDays, format } from 'date-fns'
 const PROJECTS = [
   {
     githubRepo: 'testing-library/eslint-plugin-testing-library',
-    packageName: 'eslint-plugin-testing-library',
+    packageUrl: 'https://www.npmjs.com/package/eslint-plugin-testing-library',
   },
   { githubRepo: 'Belco90/octoclairvoyant' },
   { githubRepo: 'Belco90/react-advanced-patterns-components' },
@@ -29,15 +29,7 @@ const Projects = ({ projects }) => {
       <FluidContainer>
         <SimpleGrid minChildWidth="300px" spacing={6}>
           {projects.map(({ repo, npmPackage }) => (
-            <ProjectCard
-              key={repo.id}
-              title={repo.name}
-              description={repo.description}
-              language={repo.language}
-              url={repo.html_url}
-              stars={repo.stargazers_count}
-              downloads={npmPackage?.downloads}
-            />
+            <ProjectCard key={repo.id} repo={repo} npmPackage={npmPackage} />
           ))}
         </SimpleGrid>
       </FluidContainer>
@@ -85,18 +77,23 @@ export async function getStaticProps() {
   const downloadsFromDate = format(subDays(new Date(), 7), 'y-MM-dd')
   const downloadsToDate = format(new Date(), 'y-MM-dd')
   const packages = await Promise.all(
-    PROJECTS.filter((project) => !!project.packageName).map(async (project) => {
+    PROJECTS.filter((project) => !!project.packageUrl).map(async (project) => {
+      const packageName = project.packageUrl.split('/').pop()
       const response = await fetch(
-        `https://npm-stat.com/api/download-counts?package=${project.packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`
+        `https://npm-stat.com/api/download-counts?package=${packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`
       )
 
       if (isSuccessfulResponse(response)) {
         const packageDownloads = await response.json()
-        const total = Object.values(
-          packageDownloads[project.packageName]
-        ).reduce((acc, currentValue) => acc + currentValue, 0)
+        const total = Object.values(packageDownloads[packageName]).reduce(
+          (acc, currentValue) => acc + currentValue,
+          0
+        )
 
-        return { url: project.githubRepo, data: { downloads: total } }
+        return {
+          url: project.githubRepo,
+          data: { downloads: total, url: project.packageUrl },
+        }
       }
     })
   )
