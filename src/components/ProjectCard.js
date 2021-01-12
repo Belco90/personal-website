@@ -63,7 +63,6 @@ const ProjectCard = ({ repo, npmPackage, ...rest }) => {
                   aria-label="Weekly npm downloads"
                   mr={1}
                   boxSize={6}
-                  //_hover={{ under }}
                 />
                 <Text as="span">{compactDownloads}</Text>
               </Flex>
