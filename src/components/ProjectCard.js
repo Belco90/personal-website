@@ -1,13 +1,4 @@
-import {
-  Flex,
-  Heading,
-  Link,
-  HStack,
-  Tag,
-  Text,
-  Icon,
-  Tooltip,
-} from '@chakra-ui/react'
+import { Flex, Heading, Link, HStack, Tag, Text, Icon } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import { FaRegStar, FaNpm } from 'react-icons/fa'
 
@@ -29,11 +20,6 @@ const ProjectCard = ({ repo, npmPackage, ...rest }) => {
   const formattedDownloads = npmPackage
     ? new Intl.NumberFormat().format(npmPackage.downloads)
     : null
-  const compactDownloads = npmPackage
-    ? new Intl.NumberFormat(undefined, {
-        notation: 'compact',
-      }).format(npmPackage.downloads)
-    : null
 
   return (
     <Flex direction="column" p={5} shadow="md" borderWidth="1px" {...rest}>
@@ -52,22 +38,17 @@ const ProjectCard = ({ repo, npmPackage, ...rest }) => {
           <Text as="span">{repo.stargazers_count}</Text>
         </Flex>
         {!!npmPackage && (
-          <Tooltip
-            hasArrow
-            label={`Weekly npm downloads: ${formattedDownloads}`}
-          >
-            <Link href={npmPackage.url}>
-              <Flex align="center">
-                <Icon
-                  as={FaNpm}
-                  aria-label="Weekly npm downloads"
-                  mr={1}
-                  boxSize={6}
-                />
-                <Text as="span">{compactDownloads}</Text>
-              </Flex>
-            </Link>
-          </Tooltip>
+          <Link href={npmPackage.url}>
+            <Flex align="center">
+              <Icon
+                as={FaNpm}
+                aria-label="Weekly npm downloads"
+                mr={1}
+                boxSize={6}
+              />
+              <Text as="span">{formattedDownloads}</Text>
+            </Flex>
+          </Link>
         )}
       </HStack>
     </Flex>
