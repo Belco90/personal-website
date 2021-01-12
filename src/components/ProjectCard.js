@@ -1,4 +1,13 @@
-import { Flex, Heading, Link, HStack, Tag, Text, Icon } from '@chakra-ui/react'
+import {
+  Flex,
+  Heading,
+  Link,
+  HStack,
+  Tag,
+  Text,
+  Icon,
+  Tooltip,
+} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import { FaRegStar, FaNpm } from 'react-icons/fa'
 
@@ -20,6 +29,11 @@ const ProjectCard = ({
   downloads,
   ...rest
 }) => {
+  const formattedDownloads = new Intl.NumberFormat().format(downloads)
+  const compactDownloads = new Intl.NumberFormat(undefined, {
+    notation: 'compact',
+  }).format(downloads)
+
   return (
     <Flex direction="column" p={5} shadow="md" borderWidth="1px" {...rest}>
       <Heading fontSize="xl">
@@ -38,12 +52,18 @@ const ProjectCard = ({
         </Flex>
         {!!downloads && (
           <Flex align="center">
-            <Icon as={FaNpm} aria-label="npm downloads" mr={1} boxSize={6} />
-            <Text>
-              {new Intl.NumberFormat(undefined, { notation: 'compact' }).format(
-                downloads
-              )}
-            </Text>
+            <Icon
+              as={FaNpm}
+              aria-label="Weekly npm downloads"
+              mr={1}
+              boxSize={6}
+            />
+            <Tooltip
+              hasArrow
+              label={`Weekly npm downloads: ${formattedDownloads}`}
+            >
+              <Text>{compactDownloads}</Text>
+            </Tooltip>
           </Flex>
         )}
       </HStack>
