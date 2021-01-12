@@ -18,7 +18,7 @@ const propTypes = {
 
 const ProjectCard = ({ repo, npmPackage, ...rest }) => {
   const formattedDownloads = npmPackage
-    ? new Intl.NumberFormat().format(npmPackage.downloads)
+    ? new Intl.NumberFormat('en-US').format(npmPackage.downloads)
     : null
 
   return (
