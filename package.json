@@ -29,14 +29,14 @@
     "format": "prettier --write src"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.1.2",
+    "@chakra-ui/react": "^1.1.4",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "@fontsource/karla": "^4.1.0",
     "@fontsource/rubik": "^4.1.0",
     "date-fns": "^2.16.1",
     "focus-visible": "^5.2.0",
-    "framer-motion": "^3.1.4",
+    "framer-motion": "^3.2.1",
     "next": "^10.0.5",
     "next-seo": "^4.17.0",
     "prop-types": "^15.7.2",
