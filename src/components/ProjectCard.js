@@ -39,7 +39,7 @@ const ProjectCard = ({ repo, npmPackage, ...rest }) => {
         display="flex"
         alignItems="center"
       >
-        <Link href={repo.url} color="gray.50">
+        <Link href={repo.html_url} color="gray.50">
           {repo.name}
         </Link>
       </Heading>
