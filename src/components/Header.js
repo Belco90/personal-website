@@ -1,4 +1,4 @@
-import { Box, Link, HStack, Flex } from '@chakra-ui/react'
+import { Box, Link, HStack, Flex, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
 import FluidContainer from './FluidContainer'
@@ -34,9 +34,13 @@ const HeaderLink = ({ href, children, ...remaining }) => {
   )
 }
 
-const Header = () => {
+const Header = (props) => {
+  const bgColor = useColorModeValue(
+    'rgba(255, 255, 255, 0.9)',
+    'rgba(0, 0, 0, 0.9)'
+  )
   return (
-    <Box as="header" zIndex="banner">
+    <Box as="header" zIndex="banner" {...props} bgColor={bgColor}>
       <FluidContainer py={5}>
         <Flex width="full" justifyContent="flex-end">
           <HStack
