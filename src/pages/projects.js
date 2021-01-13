@@ -16,7 +16,7 @@ const PROJECTS = [
   { githubRepo: 'Belco90/mastodonte-js' },
 ]
 
-const REVALIDATE_SECONDS = 60
+const REVALIDATE_SECONDS = 5
 
 const Projects = ({ projects }) => {
   return (
