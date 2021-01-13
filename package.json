@@ -39,6 +39,7 @@
     "framer-motion": "^3.2.1",
     "next": "^10.0.5",
     "next-seo": "^4.17.0",
+    "preact": "^10.5.9",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

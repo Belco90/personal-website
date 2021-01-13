@@ -5,7 +5,7 @@ import { NextSeo } from 'next-seo'
 
 import MainLayout from '~/components/MainLayout'
 import ProfilePicture from '~/components/ProfilePicture'
-import config from '~/config'
+import config from '~/user.config'
 
 const SocialLink = (props) => (
   <Link

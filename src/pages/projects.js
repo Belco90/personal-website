@@ -2,7 +2,7 @@ import { SimpleGrid } from '@chakra-ui/react'
 import FluidContainer from '~/components/FluidContainer'
 import ProjectCard from '~/components/ProjectCard'
 import MainLayout from '~/components/MainLayout'
-import config from '~/config'
+import config from '~/user.config'
 import { NextSeo } from 'next-seo'
 import { subDays, format } from 'date-fns'
 
