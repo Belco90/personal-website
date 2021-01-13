@@ -35,7 +35,7 @@ const ProjectCard = ({ repo, npmPackage, ...rest }) => {
         bgGradient="linear(to-tr, secondaryAlt.600, secondary.400)"
         py={2}
         px={4}
-        height={16}
+        height={24}
         display="flex"
         alignItems="center"
       >
