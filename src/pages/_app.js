@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
 
+import MainLayout from '~/components/MainLayout'
 import SEO from '~/next-seo.config'
 import '@fontsource/karla/400.css'
 import '@fontsource/karla/500.css'
@@ -16,6 +17,7 @@ import theme from '~/theme'
 
 const App = ({ Component, pageProps }) => {
   const router = useRouter()
+  const Layout = Component.layout || MainLayout
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -30,7 +32,9 @@ const App = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
       <DefaultSeo {...SEO} />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ChakraProvider>
   )
 }

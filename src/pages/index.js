@@ -3,7 +3,6 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 
-import MainLayout from '~/components/MainLayout'
 import ProfilePicture from '~/components/ProfilePicture'
 import config from '~/user.config'
 
@@ -17,7 +16,7 @@ const SocialLink = (props) => (
 
 const Index = () => {
   return (
-    <MainLayout>
+    <>
       <NextSeo title="Home" />
       <Flex justify="center" aligh="center" height="100%">
         <VStack
@@ -82,7 +81,7 @@ const Index = () => {
           </Flex>
         </VStack>
       </Flex>
-    </MainLayout>
+    </>
   )
 }
 
