@@ -52,6 +52,7 @@ const mapDataArrayToObjectCollection = (arr) => {
 }
 
 export async function getStaticProps() {
+  const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN
   const repos = await Promise.all(
     PROJECTS.map(async ({ githubRepo }) => {
       const [owner, repo] = githubRepo.split('/')
@@ -61,7 +62,9 @@ export async function getStaticProps() {
         {
           headers: {
             Accept: 'application/vnd.github.v3+json',
-            Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
+            Authorization: GITHUB_ACCESS_TOKEN
+              ? `token ${GITHUB_ACCESS_TOKEN}`
+              : undefined,
           },
         }
       )
