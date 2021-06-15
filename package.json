@@ -33,8 +33,6 @@
     "@chakra-ui/react": "^1.6.3",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "@fontsource/karla": "^4.4.5",
-    "@fontsource/rubik": "^4.4.5",
     "date-fns": "^2.22.1",
     "focus-visible": "^5.2.0",
     "framer-motion": "^4.1.17",
