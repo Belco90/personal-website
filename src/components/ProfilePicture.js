@@ -1,4 +1,6 @@
 import Image from 'next/image'
+
+import imgSrc from '../../public/profile-picture.jpg'
 import styles from './ProfilePicture.module.css'
 
 const ProfilePicture = (props) => {
@@ -8,9 +10,10 @@ const ProfilePicture = (props) => {
       height={150}
       quality={95}
       {...props}
-      src="/profile-picture.jpg"
+      src={imgSrc}
       alt="Mario profile picture"
       className={styles.root}
+      placeholder="blur"
     />
   )
 }
