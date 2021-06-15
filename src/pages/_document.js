@@ -10,11 +10,11 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700"
+            href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap"
           />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
           />
 
           {/* Global Site Tag (gtag.js) - Google Analytics */}
