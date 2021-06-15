@@ -27,7 +27,7 @@ const App = ({ Component, pageProps }) => {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [router])
+  }, [router.events])
 
   return (
     <ChakraProvider theme={theme}>
