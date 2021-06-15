@@ -26,18 +26,17 @@
     "dev": "next",
     "build": "next build",
     "serve": "next start",
+    "lint": "next lint",
     "format": "prettier --write src"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.3",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "@fontsource/karla": "^4.4.5",
-    "@fontsource/rubik": "^4.4.5",
     "date-fns": "^2.22.1",
     "focus-visible": "^5.2.0",
     "framer-motion": "^4.1.17",
-    "next": "^10.2.3",
+    "next": "^11.0.0",
     "next-seo": "^4.24.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -45,6 +44,8 @@
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-next": "^11.0.0",
     "husky": "^4.3.8",
     "prettier": "2.3.1",
     "pretty-quick": "^3.1.0"
