@@ -1,6 +1,6 @@
 const description = 'Mario Beltrán Alarcón - Frontend Software Engineer'
 
-export default {
+const nextSeoConfig = {
   titleTemplate: '%s | Mario Beltrán',
   description,
   openGraph: {
@@ -9,8 +9,7 @@ export default {
     title: description,
     images: [
       {
-        url:
-          'https://en.gravatar.com/userimage/2579648/589fd5525e1be579480a610887aa79df.png?size=200',
+        url: 'https://en.gravatar.com/userimage/2579648/589fd5525e1be579480a610887aa79df.png?size=200',
         width: 200,
         height: 200,
         alt: "Mario's profile picture",
@@ -24,3 +23,5 @@ export default {
     site: '@belcoDev',
   },
 }
+
+export default nextSeoConfig

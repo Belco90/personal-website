@@ -1,4 +1,4 @@
-export default {
+const userConfig = {
   author: {
     name: 'Mario Beltrán',
     position: 'Frontend Software Engineer',
@@ -10,3 +10,5 @@ export default {
     linkedin: 'https://www.linkedin.com/in/mario-ba-90',
   },
 }
+
+export default userConfig
