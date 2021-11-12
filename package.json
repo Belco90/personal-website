@@ -21,8 +21,11 @@
   ],
   "author": "Mario Beltrán Alarcón <belco90@gmail.com>",
   "license": "ISC",
+  "engines": {
+    "npm": "^7.0.0"
+  },
   "scripts": {
-    "start": "yarn dev",
+    "start": "npm run dev",
     "dev": "next",
     "build": "next build",
     "serve": "next start",
