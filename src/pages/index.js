@@ -1,6 +1,5 @@
 import { Box, Flex, Heading, Link, VStack, Icon } from '@chakra-ui/react'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { motion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 
 import ProfilePicture from '~/components/ProfilePicture'
@@ -41,26 +40,20 @@ const Index = () => {
             </Box>
           </Box>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+          <Box
+            borderY="solid 1px"
+            borderTopColor="gray.500"
+            borderBottomColor="gray.500"
+            px={{ base: 2, md: 8 }}
+            py={5}
           >
-            <Box
-              borderY="solid 1px"
-              borderTopColor="gray.500"
-              borderBottomColor="gray.500"
-              px={{ base: 2, md: 8 }}
-              py={5}
-            >
-              <Heading as="h1" mb={4}>
-                Mario Beltrán Alarcón
-              </Heading>
-              <Heading as="h2" fontSize="lg" fontWeight="normal">
-                Frontend Software Engineer
-              </Heading>
-            </Box>
-          </motion.div>
+            <Heading as="h1" mb={4}>
+              Mario Beltrán Alarcón
+            </Heading>
+            <Heading as="h2" fontSize="lg" fontWeight="normal">
+              Frontend Software Engineer
+            </Heading>
+          </Box>
 
           <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
             <SocialLink
