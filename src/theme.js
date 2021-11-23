@@ -1,16 +1,16 @@
 import { extendTheme, theme } from '@chakra-ui/react'
 
 const primaryColor = {
-  50: '#ffefdb',
-  100: '#ffd5ae',
-  200: '#ffbb7e',
-  300: '#ff9f4c',
-  400: '#ff841a',
-  500: '#e66b00',
-  600: '#b45300',
-  700: '#813a00',
-  800: '#4f2300',
-  900: '#200900',
+  50: '#eaf7f0',
+  100: '#cfe2d8',
+  200: '#b1cebe',
+  300: '#93bba4',
+  400: '#75a88b',
+  500: '#5b8e72',
+  600: '#476f58',
+  700: '#32503f',
+  800: '#1d3025',
+  900: '#051109',
 }
 
 export default extendTheme({

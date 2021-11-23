@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, Link, VStack, Icon } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  Heading,
+  Link,
+  VStack,
+  Icon,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { NextSeo } from 'next-seo'
 
@@ -14,6 +22,8 @@ const SocialLink = (props) => (
 )
 
 const Index = () => {
+  const primaryColor = useColorModeValue('primary.600', 'primary.400')
+
   return (
     <>
       <NextSeo title="Home" />
@@ -30,7 +40,7 @@ const Index = () => {
         >
           <Box>
             <Box
-              bgGradient="radial(primary.600 1px, transparent 1px)"
+              bgGradient={`radial(${primaryColor} 1px, transparent 1px)`}
               backgroundSize="calc(10 * 1px) calc(10 * 1px)"
               rounded="full"
             >
