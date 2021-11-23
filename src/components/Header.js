@@ -30,7 +30,7 @@ const HeaderLink = ({ href, children, ...remaining }) => {
 }
 
 const Header = (props) => {
-  const bgColor = useColorModeValue('white', 'gray.800')
+  const bgColor = useColorModeValue('white', 'gray.700')
   return (
     <Box as="header" zIndex="banner" {...props} bgColor={bgColor}>
       <FluidContainer py={5}>
