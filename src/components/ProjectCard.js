@@ -27,21 +27,20 @@ const ProjectCard = ({ repo, npmPackage, ...rest }) => {
       shadow="md"
       borderWidth="1px"
       borderRadius="lg"
+      borderColor="primary.500"
       {...rest}
     >
       <Heading
-        borderTopRadius="lg"
         fontSize="xl"
-        bgGradient="linear(to-tr, secondaryAlt.600, secondary.400)"
         py={2}
         px={4}
         height={24}
         display="flex"
         alignItems="center"
+        borderBottomColor="primary.500"
+        borderBottomWidth="1px"
       >
-        <Link href={repo.html_url} color="gray.50">
-          {repo.name}
-        </Link>
+        <Link href={repo.html_url}>{repo.name}</Link>
       </Heading>
       <Flex py={2} px={4} direction="column" height="full">
         <Text flex={1} mb={4}>

@@ -1,16 +1,29 @@
-import { extendTheme, theme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 
 const primaryColor = {
   50: '#eaf7f0',
   100: '#cfe2d8',
-  200: '#b1cebe',
-  300: '#93bba4',
-  400: '#75a88b',
-  500: '#5b8e72',
-  600: '#476f58',
-  700: '#32503f',
-  800: '#1d3025',
-  900: '#051109',
+  200: '#b1cebc',
+  300: '#93bb9f',
+  400: '#75a881',
+  500: '#5b8e65',
+  600: '#476f4b',
+  700: '#325033',
+  800: '#1e301d',
+  900: '#071105',
+}
+
+const secondaryColor = {
+  50: '#fdecf8',
+  100: '#e5cedc',
+  200: '#cfb0c2',
+  300: '#ba92a8',
+  400: '#a5738f',
+  500: '#8c5a75',
+  600: '#6e465b',
+  700: '#503142',
+  800: '#321c28',
+  900: '#180610',
 }
 
 export default extendTheme({
@@ -19,9 +32,7 @@ export default extendTheme({
   },
   colors: {
     primary: primaryColor,
-    primaryAlt: theme.colors.yellow,
-    secondary: theme.colors.purple,
-    secondaryAlt: theme.colors.pink,
+    secondary: secondaryColor,
   },
   fonts: {
     heading: '"Rubik", sans-serif;',
