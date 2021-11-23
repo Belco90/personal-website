@@ -1,4 +1,4 @@
-const description = 'Mario Beltrán Alarcón - Frontend Software Engineer'
+const description = 'Mario Beltrán - Frontend Software Engineer'
 
 const nextSeoConfig = {
   titleTemplate: '%s | Mario Beltrán',
@@ -15,7 +15,7 @@ const nextSeoConfig = {
         alt: "Mario's profile picture",
       },
     ],
-    site_name: 'Mario Beltrán Alarcón',
+    site_name: 'Mario Beltrán',
   },
   twitter: {
     handle: '@belcoDev',
