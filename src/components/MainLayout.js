@@ -9,8 +9,8 @@ const propTypes = {
 
 const MainLayout = ({ children }) => (
   <Flex height="100%" direction="column">
-    <Header position="fixed" shadow="lg" width="full" />
-    <Box flex="1" mt={24} pb={8}>
+    <Header shadow="lg" width="full" />
+    <Box flex="1" mt={6} pb={8}>
       {children}
     </Box>
   </Flex>
