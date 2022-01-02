@@ -1,18 +1,22 @@
+import type { ImageProps } from 'next/image'
 import Image from 'next/image'
+import styled from '@emotion/styled'
 
 import imgSrc from '../../public/profile-picture.jpg'
-import styles from './ProfilePicture.module.css'
 
-const ProfilePicture = (props) => {
+const RoundedImage = styled(Image)`
+  border-radius: 100%;
+`
+
+const ProfilePicture = (props: ImageProps) => {
   return (
-    <Image
+    <RoundedImage
       width={150}
       height={150}
       quality={95}
       {...props}
       src={imgSrc}
       alt="Mario profile picture"
-      className={styles.root}
       placeholder="blur"
     />
   )

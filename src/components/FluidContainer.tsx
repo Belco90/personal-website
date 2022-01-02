@@ -1,6 +1,7 @@
+import type { BoxProps } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
 
-const FluidContainer = (props) => (
+const FluidContainer = (props: BoxProps) => (
   <Box
     width="full"
     maxWidth="1280px"

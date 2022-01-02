@@ -1,22 +1,13 @@
+import type { GitHubRepo, NpmPackage } from '~/models'
 import { Flex, Heading, Link, HStack, Tag, Text, Icon } from '@chakra-ui/react'
-import PropTypes from 'prop-types'
 import { FaRegStar, FaNpm } from 'react-icons/fa'
 
-const propTypes = {
-  repo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    language: PropTypes.string.isRequired,
-    html_url: PropTypes.string.isRequired,
-    stargazers_count: PropTypes.number.isRequired,
-  }).isRequired,
-  npmPackage: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    downloads: PropTypes.number.isRequired,
-  }),
+interface ProjectCardProps {
+  repo: GitHubRepo
+  npmPackage?: NpmPackage
 }
 
-const ProjectCard = ({ repo, npmPackage, ...rest }) => {
+const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
   const formattedDownloads = npmPackage
     ? new Intl.NumberFormat('en-US').format(npmPackage.downloads)
     : null
@@ -70,7 +61,5 @@ const ProjectCard = ({ repo, npmPackage, ...rest }) => {
     </Flex>
   )
 }
-
-ProjectCard.propTypes = propTypes
 
 export default ProjectCard

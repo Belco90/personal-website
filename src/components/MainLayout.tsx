@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types'
 import { Box, Flex } from '@chakra-ui/react'
 
 import Header from './Header'
+import type { ReactNode } from 'react'
 
-const propTypes = {
-  children: PropTypes.node.isRequired,
+interface MainLayoutProps {
+  children: ReactNode
 }
 
-const MainLayout = ({ children }) => (
+const MainLayout = ({ children }: MainLayoutProps) => (
   <Flex height="100%" direction="column">
     <Header shadow="lg" width="full" />
     <Box flex="1" mt={6} pb={8}>
@@ -15,7 +15,5 @@ const MainLayout = ({ children }) => (
     </Box>
   </Flex>
 )
-
-MainLayout.propTypes = propTypes
 
 export default MainLayout
