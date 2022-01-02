@@ -11,7 +11,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { NextSeo } from 'next-seo'
 
 import ProfilePicture from '~/components/ProfilePicture'
-import config from '~/user.config'
+import { UserConfig } from '~/user.config'
 
 const SocialLink = (props) => (
   <Link
@@ -67,18 +67,18 @@ const Index = () => {
 
           <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
             <SocialLink
-              href={`mailto:${config.social.email}`}
+              href={`mailto:${UserConfig.social.email}`}
               aria-label="Email"
             >
               <Icon as={FaEnvelope} aria-label="Email" />
             </SocialLink>
-            <SocialLink href={config.social.github} aria-label="GitHub">
+            <SocialLink href={UserConfig.social.github} aria-label="GitHub">
               <Icon as={FaGithub} aria-label="GitHub" />
             </SocialLink>
-            <SocialLink href={config.social.linkedin} aria-label="LinkedIn">
+            <SocialLink href={UserConfig.social.linkedin} aria-label="LinkedIn">
               <Icon as={FaLinkedin} aria-label="LinkedIn" />
             </SocialLink>
-            <SocialLink href={config.social.twitter} aria-label="Twitter">
+            <SocialLink href={UserConfig.social.twitter} aria-label="Twitter">
               <Icon as={FaTwitter} aria-label="Twitter" />
             </SocialLink>
           </Flex>

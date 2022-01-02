@@ -1,7 +1,7 @@
 import { SimpleGrid } from '@chakra-ui/react'
 import FluidContainer from '~/components/FluidContainer'
 import ProjectCard from '~/components/ProjectCard'
-import config from '~/user.config'
+import { UserConfig } from '~/user.config'
 import { NextSeo } from 'next-seo'
 import { subDays, format } from 'date-fns'
 
@@ -22,8 +22,8 @@ const Projects = ({ projects }) => {
     <>
       <NextSeo
         title="Projects"
-        description={`${config.author.name}'s Projects`}
-        openGraph={{ description: `${config.author.name}'s Projects` }}
+        description={`${UserConfig.author.name}'s Projects`}
+        openGraph={{ description: `${UserConfig.author.name}'s Projects` }}
       />
       <FluidContainer>
         <SimpleGrid minChildWidth="300px" spacing={6}>

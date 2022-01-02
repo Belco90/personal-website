@@ -26,7 +26,7 @@ const secondaryColor = {
   900: '#180610',
 }
 
-export default extendTheme({
+const customTheme = extendTheme({
   config: {
     useSystemColorMode: true,
   },
@@ -44,3 +44,5 @@ export default extendTheme({
     },
   },
 })
+
+export { customTheme }
