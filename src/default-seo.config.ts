@@ -1,7 +1,10 @@
-const description = 'Mario Beltrán - Frontend Software Engineer'
+import type { DefaultSeoProps } from 'next-seo'
+import { UserConfig } from '~/user.config'
 
-const nextSeoConfig = {
-  titleTemplate: '%s | Mario Beltrán',
+const description = `${UserConfig.author.name} - ${UserConfig.author.position}`
+
+const DefaultSeoConfig: DefaultSeoProps = {
+  titleTemplate: `%s | ${UserConfig.author.name}`,
   description,
   openGraph: {
     type: 'website',
@@ -15,7 +18,7 @@ const nextSeoConfig = {
         alt: "Mario's profile picture",
       },
     ],
-    site_name: 'Mario Beltrán',
+    site_name: `${UserConfig.author.name}'s website`,
   },
   twitter: {
     handle: '@belcoDev',
@@ -24,4 +27,4 @@ const nextSeoConfig = {
   },
 }
 
-export default nextSeoConfig
+export { DefaultSeoConfig }

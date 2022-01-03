@@ -1,4 +1,4 @@
-const userConfig = {
+const UserConfig = {
   author: {
     name: 'Mario Beltrán',
     position: 'Frontend Software Engineer',
@@ -11,4 +11,4 @@ const userConfig = {
   },
 }
 
-export default userConfig
+export { UserConfig }
