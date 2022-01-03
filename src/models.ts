@@ -1,4 +1,5 @@
 interface GitHubRepo {
+  id: string
   name: string
   description: string
   language: string
@@ -11,4 +12,9 @@ interface NpmPackage {
   downloads: number
 }
 
-export type { GitHubRepo, NpmPackage }
+interface Project {
+  repo: GitHubRepo
+  npmPackage: NpmPackage
+}
+
+export type { GitHubRepo, NpmPackage, Project }

@@ -1,3 +1,6 @@
+import type { AppProps as NextAppProps } from 'next/app'
+import type { FunctionComponent } from 'react'
+
 import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
 
@@ -6,7 +9,12 @@ import { DefaultSeoConfig } from '~/default-seo.config'
 import 'focus-visible/dist/focus-visible'
 import { customTheme } from '~/theme'
 
-const App = ({ Component, pageProps }) => {
+type EnhancedComponent = NextAppProps['Component'] & {
+  layout: FunctionComponent
+}
+type AppProps = NextAppProps & { Component: EnhancedComponent }
+
+const App = ({ Component, pageProps }: AppProps) => {
   const Layout = Component.layout || MainLayout
 
   return (

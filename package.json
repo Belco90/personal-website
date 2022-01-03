@@ -29,6 +29,7 @@
     "dev": "next",
     "build": "next build",
     "serve": "next start",
+    "type-check": "tsc --noEmit",
     "lint": "next lint",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write src"

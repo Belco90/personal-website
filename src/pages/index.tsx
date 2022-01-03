@@ -1,3 +1,4 @@
+import type { LinkProps } from '@chakra-ui/react'
 import {
   Box,
   Flex,
@@ -13,7 +14,7 @@ import { NextSeo } from 'next-seo'
 import ProfilePicture from '~/components/ProfilePicture'
 import { UserConfig } from '~/user.config'
 
-const SocialLink = (props) => (
+const SocialLink = (props: LinkProps) => (
   <Link
     {...props}
     transition="transform 0.3s"
@@ -21,7 +22,7 @@ const SocialLink = (props) => (
   />
 )
 
-const Index = () => {
+const IndexPage = () => {
   const primaryColor = useColorModeValue('primary.600', 'primary.400')
 
   return (
@@ -88,4 +89,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default IndexPage

@@ -8,7 +8,7 @@ const RoundedImage = styled(Image)`
   border-radius: 100%;
 `
 
-const ProfilePicture = (props: ImageProps) => {
+const ProfilePicture = (props: Omit<ImageProps, 'src'>) => {
   return (
     <RoundedImage
       width={150}
