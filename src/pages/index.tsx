@@ -8,7 +8,7 @@ import {
   Icon,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { NextSeo } from 'next-seo'
 
 import ProfilePicture from '~/components/ProfilePicture'
@@ -67,12 +67,6 @@ const IndexPage = () => {
           </Box>
 
           <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
-            <SocialLink
-              href={`mailto:${UserConfig.social.email}`}
-              aria-label="Email"
-            >
-              <Icon as={FaEnvelope} aria-label="Email" />
-            </SocialLink>
             <SocialLink href={UserConfig.social.github} aria-label="GitHub">
               <Icon as={FaGithub} aria-label="GitHub" />
             </SocialLink>
