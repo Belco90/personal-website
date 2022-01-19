@@ -44,7 +44,7 @@ const IndexPage = () => {
               rounded="full"
             >
               <Box transform="translate(30px, -30px)">
-                <ProfilePicture priority />
+                <ProfilePicture />
               </Box>
             </Box>
           </Box>
