@@ -10,7 +10,7 @@ interface MainLayoutProps {
 const MainLayout = ({ children }: MainLayoutProps) => (
   <Flex height="100%" direction="column">
     <Header shadow="lg" width="full" />
-    <Box flex="1" mt={6} pb={8}>
+    <Box as="main" flex="1" mt={6} pb={8}>
       {children}
     </Box>
   </Flex>

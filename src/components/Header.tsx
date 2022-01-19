@@ -42,14 +42,21 @@ const Header = (props: BoxProps) => {
       <FluidContainer py={5}>
         <Flex width="full" justifyContent="flex-end">
           <HStack
-            as="nav"
             spacing={8}
             align="center"
             justify="center"
             shouldWrapChildren
           >
-            <HeaderLink href="/">Home</HeaderLink>
-            <HeaderLink href="/projects">Projects</HeaderLink>
+            <HStack
+              as="nav"
+              spacing={8}
+              align="center"
+              justify="center"
+              shouldWrapChildren
+            >
+              <HeaderLink href="/">Home</HeaderLink>
+              <HeaderLink href="/projects">Projects</HeaderLink>
+            </HStack>
             <ColorModeButton />
           </HStack>
         </Flex>

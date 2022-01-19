@@ -16,7 +16,7 @@ const ProfilePicture = (props: Omit<ImageProps, 'src'>) => {
       quality={95}
       {...props}
       src={imgSrc}
-      alt="Mario profile picture"
+      alt="Thoughtful Mario"
       placeholder="blur"
     />
   )

@@ -9,7 +9,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { NextSeo } from 'next-seo'
 
 import ProfilePicture from '~/components/ProfilePicture'
 import { UserConfig } from '~/user.config'
@@ -27,7 +26,6 @@ const IndexPage = () => {
 
   return (
     <>
-      <NextSeo title="Home" />
       <Flex justify="center" aligh="center" height="100%">
         <VStack
           direction="column"
@@ -68,13 +66,13 @@ const IndexPage = () => {
 
           <Flex justify="space-evenly" align="center" w="full" fontSize="2xl">
             <SocialLink href={UserConfig.social.github} aria-label="GitHub">
-              <Icon as={FaGithub} aria-label="GitHub" />
+              <Icon as={FaGithub} aria-hidden={true} />
             </SocialLink>
             <SocialLink href={UserConfig.social.linkedin} aria-label="LinkedIn">
-              <Icon as={FaLinkedin} aria-label="LinkedIn" />
+              <Icon as={FaLinkedin} aria-hidden={true} />
             </SocialLink>
             <SocialLink href={UserConfig.social.twitter} aria-label="Twitter">
-              <Icon as={FaTwitter} aria-label="Twitter" />
+              <Icon as={FaTwitter} aria-hidden={true} />
             </SocialLink>
           </Flex>
         </VStack>
