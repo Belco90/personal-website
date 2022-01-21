@@ -27,8 +27,11 @@ const App = ({ Component, pageProps }: AppProps) => {
           strategy="afterInteractive"
           src="https://getinsights.io/js/insights.js"
           onLoad={() => {
-            insights.init(insightsId)
-            insights.trackPages()
+            const urlParams = new URLSearchParams(location.search)
+            if (!urlParams.has('i-am-an-automatic-test')) {
+              insights.init(insightsId)
+              insights.trackPages()
+            }
           }}
         />
       )}
