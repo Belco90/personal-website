@@ -1,5 +1,6 @@
 import type { AppProps as NextAppProps } from 'next/app'
 import type { FunctionComponent } from 'react'
+import Script from 'next/script'
 
 import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
@@ -14,16 +15,30 @@ type EnhancedComponent = NextAppProps['Component'] & {
 }
 type AppProps = NextAppProps & { Component: EnhancedComponent }
 
+const insightsId = process.env.NEXT_PUBLIC_INSIGHTS_ID
+
 const App = ({ Component, pageProps }: AppProps) => {
   const Layout = Component.layout || MainLayout
 
   return (
-    <ChakraProvider theme={customTheme}>
-      <DefaultSeo {...DefaultSeoConfig} />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ChakraProvider>
+    <>
+      {insightsId && (
+        <Script
+          strategy="afterInteractive"
+          src="https://getinsights.io/js/insights.js"
+          onLoad={() => {
+            insights.init(insightsId)
+            insights.trackPages()
+          }}
+        />
+      )}
+      <ChakraProvider theme={customTheme}>
+        <DefaultSeo {...DefaultSeoConfig} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
+    </>
   )
 }
 
