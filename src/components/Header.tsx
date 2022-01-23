@@ -19,6 +19,9 @@ interface HeaderLinkProps extends Omit<ChakraLinkProps, 'href'> {
 
 const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
   const router = useRouter()
+  const activeLinkColor = useColorModeValue('primary.600', 'primary.400')
+  const inactiveLinkColor = useColorModeValue('gray.700', 'gray.200')
+
   const isActive = router.asPath === href
 
   return (
@@ -26,16 +29,15 @@ const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
       <Link
         {...remaining}
         textDecorationLine={isActive ? 'underline' : 'none'}
-        textDecorationColor={isActive ? 'primary.600' : 'none'}
+        textDecorationColor={isActive ? activeLinkColor : 'none'}
         textDecorationThickness="2px"
         textUnderlineOffset="2px"
-        color={isActive ? 'primary.600' : 'gray.700'}
-        borderColor="primary.600"
+        color={isActive ? activeLinkColor : inactiveLinkColor}
         fontSize="lg"
         fontWeight="bold"
         p={1}
         _hover={{
-          color: isActive ? 'primary.700' : 'current',
+          color: 'primary.700',
           bgColor: 'primary.100',
           borderRadius: 2,
         }}

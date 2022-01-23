@@ -32,7 +32,7 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
         openGraph={{ description: `${UserConfig.author.name}'s Projects` }}
       />
       <Container maxWidth="container.md">
-        <Heading as="h1" mb={4} color="primary.600">
+        <Heading as="h1" variant="gradient" mb={4} fontSize="4xl">
           Projects
         </Heading>
         <VStack minChildWidth="300px" spacing={6}>

@@ -59,7 +59,12 @@ const IndexPage = () => {
             <Heading as="h1" mb={4}>
               Mario Beltrán Alarcón
             </Heading>
-            <Heading as="h2" fontSize="lg" fontWeight="normal">
+            <Heading
+              as="h2"
+              variant="gradient"
+              fontSize="lg"
+              fontWeight="normal"
+            >
               Frontend Software Engineer
             </Heading>
           </Box>

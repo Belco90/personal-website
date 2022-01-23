@@ -1,5 +1,15 @@
 import type { GitHubRepo, NpmPackage } from '~/models'
-import { Flex, Heading, Link, HStack, Tag, Text, Icon } from '@chakra-ui/react'
+import {
+  Flex,
+  Heading,
+  Link,
+  HStack,
+  Tag,
+  Text,
+  Icon,
+  useColorModeValue,
+  useToken,
+} from '@chakra-ui/react'
 import { FaRegStar, FaNpm } from 'react-icons/fa'
 
 interface ProjectCardProps {
@@ -8,6 +18,13 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
+  const [primaryLight, primaryDark] = useToken('colors', [
+    'primary.100',
+    'primary.600',
+  ])
+  const cardBgColor = useColorModeValue('gray.50', 'gray.700')
+  const cardShadowColor = useColorModeValue(primaryLight, primaryDark)
+
   const formattedDownloads = npmPackage
     ? new Intl.NumberFormat('en-US').format(npmPackage.downloads)
     : null
@@ -16,22 +33,12 @@ const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
     <Flex
       w="full"
       direction="column"
-      shadow="md"
-      borderWidth="1px"
+      shadow={`0.2rem 0.2em ${cardShadowColor}`}
       borderRadius="lg"
-      borderColor="primary.500"
+      bgColor={cardBgColor}
       {...rest}
     >
-      <Heading
-        fontSize="xl"
-        py={2}
-        px={4}
-        height={24}
-        display="flex"
-        alignItems="center"
-        borderBottomColor="primary.500"
-        borderBottomWidth="1px"
-      >
+      <Heading fontSize="xl" py={2} px={4} display="flex" alignItems="center">
         <Link href={repo.html_url}>{repo.name}</Link>
       </Heading>
       <Flex py={2} px={4} direction="column" height="full">

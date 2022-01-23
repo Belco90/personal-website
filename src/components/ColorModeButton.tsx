@@ -4,7 +4,8 @@ import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi'
 const ColorModeButton = () => {
   const { colorMode, toggleColorMode } = useColorMode()
 
-  const title = `Switch to ${colorMode === 'light' ? 'dark' : 'light'} mode`
+  const isLight = colorMode === 'light'
+  const title = `Switch to ${isLight ? 'dark' : 'light'} mode`
 
   return (
     <IconButton
@@ -16,6 +17,7 @@ const ColorModeButton = () => {
       fontSize="24px"
       _hover={{
         bgColor: 'primary.100',
+        color: isLight ? 'current' : 'primary.600',
       }}
     />
   )
