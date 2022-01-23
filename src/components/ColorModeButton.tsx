@@ -14,6 +14,9 @@ const ColorModeButton = () => {
       onClick={toggleColorMode}
       variant="ghost"
       fontSize="24px"
+      _hover={{
+        bgColor: 'primary.100',
+      }}
     />
   )
 }

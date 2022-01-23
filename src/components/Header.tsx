@@ -19,13 +19,19 @@ const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
     <NextLink href={href} passHref>
       <Link
         {...remaining}
-        borderBottomWidth={isActive ? '4px' : 'none'}
-        borderColor="primary.500"
+        textDecorationLine={isActive ? 'underline' : 'none'}
+        textDecorationColor={isActive ? 'primary.600' : 'none'}
+        textDecorationThickness="2px"
+        textUnderlineOffset="2px"
+        color={isActive ? 'primary.600' : 'gray.700'}
+        borderColor="primary.600"
         fontSize="lg"
+        fontWeight="bold"
+        p={1}
         _hover={{
-          borderColor: 'secondary.200',
-          textDecoration: 'none',
-          borderBottomWidth: '4px',
+          color: isActive ? 'primary.700' : 'current',
+          bgColor: 'primary.100',
+          borderRadius: 2,
         }}
         aria-current={isActive ? 'page' : undefined}
       >
@@ -49,7 +55,7 @@ const Header = (props: BoxProps) => {
           >
             <HStack
               as="nav"
-              spacing={8}
+              spacing={4}
               align="center"
               justify="center"
               shouldWrapChildren
