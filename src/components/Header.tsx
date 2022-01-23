@@ -1,9 +1,15 @@
 import type { LinkProps as ChakraLinkProps, BoxProps } from '@chakra-ui/react'
-import { Box, Link, HStack, Flex, useColorModeValue } from '@chakra-ui/react'
+import {
+  Box,
+  Link,
+  HStack,
+  Flex,
+  useColorModeValue,
+  Container,
+} from '@chakra-ui/react'
 import type { LinkProps as NextLinkProps } from 'next/link'
 import NextLink from 'next/link'
 
-import FluidContainer from './FluidContainer'
 import { useRouter } from 'next/router'
 import ColorModeButton from '~/components/ColorModeButton'
 
@@ -45,7 +51,7 @@ const Header = (props: BoxProps) => {
   const bgColor = useColorModeValue('white', 'gray.700')
   return (
     <Box as="header" zIndex="banner" {...props} bgColor={bgColor}>
-      <FluidContainer py={5}>
+      <Container py={5} maxWidth="container.md">
         <Flex width="full" justifyContent="flex-end">
           <HStack
             spacing={8}
@@ -66,7 +72,7 @@ const Header = (props: BoxProps) => {
             <ColorModeButton />
           </HStack>
         </Flex>
-      </FluidContainer>
+      </Container>
     </Box>
   )
 }

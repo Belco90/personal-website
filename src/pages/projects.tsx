@@ -1,5 +1,4 @@
-import { Heading, SimpleGrid } from '@chakra-ui/react'
-import FluidContainer from '~/components/FluidContainer'
+import { Container, Heading, VStack } from '@chakra-ui/react'
 import ProjectCard from '~/components/ProjectCard'
 import { UserConfig } from '~/user.config'
 import { NextSeo } from 'next-seo'
@@ -32,16 +31,16 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
         description={`${UserConfig.author.name}'s Projects`}
         openGraph={{ description: `${UserConfig.author.name}'s Projects` }}
       />
-      <FluidContainer>
+      <Container maxWidth="container.md">
         <Heading as="h1" mb={4} color="primary.600">
           Projects
         </Heading>
-        <SimpleGrid minChildWidth="300px" spacing={6}>
+        <VStack minChildWidth="300px" spacing={6}>
           {projects.map(({ repo, npmPackage }) => (
             <ProjectCard key={repo.id} repo={repo} npmPackage={npmPackage} />
           ))}
-        </SimpleGrid>
-      </FluidContainer>
+        </VStack>
+      </Container>
     </>
   )
 }

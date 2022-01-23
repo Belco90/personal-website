@@ -14,6 +14,7 @@ const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
 
   return (
     <Flex
+      w="full"
       direction="column"
       shadow="md"
       borderWidth="1px"
