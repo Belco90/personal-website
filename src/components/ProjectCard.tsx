@@ -1,4 +1,5 @@
 import type { GitHubRepo, NpmPackage } from '~/models'
+import type { FlexProps } from '@chakra-ui/react'
 import {
   Flex,
   Heading,
@@ -12,10 +13,12 @@ import {
 } from '@chakra-ui/react'
 import { FaRegStar, FaNpm } from 'react-icons/fa'
 
-interface ProjectCardProps {
+interface CustomProps {
   repo: GitHubRepo
   npmPackage?: NpmPackage
 }
+
+type ProjectCardProps = FlexProps & CustomProps
 
 const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
   const [primaryLight, primaryDark] = useToken('colors', [
@@ -56,7 +59,7 @@ const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
               <Flex align="center">
                 <Icon
                   as={FaNpm}
-                  aria-label="Weekly npm downloads"
+                  aria-label="npm weekly downloads"
                   mr={1}
                   boxSize={6}
                 />

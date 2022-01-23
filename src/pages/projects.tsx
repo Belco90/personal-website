@@ -35,9 +35,14 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
         <Heading as="h1" variant="gradient" mb={4} fontSize="4xl">
           Projects
         </Heading>
-        <VStack minChildWidth="300px" spacing={6}>
+        <VStack as="ul" spacing={6}>
           {projects.map(({ repo, npmPackage }) => (
-            <ProjectCard key={repo.id} repo={repo} npmPackage={npmPackage} />
+            <ProjectCard
+              as="li"
+              key={repo.id}
+              repo={repo}
+              npmPackage={npmPackage}
+            />
           ))}
         </VStack>
       </Container>
