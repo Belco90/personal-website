@@ -19,7 +19,7 @@ interface HeaderLinkProps extends Omit<ChakraLinkProps, 'href'> {
 
 const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
   const router = useRouter()
-  const activeLinkColor = useColorModeValue('primary.600', 'primary.400')
+  const activeLinkColor = useColorModeValue('primary.600', 'primary.300')
   const inactiveLinkColor = useColorModeValue('gray.700', 'gray.200')
 
   const isActive = router.asPath === href
@@ -38,6 +38,7 @@ const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
         p={1}
         _hover={{
           color: 'primary.700',
+          textDecorationColor: 'current',
           bgColor: 'primary.100',
           borderRadius: 2,
         }}
