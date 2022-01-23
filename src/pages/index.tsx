@@ -28,7 +28,6 @@ const IndexPage = () => {
     <>
       <Flex justify="center" aligh="center" height="100%">
         <VStack
-          direction="column"
           py={8}
           px={4}
           align="center"
@@ -40,7 +39,7 @@ const IndexPage = () => {
           <Box>
             <Box
               bgGradient={`radial(${primaryColor} 1px, transparent 1px)`}
-              backgroundSize="calc(10 * 1px) calc(10 * 1px)"
+              backgroundSize="calc(7 * 1px) calc(7 * 1px)"
               rounded="full"
             >
               <Box transform="translate(30px, -30px)">
