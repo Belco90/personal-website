@@ -8,7 +8,7 @@ import { DefaultSeo } from 'next-seo'
 import MainLayout from '~/components/MainLayout'
 import { DefaultSeoConfig } from '~/default-seo.config'
 import 'focus-visible/dist/focus-visible'
-import { customTheme } from '~/theme'
+import { theme } from '~/theme'
 
 type EnhancedComponent = NextAppProps['Component'] & {
   layout: FunctionComponent
@@ -35,7 +35,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           }}
         />
       )}
-      <ChakraProvider theme={customTheme}>
+      <ChakraProvider theme={theme}>
         <DefaultSeo {...DefaultSeoConfig} />
         <Layout>
           <Component {...pageProps} />
