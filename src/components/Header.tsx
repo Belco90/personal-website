@@ -80,14 +80,13 @@ const Header = (props: BoxProps) => {
           </Box>
           <Spacer />
           <HStack
-            spacing={8}
+            spacing={{ base: 2, lg: 8 }}
             align="center"
-            justify="center"
             shouldWrapChildren
           >
             <HStack
               as="nav"
-              spacing={4}
+              spacing={[2, 4]}
               align="center"
               justify="center"
               shouldWrapChildren
