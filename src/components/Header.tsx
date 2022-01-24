@@ -4,8 +4,10 @@ import {
   Link,
   HStack,
   Flex,
-  useColorModeValue,
   Container,
+  Spacer,
+  useColorModeValue,
+  useToken,
 } from '@chakra-ui/react'
 import type { LinkProps as NextLinkProps } from 'next/link'
 import NextLink from 'next/link'
@@ -34,7 +36,6 @@ const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
         textUnderlineOffset="2px"
         color={isActive ? activeLinkColor : inactiveLinkColor}
         fontSize="lg"
-        fontWeight="bold"
         p={1}
         _hover={{
           color: 'primary.700',
@@ -52,10 +53,32 @@ const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
 
 const Header = (props: BoxProps) => {
   const bgColor = useColorModeValue('white', 'gray.700')
+  const [primaryFromLight, primaryToLight, primaryFromDark, primaryToDark] =
+    useToken('colors', [
+      'primary.50',
+      'primary.200',
+      'primary.500',
+      'primary.700',
+    ])
+  const primaryFrom = useColorModeValue(primaryFromLight, primaryFromDark)
+  const primaryTo = useColorModeValue(primaryToLight, primaryToDark)
+
   return (
     <Box as="header" zIndex="banner" {...props} bgColor={bgColor}>
-      <Container py={5} maxWidth="container.md">
-        <Flex width="full" justifyContent="flex-end">
+      <Container py={2} maxWidth="container.md">
+        <Flex width="full" align="center">
+          <Box
+            fontWeight="bold"
+            fontSize="2xl"
+            fontFamily="heading"
+            bgGradient={`linear(to-r, ${primaryFrom}, ${primaryTo})`}
+            bgSize="100% 0.2em"
+            bgPosition="0 80%"
+            bgRepeat="no-repeat"
+          >
+            Mario
+          </Box>
+          <Spacer />
           <HStack
             spacing={8}
             align="center"
