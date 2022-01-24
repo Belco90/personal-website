@@ -33,6 +33,8 @@
     "lint": "next lint",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write src",
+    "gen:theme-typings": "chakra-cli tokens src/theme.ts --strict-component-types",
+    "postinstall": "npm run gen:theme-typings",
     "prepare": "is-ci || husky install"
   },
   "dependencies": {
@@ -49,6 +51,7 @@
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^1.7.0",
     "@types/node": "^14.18.9",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",

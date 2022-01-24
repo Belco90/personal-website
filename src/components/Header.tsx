@@ -1,9 +1,17 @@
 import type { LinkProps as ChakraLinkProps, BoxProps } from '@chakra-ui/react'
-import { Box, Link, HStack, Flex, useColorModeValue } from '@chakra-ui/react'
+import {
+  Box,
+  Link,
+  HStack,
+  Flex,
+  Container,
+  Spacer,
+  useColorModeValue,
+  useToken,
+} from '@chakra-ui/react'
 import type { LinkProps as NextLinkProps } from 'next/link'
 import NextLink from 'next/link'
 
-import FluidContainer from './FluidContainer'
 import { useRouter } from 'next/router'
 import ColorModeButton from '~/components/ColorModeButton'
 
@@ -13,19 +21,27 @@ interface HeaderLinkProps extends Omit<ChakraLinkProps, 'href'> {
 
 const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
   const router = useRouter()
+  const activeLinkColor = useColorModeValue('primary.600', 'primary.300')
+  const inactiveLinkColor = useColorModeValue('gray.700', 'gray.200')
+
   const isActive = router.asPath === href
 
   return (
     <NextLink href={href} passHref>
       <Link
         {...remaining}
-        borderBottomWidth={isActive ? '4px' : 'none'}
-        borderColor="primary.500"
+        textDecorationLine={isActive ? 'underline' : 'none'}
+        textDecorationColor={isActive ? activeLinkColor : 'none'}
+        textDecorationThickness="2px"
+        textUnderlineOffset="2px"
+        color={isActive ? activeLinkColor : inactiveLinkColor}
         fontSize="lg"
+        p={1}
         _hover={{
-          borderColor: 'secondary.200',
-          textDecoration: 'none',
-          borderBottomWidth: '4px',
+          color: 'primary.700',
+          textDecorationColor: 'current',
+          bgColor: 'primary.100',
+          borderRadius: 2,
         }}
         aria-current={isActive ? 'page' : undefined}
       >
@@ -37,10 +53,32 @@ const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
 
 const Header = (props: BoxProps) => {
   const bgColor = useColorModeValue('white', 'gray.700')
+  const [primaryFromLight, primaryToLight, primaryFromDark, primaryToDark] =
+    useToken('colors', [
+      'primary.50',
+      'primary.200',
+      'primary.500',
+      'primary.700',
+    ])
+  const primaryFrom = useColorModeValue(primaryFromLight, primaryFromDark)
+  const primaryTo = useColorModeValue(primaryToLight, primaryToDark)
+
   return (
     <Box as="header" zIndex="banner" {...props} bgColor={bgColor}>
-      <FluidContainer py={5}>
-        <Flex width="full" justifyContent="flex-end">
+      <Container py={2} maxWidth="container.md">
+        <Flex width="full" align="center">
+          <Box
+            fontWeight="bold"
+            fontSize="2xl"
+            fontFamily="heading"
+            bgGradient={`linear(to-r, ${primaryFrom}, ${primaryTo})`}
+            bgSize="100% 0.2em"
+            bgPosition="0 80%"
+            bgRepeat="no-repeat"
+          >
+            Mario
+          </Box>
+          <Spacer />
           <HStack
             spacing={8}
             align="center"
@@ -49,7 +87,7 @@ const Header = (props: BoxProps) => {
           >
             <HStack
               as="nav"
-              spacing={8}
+              spacing={4}
               align="center"
               justify="center"
               shouldWrapChildren
@@ -60,7 +98,7 @@ const Header = (props: BoxProps) => {
             <ColorModeButton />
           </HStack>
         </Flex>
-      </FluidContainer>
+      </Container>
     </Box>
   )
 }
