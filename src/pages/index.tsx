@@ -26,7 +26,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Flex justify="center" aligh="center" height="100%">
+      <Flex justify="center" height="100%">
         <VStack
           py={8}
           px={4}
