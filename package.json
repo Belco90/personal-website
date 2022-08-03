@@ -22,7 +22,7 @@
   "author": "Mario Beltrán",
   "license": "ISC",
   "engines": {
-    "npm": "^8.3.0"
+    "pnpm": "^7.8.0"
   },
   "scripts": {
     "start": "npm run dev",
