@@ -25,16 +25,16 @@
     "pnpm": "^7.5.0"
   },
   "scripts": {
-    "start": "npm run dev",
+    "start": "pnpm dev",
     "dev": "next",
     "build": "next build",
     "serve": "next start",
     "type-check": "tsc --noEmit",
     "lint": "next lint",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:fix": "pnpm lint -- --fix",
     "format": "prettier --write src",
     "gen:theme-typings": "chakra-cli tokens src/theme.ts --strict-component-types",
-    "postinstall": "npm run gen:theme-typings",
+    "postinstall": "pnpm gen:theme-typings",
     "prepare": "is-ci || husky install"
   },
   "dependencies": {
