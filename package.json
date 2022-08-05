@@ -42,7 +42,6 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "date-fns": "^2.29.1",
-    "focus-visible": "^5.2.0",
     "framer-motion": "^6.5.1",
     "next": "^12.2.3",
     "next-seo": "^5.5.0",

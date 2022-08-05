@@ -6,7 +6,6 @@ import { DefaultSeo } from 'next-seo'
 
 import MainLayout from '~/components/MainLayout'
 import { DefaultSeoConfig } from '~/default-seo.config'
-import 'focus-visible/dist/focus-visible'
 import { theme } from '~/theme'
 
 type AppProps = NextAppProps

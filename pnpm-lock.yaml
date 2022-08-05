@@ -14,7 +14,6 @@ specifiers:
   eslint: ^8.21.0
   eslint-config-next: ^12.2.3
   eslint-config-prettier: ^8.5.0
-  focus-visible: ^5.2.0
   framer-motion: ^6.5.1
   husky: ^8.0.1
   is-ci: ^3.0.1
@@ -32,7 +31,6 @@ dependencies:
   '@emotion/react': 11.10.0_dlcr7kzjh265l7kenqxjsvuiz4
   '@emotion/styled': 11.10.0_5lvzh5oqbk7njifphd6byllopa
   date-fns: 2.29.1
-  focus-visible: 5.2.0
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   next: 12.2.3_beenoklgwfttvph5dgxj7na7aq
   next-seo: 5.5.0_53oqlnqnxhbetdy4ljlkkvmoby
@@ -3974,13 +3972,6 @@ packages:
     engines: { node: '>=10' }
     dependencies:
       tslib: 2.4.0
-    dev: false
-
-  /focus-visible/5.2.0:
-    resolution:
-      {
-        integrity: sha512-Rwix9pBtC1Nuy5wysTmKy+UjbDJpIfg8eHjw0rjZ1mX4GNLz1Bmd16uDpI3Gk1i70Fgcs8Csg2lPm8HULFg9DQ==,
-      }
     dev: false
 
   /framer-motion/6.5.1_biqbaboplfbrettd7655fr4n2y:
