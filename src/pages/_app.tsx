@@ -13,29 +13,29 @@ type AppProps = NextAppProps
 const insightsId = process.env.NEXT_PUBLIC_INSIGHTS_ID
 
 const App = ({ Component, pageProps }: AppProps) => {
-  return (
-    <>
-      {insightsId && (
-        <Script
-          strategy="afterInteractive"
-          src="https://getinsights.io/js/insights.js"
-          onLoad={() => {
-            const urlParams = new URLSearchParams(location.search)
-            if (!urlParams.has('i-am-an-automatic-test')) {
-              insights.init(insightsId)
-              insights.trackPages()
-            }
-          }}
-        />
-      )}
-      <ChakraProvider theme={theme}>
-        <DefaultSeo {...DefaultSeoConfig} />
-        <MainLayout>
-          <Component {...pageProps} />
-        </MainLayout>
-      </ChakraProvider>
-    </>
-  )
+	return (
+		<>
+			{insightsId && (
+				<Script
+					strategy="afterInteractive"
+					src="https://getinsights.io/js/insights.js"
+					onLoad={() => {
+						const urlParams = new URLSearchParams(location.search)
+						if (!urlParams.has('i-am-an-automatic-test')) {
+							insights.init(insightsId)
+							insights.trackPages()
+						}
+					}}
+				/>
+			)}
+			<ChakraProvider theme={theme}>
+				<DefaultSeo {...DefaultSeoConfig} />
+				<MainLayout>
+					<Component {...pageProps} />
+				</MainLayout>
+			</ChakraProvider>
+		</>
+	)
 }
 
 export default App
