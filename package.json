@@ -1,68 +1,68 @@
 {
-  "name": "mario-web",
-  "private": true,
-  "version": "1.0.0",
-  "description": "Mario Beltrán Alarcón - Frontend Software Engineer",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Belco90/mario-web"
-  },
-  "homepage": "https://mario.dev",
-  "main": "index.js",
-  "keywords": [
-    "website",
-    "personal",
-    "portfolio",
-    "developer",
-    "engineer",
-    "react",
-    "nextjs",
-    "frontend"
-  ],
-  "author": "Mario Beltrán",
-  "license": "ISC",
-  "engines": {
-    "pnpm": "^7.5.0"
-  },
-  "scripts": {
-    "start": "pnpm dev",
-    "dev": "next",
-    "build": "next build",
-    "serve": "next start",
-    "type-check": "tsc --noEmit",
-    "lint": "next lint",
-    "lint:fix": "pnpm lint -- --fix",
-    "format": "prettier --write src",
-    "gen:theme-typings": "chakra-cli tokens src/theme.ts --strict-component-types",
-    "postinstall": "pnpm gen:theme-typings",
-    "prepare": "is-ci || husky install"
-  },
-  "dependencies": {
-    "@chakra-ui/react": "^2.2.6",
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "date-fns": "^2.29.1",
-    "framer-motion": "^6.5.1",
-    "next": "^12.2.4",
-    "next-seo": "^5.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.4.0"
-  },
-  "devDependencies": {
-    "@chakra-ui/cli": "^2.1.4",
-    "@chakra-ui/styled-system": "^2.2.5",
-    "@types/node": "^16.11.47",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.32.0",
-    "eslint": "^8.21.0",
-    "eslint-config-next": "^12.2.4",
-    "eslint-config-prettier": "^8.5.0",
-    "husky": "^8.0.1",
-    "is-ci": "^3.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "2.7.1",
-    "typescript": "^4.7.4"
-  }
+	"name": "mario-web",
+	"private": true,
+	"version": "1.0.0",
+	"description": "Mario Beltrán Alarcón - Frontend Software Engineer",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Belco90/mario-web"
+	},
+	"homepage": "https://mario.dev",
+	"main": "index.js",
+	"keywords": [
+		"website",
+		"personal",
+		"portfolio",
+		"developer",
+		"engineer",
+		"react",
+		"nextjs",
+		"frontend"
+	],
+	"author": "Mario Beltrán",
+	"license": "ISC",
+	"engines": {
+		"pnpm": "^7.5.0"
+	},
+	"scripts": {
+		"start": "pnpm dev",
+		"dev": "next",
+		"build": "next build",
+		"serve": "next start",
+		"type-check": "tsc --noEmit",
+		"lint": "next lint",
+		"lint:fix": "pnpm lint -- --fix",
+		"format": "prettier --write src",
+		"gen:theme-typings": "chakra-cli tokens src/theme.ts --strict-component-types",
+		"postinstall": "pnpm gen:theme-typings",
+		"prepare": "is-ci || husky install"
+	},
+	"dependencies": {
+		"@chakra-ui/react": "^2.2.8",
+		"@emotion/react": "^11.10.0",
+		"@emotion/styled": "^11.10.0",
+		"date-fns": "^2.29.1",
+		"framer-motion": "^6.5.1",
+		"next": "^12.2.5",
+		"next-seo": "^5.5.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-icons": "^4.4.0"
+	},
+	"devDependencies": {
+		"@chakra-ui/cli": "^2.1.6",
+		"@chakra-ui/styled-system": "^2.2.7",
+		"@types/node": "^16.11.49",
+		"@types/react": "^18.0.17",
+		"@types/react-dom": "^18.0.6",
+		"@typescript-eslint/eslint-plugin": "^5.33.1",
+		"eslint": "^8.22.0",
+		"eslint-config-next": "^12.2.5",
+		"eslint-config-prettier": "^8.5.0",
+		"husky": "^8.0.1",
+		"is-ci": "^3.0.1",
+		"lint-staged": "^13.0.3",
+		"prettier": "2.7.1",
+		"typescript": "^4.7.4"
+	}
 }
