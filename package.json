@@ -38,31 +38,31 @@
 		"prepare": "is-ci || husky install"
 	},
 	"dependencies": {
-		"@chakra-ui/react": "^2.2.8",
-		"@emotion/react": "^11.10.0",
-		"@emotion/styled": "^11.10.0",
-		"date-fns": "^2.29.1",
-		"framer-motion": "^7.1.2",
-		"next": "^12.2.5",
+		"@chakra-ui/react": "^2.3.2",
+		"@emotion/react": "^11.10.4",
+		"@emotion/styled": "^11.10.4",
+		"date-fns": "^2.29.2",
+		"framer-motion": "^7.3.2",
+		"next": "^12.3.0",
 		"next-seo": "^5.5.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-icons": "^4.4.0"
 	},
 	"devDependencies": {
-		"@chakra-ui/cli": "^2.1.6",
-		"@chakra-ui/styled-system": "^2.2.7",
-		"@types/node": "^16.11.49",
-		"@types/react": "^18.0.17",
+		"@chakra-ui/cli": "^2.1.7",
+		"@chakra-ui/styled-system": "^2.3.1",
+		"@types/node": "^16.11.58",
+		"@types/react": "^18.0.19",
 		"@types/react-dom": "^18.0.6",
-		"@typescript-eslint/eslint-plugin": "^5.33.1",
+		"@typescript-eslint/eslint-plugin": "^5.36.2",
 		"eslint": "^8.22.0",
-		"eslint-config-next": "^12.2.5",
+		"eslint-config-next": "^12.3.0",
 		"eslint-config-prettier": "^8.5.0",
 		"husky": "^8.0.1",
 		"is-ci": "^3.0.1",
 		"lint-staged": "^13.0.3",
 		"prettier": "2.7.1",
-		"typescript": "^4.7.4"
+		"typescript": "^4.8.3"
 	}
 }
