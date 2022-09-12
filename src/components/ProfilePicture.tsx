@@ -1,16 +1,16 @@
-import type { ImageProps } from 'next/image'
-import Image from 'next/image'
-import styled from '@emotion/styled'
+import type { ImageProps } from 'next/future/image'
+import Image from 'next/future/image'
 
 import imgSrc from '@app-public/profile-picture.jpg'
+import type { CSSProperties } from 'react'
 
-const RoundedImage = styled(Image)`
-	border-radius: 100%;
-`
+const extraStyle: CSSProperties = { borderRadius: '100%' }
 
-const ProfilePicture = (props: Omit<ImageProps, 'src'>) => {
+type ProfilePictureProps = Omit<ImageProps, 'src' | 'alt'>
+
+const ProfilePicture = (props: ProfilePictureProps) => {
 	return (
-		<RoundedImage
+		<Image
 			width={150}
 			height={150}
 			quality={95}
@@ -18,6 +18,7 @@ const ProfilePicture = (props: Omit<ImageProps, 'src'>) => {
 			src={imgSrc}
 			alt="Thoughtful Mario"
 			placeholder="blur"
+			style={extraStyle}
 		/>
 	)
 }
