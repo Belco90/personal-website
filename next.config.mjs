@@ -6,7 +6,6 @@ const nextConfig = {
 	experimental: {
 		browsersListForSwc: true,
 		legacyBrowsers: false,
-		fallbackNodePolyfills: false,
 	},
 }
 
