@@ -4,6 +4,8 @@ specifiers:
   '@chakra-ui/cli': ^2.1.7
   '@chakra-ui/react': ^2.3.2
   '@chakra-ui/styled-system': ^2.3.1
+  '@chakra-ui/theme-tools': ^2.0.11
+  '@chakra-ui/utils': ^2.0.9
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
   '@types/node': ^16.11.58
@@ -11,7 +13,7 @@ specifiers:
   '@types/react-dom': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.36.2
   date-fns: ^2.29.2
-  eslint: 8.22.0
+  eslint: ^8.22.0
   eslint-config-next: ^12.3.0
   eslint-config-prettier: ^8.5.0
   framer-motion: ^7.3.2
@@ -41,6 +43,8 @@ dependencies:
 devDependencies:
   '@chakra-ui/cli': 2.1.7_jo7canvdyegimszc24bn5dmoxi
   '@chakra-ui/styled-system': 2.3.1
+  '@chakra-ui/theme-tools': 2.0.11_ixdfg65nzjkaw36n6br7hh33cu
+  '@chakra-ui/utils': 2.0.9
   '@types/node': 16.11.58
   '@types/react': 18.0.19
   '@types/react-dom': 18.0.6
@@ -405,7 +409,6 @@ packages:
       {
         integrity: sha512-Vgop2FFdhVtX7BydjZdJWZAWy+DdXBU1IMaBppz6COaH+/7OXxoI2ec2bs17ehJyBO0M+ud3OLj5UCFQ79YsoQ==,
       }
-    dev: false
 
   /@chakra-ui/avatar/2.1.0_t3ehvuuqn76q3rgsqchbz6ue7u:
     resolution:
@@ -1521,7 +1524,6 @@ packages:
       '@chakra-ui/anatomy': 2.0.6
       '@chakra-ui/styled-system': 2.3.1
       '@ctrl/tinycolor': 3.4.1
-    dev: false
 
   /@chakra-ui/theme/2.1.11_ixdfg65nzjkaw36n6br7hh33cu:
     resolution:
@@ -1637,7 +1639,6 @@ packages:
         integrity: sha512-ej5oVy6lykXsvieQtqZxCOaLT+xD4+QNarq78cIYISHmZXshCvROLudpQN3lfL8G0NL7plMSSK+zlyvCaIJ4Iw==,
       }
     engines: { node: '>=10' }
-    dev: false
 
   /@emotion/babel-plugin/11.10.0_@babel+core@7.18.10:
     resolution:
