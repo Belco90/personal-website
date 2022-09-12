@@ -17,7 +17,6 @@ const ProfilePicture = (props: ProfilePictureProps) => {
 			{...props}
 			src={imgSrc}
 			alt="Thoughtful Mario"
-			placeholder="blur"
 			style={extraStyle}
 		/>
 	)
