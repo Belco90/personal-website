@@ -1,10 +1,7 @@
 export default {
-  swcMinify: true,
-  experimental: {
-    browsersListForSwc: true,
-    legacyBrowsers: false,
-  },
-  eslint: {
-    dirs: ['src'],
-  },
+	swcMinify: true,
+	experimental: {
+		browsersListForSwc: true,
+		legacyBrowsers: false,
+	},
 }
