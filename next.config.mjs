@@ -1,8 +1,12 @@
-export default {
+// @ts-check
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
 	swcMinify: true,
-	fallbackNodePolyfills: false,
 	experimental: {
 		browsersListForSwc: true,
 		legacyBrowsers: false,
 	},
 }
+
+export default nextConfig
