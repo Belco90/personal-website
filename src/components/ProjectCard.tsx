@@ -1,11 +1,10 @@
 import type { GitHubRepo, NpmPackage } from '~/models'
 import type { LinkBoxProps } from '@chakra-ui/react'
 import {
+	Box,
 	Flex,
 	Heading,
 	Link,
-	LinkBox,
-	LinkOverlay,
 	HStack,
 	Tag,
 	Text,
@@ -27,6 +26,7 @@ const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
 		'primary.100',
 		'primary.600',
 	])
+	const headingColor = useColorModeValue('primary.500', 'primary.300')
 	const cardBgColor = useColorModeValue('gray.50', 'gray.700')
 	const cardShadowColor = useColorModeValue(primaryLight, primaryDark)
 
@@ -35,7 +35,7 @@ const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
 		: null
 
 	return (
-		<LinkBox
+		<Box
 			as="article"
 			w="full"
 			display="flex"
@@ -48,7 +48,16 @@ const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
 			{...rest}
 		>
 			<Heading fontSize="xl">
-				<LinkOverlay href={repo.html_url}>{repo.name}</LinkOverlay>
+				<Link
+					href={repo.html_url}
+					textDecorationLine="underline"
+					_hover={{
+						textColor: headingColor,
+						textDecorationColor: headingColor,
+					}}
+				>
+					{repo.name}
+				</Link>
 			</Heading>
 			<Text flex={1}>{repo.description}</Text>
 			<HStack spacing={8}>
@@ -78,7 +87,7 @@ const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
 					</Link>
 				)}
 			</HStack>
-		</LinkBox>
+		</Box>
 	)
 }
 
