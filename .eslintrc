@@ -1,29 +1,32 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
-  "overrides": [
-    {
-      // TypeScript
-      "files": ["**/*.ts?(x)"],
-      "parserOptions": {
-        "project": ["./tsconfig.json"]
-      },
-      "rules": {
-        "@typescript-eslint/array-type": [
-          "error",
-          {
-            "default": "generic"
-          }
-        ],
-        "@typescript-eslint/no-floating-promises": "error",
-        "@typescript-eslint/consistent-type-exports": "error",
-        "@typescript-eslint/consistent-type-imports": "error",
-        "@typescript-eslint/no-explicit-any": "error"
-      }
-    }
-  ]
+	"extends": [
+		"eslint:recommended",
+		"next/core-web-vitals",
+		"plugin:@typescript-eslint/recommended",
+		"prettier"
+	],
+	"rules": {
+		"react/self-closing-comp": "error"
+	},
+	"overrides": [
+		{
+			// TypeScript
+			"files": ["**/*.ts?(x)"],
+			"parserOptions": {
+				"project": ["./tsconfig.json"]
+			},
+			"rules": {
+				"@typescript-eslint/array-type": [
+					"error",
+					{
+						"default": "generic"
+					}
+				],
+				"@typescript-eslint/no-floating-promises": "error",
+				"@typescript-eslint/consistent-type-exports": "error",
+				"@typescript-eslint/consistent-type-imports": "error",
+				"@typescript-eslint/no-explicit-any": "error"
+			}
+		}
+	]
 }
