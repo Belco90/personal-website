@@ -1,6 +1,19 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import { ColorModeScript } from '@chakra-ui/react'
 
+interface GoatCounterSettings {
+	no_onload: boolean
+	allow_local: boolean
+}
+
+// Add "allow_local": true and disable the production check in useGoatCounter
+// to test in local env.
+const goatCounterSettings: Partial<GoatCounterSettings> = {
+	no_onload: true,
+}
+
+const dataGoatCounterSettings = JSON.stringify(goatCounterSettings)
+
 export const MyDocument = () => {
 	return (
 		<Html lang="en">
@@ -12,6 +25,12 @@ export const MyDocument = () => {
 				<link
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+				/>
+				<script
+					data-goatcounter="https://belco.goatcounter.com/count"
+					data-goatcounter-settings={dataGoatCounterSettings}
+					async
+					src="/scripts/goat-counter.js"
 				/>
 			</Head>
 			<body>
