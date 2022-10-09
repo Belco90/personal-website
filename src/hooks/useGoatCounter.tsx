@@ -15,7 +15,7 @@ declare global {
 }
 
 function isDeployedToProduction() {
-	return process.env.VERCEL_ENV === 'production'
+	return process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 }
 
 function useGoatCounter() {
