@@ -25,13 +25,7 @@ function handleRouteChange(url: string) {
 }
 
 function useGoatCounter() {
-	const { events, asPath } = useRouter()
-
-	// Count the first page accessed
-	useEffect(() => {
-		isDeployedToProduction() && handleRouteChange(asPath)
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+	const { events } = useRouter()
 
 	// Count sequent pages navigated on client side
 	useEffect(() => {
@@ -45,4 +39,4 @@ function useGoatCounter() {
 	}, [events])
 }
 
-export { useGoatCounter }
+export { useGoatCounter, isDeployedToProduction }
