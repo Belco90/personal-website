@@ -14,7 +14,7 @@ declare global {
 	}
 }
 
-function isDeployedToProduction() {
+function getIsGoatCounterEnabled() {
 	return process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 }
 
@@ -29,14 +29,15 @@ function useGoatCounter() {
 
 	// Count sequent pages navigated on client side
 	useEffect(() => {
-		isDeployedToProduction() && events.on('routeChangeStart', handleRouteChange)
+		getIsGoatCounterEnabled() &&
+			events.on('routeChangeStart', handleRouteChange)
 
 		return () => {
 			// Unsuscribe if the component is unmounted
-			isDeployedToProduction() &&
+			getIsGoatCounterEnabled() &&
 				events.off('routeChangeStart', handleRouteChange)
 		}
 	}, [events])
 }
 
-export { useGoatCounter, isDeployedToProduction }
+export { useGoatCounter, getIsGoatCounterEnabled }

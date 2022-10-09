@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import { ColorModeScript } from '@chakra-ui/react'
-import { isDeployedToProduction } from '~/hooks/useGoatCounter'
+import { getIsGoatCounterEnabled } from '~/hooks/useGoatCounter'
 
 interface GoatCounterSettings {
 	no_onload: boolean
@@ -13,7 +13,7 @@ const goatCounterSettings: Partial<GoatCounterSettings> = {
 	// This is false (on prod) so the first page accessed gets reported here,
 	// and sequent page navigation are reported by useGoatCount hook.
 	// If not on prod, it's true so no onload event is triggered.
-	no_onload: !isDeployedToProduction(),
+	no_onload: !getIsGoatCounterEnabled(),
 }
 
 const dataGoatCounterSettings = JSON.stringify(goatCounterSettings)
