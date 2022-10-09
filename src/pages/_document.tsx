@@ -9,9 +9,7 @@ interface GoatCounterSettings {
 // Add "allow_local": true and disable the production check in useGoatCounter
 // to test in local env.
 const goatCounterSettings: Partial<GoatCounterSettings> = {
-	// This is false so the first page accessed gets reported here,
-	// and sequent page navigation are reported by useGoatCount hook.
-	no_onload: false,
+	no_onload: true,
 }
 
 const dataGoatCounterSettings = JSON.stringify(goatCounterSettings)

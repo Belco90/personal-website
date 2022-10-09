@@ -18,16 +18,31 @@ function isDeployedToProduction() {
 	return process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 }
 
-function useGoatCounter() {
-	const { isReady, asPath } = useRouter()
+function handleRouteChange(url: string) {
+	window.goatcounter?.count({
+		path: url,
+	})
+}
 
+function useGoatCounter() {
+	const { events, asPath } = useRouter()
+
+	// Count the first page accessed
 	useEffect(() => {
-		if (isReady && typeof window !== 'undefined' && isDeployedToProduction()) {
-			window.goatcounter?.count({
-				path: asPath,
-			})
+		isDeployedToProduction() && handleRouteChange(asPath)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
+
+	// Count sequent pages navigated on client side
+	useEffect(() => {
+		isDeployedToProduction() && events.on('routeChangeStart', handleRouteChange)
+
+		return () => {
+			// Unsuscribe if the component is unmounted
+			isDeployedToProduction() &&
+				events.off('routeChangeStart', handleRouteChange)
 		}
-	}, [isReady, asPath])
+	}, [events])
 }
 
 export { useGoatCounter }
