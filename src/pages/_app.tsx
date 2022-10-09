@@ -6,7 +6,7 @@ import { DefaultSeo } from 'next-seo'
 import MainLayout from '~/components/MainLayout'
 import { DefaultSeoConfig } from '~/default-seo.config'
 import { theme } from '~/theme'
-import { useGoatCounter } from '~/hooks/useGoatCounter'
+import { useGoatCounter } from '~/goat-counter-utils'
 
 type AppProps = NextAppProps
 
