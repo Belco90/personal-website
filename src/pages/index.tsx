@@ -9,6 +9,7 @@ import {
 	useColorModeValue,
 } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 
 import ProfilePicture from '~/components/ProfilePicture'
 import { UserConfig } from '~/user.config'
@@ -16,6 +17,7 @@ import { UserConfig } from '~/user.config'
 type SocialNetwork = keyof typeof UserConfig.social
 const socialNetworks: Record<SocialNetwork, { title: string; icon: IconType }> =
 	{
+		email: { title: 'Email', icon: MdEmail },
 		github: { title: 'GitHub', icon: FaGithub },
 		linkedin: { title: 'LinkedIn', icon: FaLinkedin },
 		twitter: { title: 'Twitter', icon: FaTwitter },
