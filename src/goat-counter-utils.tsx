@@ -58,21 +58,25 @@ function useGoatCounter() {
 /**
  * Must be used in the _app page component.
  */
-const GoatCounterScript: FC = () => (
-	<Script
-		data-goatcounter="https://belco.goatcounter.com/count"
-		data-goatcounter-settings={dataGoatCounterSettings}
-		async
-		src="/scripts/goat-counter.js"
-		strategy="afterInteractive"
-		onLoad={() => {
-			// non-null assertion is fine since goatcounter is loaded 100% sure here
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			window.goatcounter!.count({
-				path: '',
-			})
-		}}
-	/>
-)
+const GoatCounterScript: FC = () => {
+	const { asPath } = useRouter()
+
+	return (
+		<Script
+			data-goatcounter="https://belco.goatcounter.com/count"
+			data-goatcounter-settings={dataGoatCounterSettings}
+			async
+			src="/scripts/goat-counter.js"
+			strategy="afterInteractive"
+			onLoad={() => {
+				// non-null assertion is fine since goatcounter is loaded 100% sure here
+				// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+				window.goatcounter!.count({
+					path: asPath,
+				})
+			}}
+		/>
+	)
+}
 
 export { useGoatCounter, getIsGoatCounterEnabled, GoatCounterScript }
