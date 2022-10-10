@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import type { FC } from 'react'
 import { useEffect } from 'react'
+import Script from 'next/script'
 
 declare global {
 	interface Window {
@@ -20,13 +21,10 @@ interface GoatCounterSettings {
 	allow_local: boolean
 }
 
-// Add "allow_local": true and disable the production check in useGoatCounter
+// Add "allow_local": true and disable the check in getIsGoatCounterEnabled
 // to test in local env.
 const goatCounterSettings: Partial<GoatCounterSettings> = {
-	// This is false (on prod) so the first page accessed gets reported here,
-	// and sequent page navigation are reported by useGoatCount hook.
-	// If not on prod, it's true so no onload event is triggered.
-	no_onload: !getIsGoatCounterEnabled(),
+	no_onload: true,
 }
 
 const dataGoatCounterSettings = JSON.stringify(goatCounterSettings)
@@ -57,12 +55,23 @@ function useGoatCounter() {
 	}, [events])
 }
 
+/**
+ * Must be used in the _app page component.
+ */
 const GoatCounterScript: FC = () => (
-	<script
+	<Script
 		data-goatcounter="https://belco.goatcounter.com/count"
 		data-goatcounter-settings={dataGoatCounterSettings}
 		async
 		src="/scripts/goat-counter.js"
+		strategy="afterInteractive"
+		onLoad={() => {
+			// non-null assertion is fine since goatcounter is loaded 100% sure here
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			window.goatcounter!.count({
+				path: '',
+			})
+		}}
 	/>
 )
 

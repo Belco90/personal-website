@@ -1,6 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import { ColorModeScript } from '@chakra-ui/react'
-import { GoatCounterScript } from '~/goat-counter-utils'
 
 export const MyDocument = () => {
 	return (
@@ -14,7 +13,6 @@ export const MyDocument = () => {
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
 				/>
-				<GoatCounterScript />
 			</Head>
 			<body>
 				<ColorModeScript />

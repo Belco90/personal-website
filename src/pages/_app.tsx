@@ -6,7 +6,7 @@ import { DefaultSeo } from 'next-seo'
 import MainLayout from '~/components/MainLayout'
 import { DefaultSeoConfig } from '~/default-seo.config'
 import { theme } from '~/theme'
-import { useGoatCounter } from '~/goat-counter-utils'
+import { GoatCounterScript, useGoatCounter } from '~/goat-counter-utils'
 
 type AppProps = NextAppProps
 
@@ -14,12 +14,15 @@ const App = ({ Component, pageProps }: AppProps) => {
 	useGoatCounter()
 
 	return (
-		<ChakraProvider theme={theme}>
-			<DefaultSeo {...DefaultSeoConfig} />
-			<MainLayout>
-				<Component {...pageProps} />
-			</MainLayout>
-		</ChakraProvider>
+		<>
+			<GoatCounterScript />
+			<ChakraProvider theme={theme}>
+				<DefaultSeo {...DefaultSeoConfig} />
+				<MainLayout>
+					<Component {...pageProps} />
+				</MainLayout>
+			</ChakraProvider>
+		</>
 	)
 }
 
