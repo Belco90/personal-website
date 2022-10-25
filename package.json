@@ -22,7 +22,7 @@
 	"author": "Mario Beltrán",
 	"license": "ISC",
 	"engines": {
-		"pnpm": "^7.14.0"
+		"pnpm": "^7.13.0"
 	},
 	"packageManager": "pnpm@7.14.0",
 	"scripts": {
