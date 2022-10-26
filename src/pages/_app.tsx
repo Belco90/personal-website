@@ -1,4 +1,5 @@
 import type { AppProps as NextAppProps } from 'next/app'
+import { Analytics } from '@vercel/analytics/react'
 
 import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
@@ -16,6 +17,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
 			<GoatCounterScript />
+			<Analytics />
 			<ChakraProvider theme={theme}>
 				<DefaultSeo {...DefaultSeoConfig} />
 				<MainLayout>
