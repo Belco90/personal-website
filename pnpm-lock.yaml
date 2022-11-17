@@ -8,6 +8,7 @@ specifiers:
   '@chakra-ui/utils': ^2.0.9
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
+  '@next/font': ^13.0.3
   '@types/node': ^16.11.58
   '@types/react': ^18.0.19
   '@types/react-dom': ^18.0.6
@@ -33,6 +34,7 @@ dependencies:
   '@chakra-ui/react': 2.3.2_uwd2kxpyhtmqlclhf6n5c2gfau
   '@emotion/react': 11.10.4_dsf3gximgpcuze2rz7vhtch6by
   '@emotion/styled': 11.10.4_mlebawnxrbyewlf2dzdxw4o3by
+  '@next/font': 13.0.3
   '@vercel/analytics': 0.1.3_react@18.2.0
   date-fns: 2.29.2
   framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
@@ -2048,6 +2050,13 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
+
+  /@next/font/13.0.3:
+    resolution:
+      {
+        integrity: sha512-J3bZooNyhzhRshEJZlc4Kagfx6f8LQkPdCsP0nZm63dAUaoeMaQRidFFhbL68WZ3S5XleVfpGYypZuBSyJqYtw==,
+      }
+    dev: false
 
   /@next/swc-android-arm-eabi/12.3.0:
     resolution:
