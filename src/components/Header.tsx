@@ -27,7 +27,7 @@ const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
 	const isActive = router.asPath === href
 
 	return (
-		<NextLink href={href} passHref>
+		<NextLink href={href} passHref legacyBehavior>
 			<Link
 				{...remaining}
 				textDecorationLine={isActive ? 'underline' : 'none'}
