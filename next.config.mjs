@@ -2,11 +2,7 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	swcMinify: true,
-	experimental: {
-		browsersListForSwc: true,
-		legacyBrowsers: false,
-	},
+	reactStrictMode: true,
 }
 
 export default nextConfig

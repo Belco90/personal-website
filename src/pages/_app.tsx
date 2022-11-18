@@ -14,8 +14,8 @@ const App = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
 			<VercelAnalytics />
+			<DefaultSeo {...DefaultSeoConfig} />
 			<ChakraProvider theme={theme}>
-				<DefaultSeo {...DefaultSeoConfig} />
 				<MainLayout>
 					<Component {...pageProps} />
 				</MainLayout>
