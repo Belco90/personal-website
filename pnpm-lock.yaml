@@ -8,7 +8,7 @@ specifiers:
   '@chakra-ui/utils': ^2.0.9
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
-  '@types/node': ^16.11.58
+  '@types/node': ^18.11.9
   '@types/react': ^18.0.19
   '@types/react-dom': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.36.2
@@ -43,11 +43,11 @@ dependencies:
   react-icons: 4.4.0_react@18.2.0
 
 devDependencies:
-  '@chakra-ui/cli': 2.1.7_jo7canvdyegimszc24bn5dmoxi
+  '@chakra-ui/cli': 2.1.7_h6wsvvmh4l7tb54yk3ecr4mgtm
   '@chakra-ui/styled-system': 2.3.1
   '@chakra-ui/theme-tools': 2.0.11_ixdfg65nzjkaw36n6br7hh33cu
   '@chakra-ui/utils': 2.0.9
-  '@types/node': 16.11.58
+  '@types/node': 18.11.9
   '@types/react': 18.0.19
   '@types/react-dom': 18.0.6
   '@typescript-eslint/eslint-plugin': 5.36.2_gvr74yfk5cjbja3ekvsbrmf6b4
@@ -529,7 +529,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/cli/2.1.7_jo7canvdyegimszc24bn5dmoxi:
+  /@chakra-ui/cli/2.1.7_h6wsvvmh4l7tb54yk3ecr4mgtm:
     resolution:
       {
         integrity: sha512-AcPXTCCcGzG3TySs+0PxHU1PsXysPahlVMM53oiEQKrvrAGHOfJcXlYG2VsCZ4pqfYKfbyW+woSw7sYTc/MKNQ==,
@@ -548,7 +548,7 @@ packages:
       ora: 5.4.1
       prettier: 2.7.1
       regenerator-runtime: 0.13.9
-      ts-node: 10.8.0_3bjcsnm3sj35ysckksx2jvotpq
+      ts-node: 10.8.0_jl6l7a5x4r5jv72qgpsmdho2me
       tsconfig-paths: 4.0.0
       update-notifier: 5.1.0
     transitivePeerDependencies:
@@ -2513,7 +2513,7 @@ packages:
         integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==,
       }
     dependencies:
-      '@types/node': 16.11.58
+      '@types/node': 18.11.9
     dev: true
 
   /@types/lodash.mergewith/4.6.6:
@@ -2530,10 +2530,10 @@ packages:
         integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==,
       }
 
-  /@types/node/16.11.58:
+  /@types/node/18.11.9:
     resolution:
       {
-        integrity: sha512-uMVxJ111wpHzkx/vshZFb6Qni3BOMnlWLq7q9jrwej7Yw/KvjsEbpxCCxw+hLKxexFMc8YmpG8J9tnEe/rKsIg==,
+        integrity: sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==,
       }
     dev: true
 
@@ -2575,7 +2575,7 @@ packages:
         integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==,
       }
     dependencies:
-      '@types/node': 16.11.58
+      '@types/node': 18.11.9
     dev: true
 
   /@types/scheduler/0.16.2:
@@ -6745,7 +6745,7 @@ packages:
       }
     dev: false
 
-  /ts-node/10.8.0_3bjcsnm3sj35ysckksx2jvotpq:
+  /ts-node/10.8.0_jl6l7a5x4r5jv72qgpsmdho2me:
     resolution:
       {
         integrity: sha512-/fNd5Qh+zTt8Vt1KbYZjRHCE9sI5i7nqfD/dzBBRDeVXZXS6kToW6R7tTU6Nd4XavFs0mAVCg29Q//ML7WsZYA==,
@@ -6768,7 +6768,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
-      '@types/node': 16.11.58
+      '@types/node': 18.11.9
       acorn: 8.8.0
       acorn-walk: 8.2.0
       arg: 4.1.3
