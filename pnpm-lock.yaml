@@ -12,7 +12,7 @@ specifiers:
   '@types/react': ^18.0.19
   '@types/react-dom': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.36.2
-  '@vercel/analytics': ^0.1.3
+  '@vercel/analytics': ^0.1.6
   date-fns: ^2.29.2
   eslint: ^8.22.0
   eslint-config-next: ^13.0.6
@@ -33,7 +33,7 @@ dependencies:
   '@chakra-ui/react': 2.3.2_uwd2kxpyhtmqlclhf6n5c2gfau
   '@emotion/react': 11.10.4_yglq6fei5g4f3s7hztjdjyssdq
   '@emotion/styled': 11.10.4_nt3pmbr2d4km4wubdrol3ykbry
-  '@vercel/analytics': 0.1.3_react@18.2.0
+  '@vercel/analytics': 0.1.6_react@18.2.0
   date-fns: 2.29.2
   framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
   next: 13.0.6_672uxklweod7ene3nqtsh262ca
@@ -2804,10 +2804,10 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vercel/analytics/0.1.3_react@18.2.0:
+  /@vercel/analytics/0.1.6_react@18.2.0:
     resolution:
       {
-        integrity: sha512-zJuEwzvi0bBmWrMrj9jvyMS+X6iUdW3m/y5P7aOLwJQKHsJyfpdINo/4Rv+wxubz3gl4nRqIQdtOFCe1P1ErXQ==,
+        integrity: sha512-zNd5pj3iDvq8IMBQHa1YRcIteiw6ZiPB8AsONHd8ieFXlNpLqhXfIYnf4WvTfZ7S1NSJ++mIM14aJnNac/VMXQ==,
       }
     peerDependencies:
       react: ^16.8||^17||^18
