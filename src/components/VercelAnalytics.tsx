@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/react'
 import { useRouter } from 'next/router'
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 
 const VA_DISABLE_KEY = 'va-disable'
 const VA_TOGGLE_HASH = '#va-toggle'
@@ -20,10 +20,11 @@ function logToggleVercelAnalyticsAction(action: 'disabled' | 'enabled') {
 
 function useToggleVercelAnalytics(): { isEnabled: boolean } {
 	const { isReady, replace, asPath } = useRouter()
-	const isEnabledRef = useRef<boolean>(false)
+	const [isDisabled, setIsDisabled] = useState<boolean>(
+		getIsVercelAnalyticsDisabled
+	)
 
 	useEffect(() => {
-		const isDisabled = getIsVercelAnalyticsDisabled()
 		const statusText = isDisabled ? 'disabled' : 'enabled'
 		console.log(`Vercel Analytics are ${statusText} for this browser`)
 	}, [])
@@ -34,10 +35,10 @@ function useToggleVercelAnalytics(): { isEnabled: boolean } {
 
 		if (isReady && shouldToggleVercelAnalytics) {
 			const newUrl = asPath.replace(VA_TOGGLE_HASH, '')
-			const isVercelAnalyticsDisabled = !!localStorage.getItem(VA_DISABLE_KEY)
-			isEnabledRef.current = !isVercelAnalyticsDisabled
+			const wasVercelAnalyticsDisabled = !!localStorage.getItem(VA_DISABLE_KEY)
+			setIsDisabled(!wasVercelAnalyticsDisabled)
 
-			if (isVercelAnalyticsDisabled) {
+			if (wasVercelAnalyticsDisabled) {
 				localStorage.removeItem(VA_DISABLE_KEY)
 				logToggleVercelAnalyticsAction('enabled')
 			} else {
@@ -48,7 +49,7 @@ function useToggleVercelAnalytics(): { isEnabled: boolean } {
 		}
 	}, [replace, isReady, asPath])
 
-	return { isEnabled: isEnabledRef.current }
+	return { isEnabled: !isDisabled }
 }
 
 const VercelAnalytics = () => {
