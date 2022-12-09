@@ -33,7 +33,7 @@
 		"type-check": "tsc --noEmit",
 		"lint": "next lint",
 		"lint:fix": "pnpm lint -- --fix",
-		"format": "prettier --write src",
+		"format": "prettier --write --ignore-unknown src \"*.json\"",
 		"gen:theme-typings": "chakra-cli tokens src/theme.ts --strict-component-types",
 		"postinstall": "pnpm gen:theme-typings",
 		"prepare": "is-ci || husky install"
