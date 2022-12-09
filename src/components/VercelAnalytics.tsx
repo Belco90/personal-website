@@ -6,10 +6,12 @@ const VA_DISABLE_KEY = 'va-disable'
 const VA_TOGGLE_HASH = '#va-toggle'
 
 function getIsVercelAnalyticsDisabled(): boolean {
-	const currentUrl: URL | undefined =
-		typeof document !== 'undefined' ? new URL(document.URL) : undefined
+	if (typeof document === 'undefined') {
+		return false
+	}
+	const currentUrl = new URL(document.URL)
 	return (
-		Boolean(currentUrl?.searchParams.get(VA_DISABLE_KEY)) ||
+		Boolean(currentUrl.searchParams.get(VA_DISABLE_KEY)) ||
 		Boolean(localStorage.getItem(VA_DISABLE_KEY))
 	)
 }
