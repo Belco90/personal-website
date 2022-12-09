@@ -7,7 +7,7 @@ const VA_TOGGLE_HASH = '#va-toggle'
 
 function getIsVercelAnalyticsDisabled(): boolean {
 	if (typeof document === 'undefined') {
-		return false
+		return true
 	}
 	const currentUrl = new URL(document.URL)
 	return (
