@@ -1,6 +1,5 @@
 module.exports = {
 	root: true,
-	parser: '@typescript-eslint/parser',
 	extends: ['eslint:recommended', 'next/core-web-vitals', 'prettier'],
 	rules: {
 		// JS
