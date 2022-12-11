@@ -29,7 +29,9 @@ function useToggleVercelAnalytics(): { isEnabled: boolean } {
 
 	useEffect(() => {
 		const statusText = isDisabled ? 'disabled' : 'enabled'
+		// eslint-disable-next-line no-console
 		console.log(`Vercel Analytics are ${statusText} for this browser`)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	useEffect(() => {

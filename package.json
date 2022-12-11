@@ -33,7 +33,7 @@
 		"type-check": "tsc --noEmit",
 		"lint": "next lint",
 		"lint:fix": "pnpm lint -- --fix",
-		"format": "prettier --write --ignore-unknown src \"*.json\"",
+		"format": "prettier --write --ignore-unknown src \"*.{json,js,md}\"",
 		"gen:theme-typings": "chakra-cli tokens src/theme.ts --strict-component-types",
 		"postinstall": "pnpm gen:theme-typings",
 		"prepare": "is-ci || husky install"
@@ -59,7 +59,7 @@
 		"@types/node": "^18.11.9",
 		"@types/react": "^18.0.19",
 		"@types/react-dom": "^18.0.6",
-		"@typescript-eslint/eslint-plugin": "^5.36.2",
+		"@typescript-eslint/eslint-plugin": "^5.46.0",
 		"eslint": "^8.22.0",
 		"eslint-config-next": "^13.0.6",
 		"eslint-config-prettier": "^8.5.0",

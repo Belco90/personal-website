@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps<{
 			)
 
 			if (response.ok) {
-				const repo: GitHubRepo = await response.json()
+				const repo: GitHubRepo = (await response.json()) as GitHubRepo
 				return { url: githubRepo, data: repo }
 			}
 		})
@@ -95,11 +95,18 @@ export const getStaticProps: GetStaticProps<{
 					`https://npm-stat.com/api/download-counts?package=${packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`
 				)
 
+				type PackageDownloads = Record<string, number>
+
 				if (response.ok) {
-					const packageDownloads: Record<string, number> = await response.json()
-					const total = Object.values(
+					const packageDownloads: PackageDownloads =
+						(await response.json()) as PackageDownloads
+					const totalArray = Object.values(
 						packageDownloads[packageName]
-					).reduce<number>((acc, currentValue) => acc + currentValue, 0)
+					) as Array<PackageDownloads[string]>
+					const total = totalArray.reduce(
+						(acc, currentValue) => acc + currentValue,
+						0
+					)
 
 					return {
 						url: project.githubRepo,
