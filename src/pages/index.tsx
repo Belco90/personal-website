@@ -15,13 +15,15 @@ import ProfilePicture from '~/components/ProfilePicture'
 import { UserConfig } from '~/user.config'
 
 type SocialNetwork = keyof typeof UserConfig.social
-const socialNetworks: Record<SocialNetwork, { title: string; icon: IconType }> =
-	{
-		email: { title: 'Email', icon: MdEmail },
-		github: { title: 'GitHub', icon: FaGithub },
-		linkedin: { title: 'LinkedIn', icon: FaLinkedin },
-		twitter: { title: 'Twitter', icon: FaTwitter },
-	}
+const SOCIAL_NETWORKS_META: Record<
+	SocialNetwork,
+	{ title: string; icon: IconType }
+> = {
+	email: { title: 'Email', icon: MdEmail },
+	github: { title: 'GitHub', icon: FaGithub },
+	linkedin: { title: 'LinkedIn', icon: FaLinkedin },
+	twitter: { title: 'Twitter', icon: FaTwitter },
+}
 
 const IndexPage = () => {
 	const primaryColor = useColorModeValue('primary.600', 'primary.400')
@@ -79,22 +81,26 @@ const IndexPage = () => {
 						fontSize="2xl"
 						aria-label="Social networks"
 					>
-						{Object.entries(socialNetworks).map(([id, { title, icon }]) => (
-							<Box
-								as="li"
-								key={id}
-								transition="transform 0.3s"
-								_hover={{ transform: 'scale(1.3)' }}
-							>
-								<Link
-									href={UserConfig.social[id as SocialNetwork]}
-									aria-label={title}
-									title={title}
-								>
-									<Icon as={icon} aria-hidden />
-								</Link>
-							</Box>
-						))}
+						{Object.entries(SOCIAL_NETWORKS_META).map(
+							([id, { title, icon }]) => {
+								const socialNetworkKey = id as SocialNetwork
+								const link = UserConfig.social[socialNetworkKey]
+								const href =
+									socialNetworkKey === 'email' ? `mailto:${link}` : link
+								return (
+									<Box
+										as="li"
+										key={socialNetworkKey}
+										transition="transform 0.3s"
+										_hover={{ transform: 'scale(1.3)' }}
+									>
+										<Link href={href} aria-label={title} title={title}>
+											<Icon as={icon} aria-hidden />
+										</Link>
+									</Box>
+								)
+							}
+						)}
 					</Flex>
 				</VStack>
 			</Flex>

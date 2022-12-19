@@ -4,7 +4,7 @@ const UserConfig = {
 		position: 'Frontend Software Engineer',
 	},
 	social: {
-		email: 'mailto:mariobeltran@onmail.com',
+		email: 'me@mario.dev',
 		twitter: 'https://twitter.com/belcoDev',
 		github: 'https://github.com/Belco90',
 		linkedin: 'https://www.linkedin.com/in/mario-ba-90/?locale=en_US',
