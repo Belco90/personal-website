@@ -8,7 +8,12 @@ import {
 	Icon,
 	useColorModeValue,
 } from '@chakra-ui/react'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import {
+	FaGithub,
+	FaLinkedin,
+	FaTwitter,
+	FaStackOverflow,
+} from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 
 import ProfilePicture from '~/components/ProfilePicture'
@@ -23,6 +28,7 @@ const SOCIAL_NETWORKS_META: Record<
 	github: { title: 'GitHub', icon: FaGithub },
 	linkedin: { title: 'LinkedIn', icon: FaLinkedin },
 	twitter: { title: 'Twitter', icon: FaTwitter },
+	stackoverflow: { title: 'StackOverflow', icon: FaStackOverflow },
 }
 
 const IndexPage = () => {
