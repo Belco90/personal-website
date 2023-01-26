@@ -11,7 +11,7 @@ import {
 import {
 	FaGithub,
 	FaLinkedin,
-	FaTwitter,
+	FaMastodon,
 	FaStackOverflow,
 } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
@@ -22,12 +22,12 @@ import { UserConfig } from '~/user.config'
 type SocialNetwork = keyof typeof UserConfig.social
 const SOCIAL_NETWORKS_META: Record<
 	SocialNetwork,
-	{ title: string; icon: IconType }
+	{ title: string; icon: IconType; extra?: Record<string, unknown> }
 > = {
 	email: { title: 'Email', icon: MdEmail },
 	github: { title: 'GitHub', icon: FaGithub },
 	linkedin: { title: 'LinkedIn', icon: FaLinkedin },
-	twitter: { title: 'Twitter', icon: FaTwitter },
+	mastodon: { title: 'Mastodon', icon: FaMastodon, extra: { rel: 'me' } },
 	stackoverflow: { title: 'StackOverflow', icon: FaStackOverflow },
 }
 
@@ -88,7 +88,7 @@ const IndexPage = () => {
 						aria-label="Social networks"
 					>
 						{Object.entries(SOCIAL_NETWORKS_META).map(
-							([id, { title, icon }]) => {
+							([id, { title, icon, extra }]) => {
 								const socialNetworkKey = id as SocialNetwork
 								const link = UserConfig.social[socialNetworkKey]
 								const href =
@@ -100,7 +100,12 @@ const IndexPage = () => {
 										transition="transform 0.3s"
 										_hover={{ transform: 'scale(1.3)' }}
 									>
-										<Link href={href} aria-label={title} title={title}>
+										<Link
+											href={href}
+											aria-label={title}
+											title={title}
+											{...extra}
+										>
 											<Icon as={icon} aria-hidden />
 										</Link>
 									</Box>
