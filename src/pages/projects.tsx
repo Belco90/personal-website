@@ -83,7 +83,10 @@ export const getStaticProps: GetStaticProps<{
 				return { url: githubRepo, data: repo }
 			}
 		})
-	)
+	).catch((reason) => {
+		// eslint-disable-next-line no-console
+		console.log(`Problem fetching github stats: ${String(reason)}`)
+	})
 
 	const downloadsFromDate = format(subDays(new Date(), 7), NPM_STAT_DATE_FORMAT)
 	const downloadsToDate = format(new Date(), NPM_STAT_DATE_FORMAT)
@@ -115,7 +118,10 @@ export const getStaticProps: GetStaticProps<{
 				}
 			}
 		)
-	)
+	).catch((reason) => {
+		// eslint-disable-next-line no-console
+		console.log(`Problem fetching npm stats: ${String(reason)}`)
+	})
 
 	const reposCollection = mapDataArrayToObjectCollection(repos)
 	const packagesCollection = mapDataArrayToObjectCollection(packages)
