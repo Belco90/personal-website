@@ -61,82 +61,80 @@ function mapDataArrayToObjectCollection<DataType>(
 export const getStaticProps: GetStaticProps<{
 	projects: Array<Project>
 }> = async () => {
-	const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN
-	const repos = await Promise.all(
-		PROJECTS_META_INFO.map(async ({ githubRepo }) => {
-			const [owner, repo] = githubRepo.split('/')
-			const repoUrl = `https://api.github.com/repos/${owner}/${repo}`
+	let projects: Array<Project> = []
+	try {
+		const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN
+		const repos = await Promise.all(
+			PROJECTS_META_INFO.map(async ({ githubRepo }) => {
+				const [owner, repo] = githubRepo.split('/')
 
-			const response = await fetch(repoUrl, {
-				headers: {
-					Accept: 'application/vnd.github.v3+json',
-					Authorization: GITHUB_ACCESS_TOKEN
-						? `token ${GITHUB_ACCESS_TOKEN}`
-						: '',
-				},
-			})
-
-			if (response.ok) {
-				const repo: GitHubRepo = (await response.json()) as GitHubRepo
-				return { url: githubRepo, data: repo }
-			} else {
-				// eslint-disable-next-line no-console
-				console.log(
-					`Problem fetching ${repoUrl}: ${response.status} - ${response.statusText}`
-				)
-			}
-		})
-	).catch((reason) => {
-		// eslint-disable-next-line no-console
-		console.log(`Problem fetching github stats: ${String(reason)}`)
-		return []
-	})
-
-	const downloadsFromDate = format(subDays(new Date(), 7), NPM_STAT_DATE_FORMAT)
-	const downloadsToDate = format(new Date(), NPM_STAT_DATE_FORMAT)
-	const packages = await Promise.all(
-		PROJECTS_META_INFO.filter((project) => !!project.packageUrl).map(
-			async (project) => {
-				const packageName = project.packageUrl?.split('/').pop() ?? ''
 				const response = await fetch(
-					`https://npm-stat.com/api/download-counts?package=${packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`
+					`https://api.github.com/repos/${owner}/${repo}`,
+					{
+						headers: {
+							Accept: 'application/vnd.github.v3+json',
+							Authorization: GITHUB_ACCESS_TOKEN
+								? `token ${GITHUB_ACCESS_TOKEN}`
+								: '',
+						},
+					}
 				)
-
-				type PackageDownloads = Record<string, number>
 
 				if (response.ok) {
-					const packageDownloads: PackageDownloads =
-						(await response.json()) as PackageDownloads
-					const totalArray = Object.values(
-						packageDownloads[packageName]
-					) as Array<PackageDownloads[string]>
-					const total = totalArray.reduce(
-						(acc, currentValue) => acc + currentValue,
-						0
+					const repo: GitHubRepo = (await response.json()) as GitHubRepo
+					return { url: githubRepo, data: repo }
+				}
+			})
+		)
+
+		const downloadsFromDate = format(
+			subDays(new Date(), 7),
+			NPM_STAT_DATE_FORMAT
+		)
+		const downloadsToDate = format(new Date(), NPM_STAT_DATE_FORMAT)
+		const packages = await Promise.all(
+			PROJECTS_META_INFO.filter((project) => !!project.packageUrl).map(
+				async (project) => {
+					const packageName = project.packageUrl?.split('/').pop() ?? ''
+					const response = await fetch(
+						`https://npm-stat.com/api/download-counts?package=${packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`
 					)
 
-					return {
-						url: project.githubRepo,
-						data: { downloads: total, url: project.packageUrl ?? '' },
+					type PackageDownloads = Record<string, number>
+
+					if (response.ok) {
+						const packageDownloads: PackageDownloads =
+							(await response.json()) as PackageDownloads
+						const totalArray = Object.values(
+							packageDownloads[packageName]
+						) as Array<PackageDownloads[string]>
+						const total = totalArray.reduce(
+							(acc, currentValue) => acc + currentValue,
+							0
+						)
+
+						return {
+							url: project.githubRepo,
+							data: { downloads: total, url: project.packageUrl ?? '' },
+						}
 					}
 				}
-			}
+			)
 		)
-	).catch((reason) => {
+
+		const reposCollection = mapDataArrayToObjectCollection(repos)
+		const packagesCollection = mapDataArrayToObjectCollection(packages)
+
+		projects = PROJECTS_META_INFO.map(({ githubRepo }) => {
+			return {
+				repo: reposCollection[githubRepo],
+				npmPackage: packagesCollection[githubRepo] ?? null,
+			}
+		}).filter(({ repo }) => !!repo)
+	} catch (e) {
 		// eslint-disable-next-line no-console
-		console.log(`Problem fetching npm stats: ${String(reason)}`)
-		return []
-	})
-
-	const reposCollection = mapDataArrayToObjectCollection(repos)
-	const packagesCollection = mapDataArrayToObjectCollection(packages)
-
-	const projects = PROJECTS_META_INFO.map(({ githubRepo }) => {
-		return {
-			repo: reposCollection[githubRepo],
-			npmPackage: packagesCollection[githubRepo] ?? null,
-		}
-	}).filter(({ repo }) => !!repo)
+		console.log(`Something wrong fetching stats: ${String(e)}`)
+	}
 
 	return {
 		props: {
