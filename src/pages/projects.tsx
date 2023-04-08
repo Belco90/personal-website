@@ -65,22 +65,25 @@ export const getStaticProps: GetStaticProps<{
 	const repos = await Promise.all(
 		PROJECTS_META_INFO.map(async ({ githubRepo }) => {
 			const [owner, repo] = githubRepo.split('/')
+			const repoUrl = `https://api.github.com/repos/${owner}/${repo}`
 
-			const response = await fetch(
-				`https://api.github.com/repos/${owner}/${repo}`,
-				{
-					headers: {
-						Accept: 'application/vnd.github.v3+json',
-						Authorization: GITHUB_ACCESS_TOKEN
-							? `token ${GITHUB_ACCESS_TOKEN}`
-							: '',
-					},
-				}
-			)
+			const response = await fetch(repoUrl, {
+				headers: {
+					Accept: 'application/vnd.github.v3+json',
+					Authorization: GITHUB_ACCESS_TOKEN
+						? `token ${GITHUB_ACCESS_TOKEN}`
+						: '',
+				},
+			})
 
 			if (response.ok) {
 				const repo: GitHubRepo = (await response.json()) as GitHubRepo
 				return { url: githubRepo, data: repo }
+			} else {
+				// eslint-disable-next-line no-console
+				console.log(
+					`Problem fetching ${repoUrl}: ${response.status} - ${response.statusText}`
+				)
 			}
 		})
 	).catch((reason) => {
