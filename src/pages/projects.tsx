@@ -11,7 +11,7 @@ const PROJECTS_META_INFO: Array<{ githubRepo: string; packageUrl?: string }> = [
 		githubRepo: 'testing-library/eslint-plugin-testing-library',
 		packageUrl: 'https://www.npmjs.com/package/eslint-plugin-testing-library',
 	},
-	{ githubRepo: 'Belco90/octoclairvoyant' },
+	{ githubRepo: 'octoclairvoyant/octoclairvoyant-webapp' },
 	{ githubRepo: 'Belco90/react-advanced-patterns-components' },
 	{ githubRepo: 'Belco90/mastodonte-js' },
 ]
