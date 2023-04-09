@@ -67,18 +67,23 @@ export const getStaticProps: GetStaticProps<{
 			const [owner, repo] = githubRepo.split('/')
 			const repoUrl = `https://api.github.com/repos/${owner}/${repo}`
 
-			const response = await fetch(repoUrl, {
-				headers: {
-					Accept: 'application/vnd.github.v3+json',
-					Authorization: GITHUB_ACCESS_TOKEN
-						? `token ${GITHUB_ACCESS_TOKEN}`
-						: '',
-				},
-			})
+			try {
+				const response = await fetch(repoUrl, {
+					headers: {
+						Accept: 'application/vnd.github.v3+json',
+						Authorization: GITHUB_ACCESS_TOKEN
+							? `token ${GITHUB_ACCESS_TOKEN}`
+							: '',
+					},
+				})
 
-			if (response.ok) {
-				const repo: GitHubRepo = (await response.json()) as GitHubRepo
-				return { url: githubRepo, data: repo }
+				if (response.ok) {
+					const repo: GitHubRepo = (await response.json()) as GitHubRepo
+					return { url: githubRepo, data: repo }
+				}
+			} catch (e) {
+				// eslint-disable-next-line no-console
+				console.log(`Problem fetching ${githubRepo}: ${String(e)}`)
 			}
 		})
 	)
