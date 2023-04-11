@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@chakra-ui/next-js':
+    specifier: ^2.1.2
+    version: 2.1.2(@chakra-ui/react@2.5.5)(@emotion/react@11.10.6)(next@13.3.0)(react@18.2.0)
   '@chakra-ui/react':
     specifier: ^2.5.5
     version: 2.5.5(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.33)(framer-motion@10.11.2)(react-dom@18.2.0)(react@18.2.0)
@@ -665,6 +668,24 @@ packages:
       react-remove-scroll: 2.5.5(@types/react@18.0.33)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /@chakra-ui/next-js@2.1.2(@chakra-ui/react@2.5.5)(@emotion/react@11.10.6)(next@13.3.0)(react@18.2.0):
+    resolution:
+      {
+        integrity: sha512-fbTeuFDBBk72HQ2UgtKIAMdT7Zuoz9icQIxZMGJMuzbB91gHHs5ZVUB965qPB0lg9UkzqQdb/lmT13BYa0PG0A==,
+      }
+    peerDependencies:
+      '@chakra-ui/react': '>=2.4.0'
+      '@emotion/react': '>=11'
+      next: '>=13'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/react': 2.5.5(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.0.33)(framer-motion@10.11.2)(react-dom@18.2.0)(react@18.2.0)
+      '@emotion/cache': 11.10.7
+      '@emotion/react': 11.10.6(@types/react@18.0.33)(react@18.2.0)
+      next: 13.3.0(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
     dev: false
 
   /@chakra-ui/number-input@2.0.19(@chakra-ui/system@2.5.5)(react@18.2.0):
