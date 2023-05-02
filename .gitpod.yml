@@ -1,5 +1,6 @@
 tasks:
-  - init: pnpm install
+  - before: corepack enable
+    init: pnpm install
     command: pnpm dev
 ports:
   - port: 3000
