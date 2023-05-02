@@ -34,7 +34,7 @@
 		"lint": "next lint",
 		"lint:fix": "pnpm lint -- --fix",
 		"format": "prettier --write --ignore-unknown src \"*.{json,js,md}\"",
-		"gen:theme-typings": "chakra-cli tokens src/theme.ts --strict-component-types",
+		"gen:theme-typings": "chakra-cli tokens src/theme.ts --strict-component-types --strict-token-types",
 		"postinstall": "pnpm gen:theme-typings",
 		"prepare": "is-ci || husky install"
 	},
