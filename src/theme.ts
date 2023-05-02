@@ -1,6 +1,7 @@
 import type { Dict } from '@chakra-ui/utils'
 import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
+import { Karla, Rubik } from 'next/font/google'
 
 const primaryColor = {
 	50: '#eaf7f0',
@@ -15,6 +16,9 @@ const primaryColor = {
 	900: '#071105',
 }
 
+const karlaFont = Karla({ subsets: ['latin'], weight: ['400', '500', '700'] })
+const rubikFont = Rubik({ subsets: ['latin'], weight: ['400', '500', '700'] })
+
 const theme = extendTheme({
 	config: {
 		useSystemColorMode: true,
@@ -23,8 +27,8 @@ const theme = extendTheme({
 		primary: primaryColor,
 	},
 	fonts: {
-		heading: '"Rubik", sans-serif;',
-		body: '"Karla", sans-serif;',
+		heading: rubikFont.style.fontFamily,
+		body: karlaFont.style.fontFamily,
 	},
 	styles: {
 		global: {
