@@ -1,4 +1,3 @@
-import type { GitHubRepo, NpmPackage } from '~/models'
 import type { LinkBoxProps } from '@chakra-ui/react'
 import {
 	Box,
@@ -13,6 +12,8 @@ import {
 	useToken,
 } from '@chakra-ui/react'
 import { FaRegStar, FaNpm } from 'react-icons/fa'
+
+import type { GitHubRepo, NpmPackage } from '~/models'
 
 interface CustomProps {
 	repo: GitHubRepo

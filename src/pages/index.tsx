@@ -1,4 +1,3 @@
-import type { IconType } from 'react-icons'
 import {
 	Box,
 	Flex,
@@ -7,7 +6,9 @@ import {
 	VStack,
 	Icon,
 	useColorModeValue,
+	useToken,
 } from '@chakra-ui/react'
+import type { IconType } from 'react-icons'
 import {
 	FaGithub,
 	FaLinkedin,
@@ -31,8 +32,50 @@ const SOCIAL_NETWORKS_META: Record<
 	stackoverflow: { title: 'StackOverflow', icon: FaStackOverflow },
 }
 
+const convertHexToRgb = (hex: string): [number, number, number] | null => {
+	const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
+	hex = hex.replace(
+		shorthandRegex,
+		(_, r: string, g: string, b: string) => r + r + g + g + b + b,
+	)
+
+	const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+	return result
+		? [
+				parseInt(result[1], 16),
+				parseInt(result[2], 16),
+				parseInt(result[3], 16),
+		  ]
+		: null
+}
+
+const getCoolBoxShadow = (hexColor: string): string => {
+	const BASE_POSITION = 5
+	const OPACITY_ELEMENTS: Array<number> = [0.4, 0.3, 0.2, 0.1, 0.05]
+	const boxShadowElements: Array<string> = []
+
+	for (let i = 0; i < 5; i++) {
+		const position = (i + 1) * BASE_POSITION
+		const opacity = OPACITY_ELEMENTS[i]
+		const rgbColor = convertHexToRgb(hexColor) ?? [0, 0, 0]
+		boxShadowElements.push(
+			`rgba(${rgbColor.join(', ')}, ${opacity}) -${position}px ${position}px`,
+		)
+	}
+
+	// return 'rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;'
+	return boxShadowElements.join(', ') + ';'
+}
+
 const IndexPage = () => {
-	const primaryColor = useColorModeValue('primary.600', 'primary.400')
+	const [primaryLightToken, primaryDarkToken] = useToken('colors', [
+		'primary.500',
+		'primary.300',
+	])
+	const primaryColorValue = useColorModeValue(
+		primaryLightToken,
+		primaryDarkToken,
+	)
 
 	return (
 		<>
@@ -47,12 +90,11 @@ const IndexPage = () => {
 					spacing={12}
 				>
 					<Box>
-						<Box
-							bgGradient={`radial(${primaryColor} 1px, transparent 1px)`}
-							backgroundSize="calc(7 * 1px) calc(7 * 1px)"
-							rounded="full"
-						>
-							<Box transform="translate(30px, -30px)">
+						<Box rounded="full" boxShadow={getCoolBoxShadow(primaryColorValue)}>
+							<Box
+								rounded="full"
+								boxShadow="rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;"
+							>
 								<ProfilePicture priority />
 							</Box>
 						</Box>
@@ -110,7 +152,7 @@ const IndexPage = () => {
 										</Link>
 									</Box>
 								)
-							}
+							},
 						)}
 					</Flex>
 				</VStack>

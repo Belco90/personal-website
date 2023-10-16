@@ -1,9 +1,55 @@
 module.exports = {
 	root: true,
-	extends: ['eslint:recommended', 'next/core-web-vitals', 'prettier'],
+	extends: [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended-type-checked',
+		'plugin:@typescript-eslint/stylistic-type-checked',
+		'next/core-web-vitals',
+		'prettier',
+	],
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		tsconfigRootDir: __dirname,
+		project: true,
+	},
 	rules: {
-		// JS
+		// General
 		'no-console': 'warn',
+
+		// TypeScript
+		'@typescript-eslint/array-type': [
+			'warn',
+			{
+				default: 'generic',
+			},
+		],
+		'@typescript-eslint/no-floating-promises': 'error',
+		'@typescript-eslint/consistent-type-exports': [
+			'error',
+			{
+				fixMixedExportsWithInlineTypeSpecifier: true,
+			},
+		],
+		'@typescript-eslint/consistent-type-imports': [
+			'error',
+			{
+				fixStyle: 'inline-type-imports',
+			},
+		],
+		'@typescript-eslint/no-explicit-any': 'error',
+
+		// Import
+		'import/newline-after-import': 'error',
+		'import/order': [
+			'error',
+			{
+				'newlines-between': 'always',
+				alphabetize: {
+					order: 'asc',
+					caseInsensitive: false,
+				},
+			},
+		],
 
 		// React
 		'react/self-closing-comp': 'warn',
@@ -11,38 +57,8 @@ module.exports = {
 
 	overrides: [
 		{
-			// TypeScript
-			files: ['**/*.ts?(x)'],
-			parserOptions: {
-				tsconfigRootDir: __dirname,
-				project: ['./tsconfig.json'],
-			},
-			extends: [
-				'plugin:@typescript-eslint/recommended',
-				'plugin:@typescript-eslint/recommended-requiring-type-checking',
-			],
-			rules: {
-				'@typescript-eslint/array-type': [
-					'warn',
-					{
-						default: 'generic',
-					},
-				],
-				'@typescript-eslint/no-floating-promises': 'error',
-				'@typescript-eslint/consistent-type-exports': [
-					'error',
-					{
-						fixMixedExportsWithInlineTypeSpecifier: true,
-					},
-				],
-				'@typescript-eslint/consistent-type-imports': [
-					'error',
-					{
-						fixStyle: 'inline-type-imports',
-					},
-				],
-				'@typescript-eslint/no-explicit-any': 'error',
-			},
+			files: ['*.js'],
+			extends: ['plugin:@typescript-eslint/disable-type-checked'],
 		},
 	],
 }

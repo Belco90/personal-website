@@ -1,6 +1,6 @@
-import type { Dict } from '@chakra-ui/utils'
 import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
+import type { Dict } from '@chakra-ui/utils'
 
 const primaryColor = {
 	50: '#eaf7f0',
@@ -23,8 +23,8 @@ const theme = extendTheme({
 		primary: primaryColor,
 	},
 	fonts: {
-		heading: '"Rubik", sans-serif;',
-		body: '"Karla", sans-serif;',
+		heading: 'var(--font-rubik)',
+		body: 'var(--font-karla)',
 	},
 	styles: {
 		global: {
@@ -38,7 +38,7 @@ const theme = extendTheme({
 					return {
 						bgGradient: mode(
 							'linear(to-br, primary.400, primary.700)',
-							'linear(to-br, primary.200, primary.400)'
+							'linear(to-br, primary.200, primary.400)',
 						)(props),
 						bgClip: 'text',
 					}

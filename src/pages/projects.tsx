@@ -1,10 +1,11 @@
 import { Container, Heading, VStack } from '@chakra-ui/react'
-import ProjectCard from '~/components/ProjectCard'
-import { UserConfig } from '~/user.config'
-import { NextSeo } from 'next-seo'
 import { subDays, format } from 'date-fns'
-import type { GitHubRepo, Project } from '~/models'
 import type { GetStaticProps } from 'next'
+import { NextSeo } from 'next-seo'
+
+import ProjectCard from '~/components/ProjectCard'
+import type { GitHubRepo, Project } from '~/models'
+import { UserConfig } from '~/user.config'
 
 const PROJECTS_META_INFO: Array<{ githubRepo: string; packageUrl?: string }> = [
 	{
@@ -46,7 +47,7 @@ const ProjectsPage = ({ projects }: ProjectsPageProps) => {
 }
 
 function mapDataArrayToObjectCollection<DataType>(
-	arr: Array<{ url: string; data: DataType } | undefined>
+	arr: Array<{ url: string; data: DataType } | undefined>,
 ): Record<string, DataType> {
 	const collection: Record<string, DataType> = {}
 	for (const filteredArrItem of arr) {
@@ -85,7 +86,7 @@ export const getStaticProps: GetStaticProps<{
 				// eslint-disable-next-line no-console
 				console.log(`Problem fetching ${githubRepo}: ${String(e)}`)
 			}
-		})
+		}),
 	)
 
 	const downloadsFromDate = format(subDays(new Date(), 7), NPM_STAT_DATE_FORMAT)
@@ -95,7 +96,7 @@ export const getStaticProps: GetStaticProps<{
 			async (project) => {
 				const packageName = project.packageUrl?.split('/').pop() ?? ''
 				const response = await fetch(
-					`https://npm-stat.com/api/download-counts?package=${packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`
+					`https://npm-stat.com/api/download-counts?package=${packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`,
 				)
 
 				type PackageDownloads = Record<string, number>
@@ -104,11 +105,11 @@ export const getStaticProps: GetStaticProps<{
 					const packageDownloads: PackageDownloads =
 						(await response.json()) as PackageDownloads
 					const totalArray = Object.values(
-						packageDownloads[packageName]
+						packageDownloads[packageName],
 					) as Array<PackageDownloads[string]>
 					const total = totalArray.reduce(
 						(acc, currentValue) => acc + currentValue,
-						0
+						0,
 					)
 
 					return {
@@ -116,8 +117,8 @@ export const getStaticProps: GetStaticProps<{
 						data: { downloads: total, url: project.packageUrl ?? '' },
 					}
 				}
-			}
-		)
+			},
+		),
 	)
 
 	const reposCollection = mapDataArrayToObjectCollection(repos)
