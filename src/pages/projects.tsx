@@ -1,10 +1,11 @@
 import { Container, Heading, VStack } from '@chakra-ui/react'
-import ProjectCard from '~/components/ProjectCard'
-import { UserConfig } from '~/user.config'
-import { NextSeo } from 'next-seo'
 import { subDays, format } from 'date-fns'
-import type { GitHubRepo, Project } from '~/models'
 import type { GetStaticProps } from 'next'
+import { NextSeo } from 'next-seo'
+
+import ProjectCard from '~/components/ProjectCard'
+import type { GitHubRepo, Project } from '~/models'
+import { UserConfig } from '~/user.config'
 
 const PROJECTS_META_INFO: Array<{ githubRepo: string; packageUrl?: string }> = [
 	{

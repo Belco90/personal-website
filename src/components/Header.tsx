@@ -11,8 +11,8 @@ import {
 } from '@chakra-ui/react'
 import type { LinkProps as NextLinkProps } from 'next/link'
 import NextLink from 'next/link'
-
 import { useRouter } from 'next/router'
+
 import ColorModeButton from '~/components/ColorModeButton'
 
 interface HeaderLinkProps extends Omit<ChakraLinkProps, 'href'> {

@@ -1,4 +1,3 @@
-import type { IconType } from 'react-icons'
 import {
 	Box,
 	Flex,
@@ -9,6 +8,7 @@ import {
 	useColorModeValue,
 	useToken,
 } from '@chakra-ui/react'
+import type { IconType } from 'react-icons'
 import {
 	FaGithub,
 	FaLinkedin,

@@ -1,6 +1,6 @@
-import type { Dict } from '@chakra-ui/utils'
 import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
+import type { Dict } from '@chakra-ui/utils'
 
 const primaryColor = {
 	50: '#eaf7f0',

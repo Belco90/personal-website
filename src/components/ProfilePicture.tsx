@@ -1,9 +1,9 @@
+import { Box } from '@chakra-ui/react'
 import type { ImageProps } from 'next/image'
 import Image from 'next/image'
+import type { CSSProperties } from 'react'
 
 import imgSrc from '@app-public/profile-picture.jpg'
-import type { CSSProperties } from 'react'
-import { Box } from '@chakra-ui/react'
 
 const extraStyle: CSSProperties = { borderRadius: '100%' }
 

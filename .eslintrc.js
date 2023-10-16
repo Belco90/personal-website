@@ -38,6 +38,19 @@ module.exports = {
 		],
 		'@typescript-eslint/no-explicit-any': 'error',
 
+		// Import
+		'import/newline-after-import': 'error',
+		'import/order': [
+			'error',
+			{
+				'newlines-between': 'always',
+				alphabetize: {
+					order: 'asc',
+					caseInsensitive: false,
+				},
+			},
+		],
+
 		// React
 		'react/self-closing-comp': 'warn',
 	},
