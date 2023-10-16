@@ -1,7 +1,8 @@
 'use client'
 
-import { type FC, type ReactNode } from 'react'
 import { ColorModeScript } from '@chakra-ui/react'
+import { type FC, type ReactNode } from 'react'
+
 import Providers from '~/app/Providers'
 
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
