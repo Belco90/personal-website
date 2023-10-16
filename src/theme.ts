@@ -38,7 +38,7 @@ const theme = extendTheme({
 					return {
 						bgGradient: mode(
 							'linear(to-br, primary.400, primary.700)',
-							'linear(to-br, primary.200, primary.400)'
+							'linear(to-br, primary.200, primary.400)',
 						)(props),
 						bgClip: 'text',
 					}

@@ -4,7 +4,7 @@ const { ESLint } = require('eslint')
 const removeIgnoredFiles = async (files) => {
 	const eslint = new ESLint()
 	const ignoredFiles = await Promise.all(
-		files.map((file) => eslint.isPathIgnored(file))
+		files.map((file) => eslint.isPathIgnored(file)),
 	)
 	return files.filter((_, i) => !ignoredFiles[i])
 }

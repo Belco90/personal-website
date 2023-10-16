@@ -36,7 +36,7 @@ const convertHexToRgb = (hex: string): [number, number, number] | null => {
 	const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
 	hex = hex.replace(
 		shorthandRegex,
-		(_, r: string, g: string, b: string) => r + r + g + g + b + b
+		(_, r: string, g: string, b: string) => r + r + g + g + b + b,
 	)
 
 	const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
@@ -59,7 +59,7 @@ const getCoolBoxShadow = (hexColor: string): string => {
 		const opacity = OPACITY_ELEMENTS[i]
 		const rgbColor = convertHexToRgb(hexColor) ?? [0, 0, 0]
 		boxShadowElements.push(
-			`rgba(${rgbColor.join(', ')}, ${opacity}) -${position}px ${position}px`
+			`rgba(${rgbColor.join(', ')}, ${opacity}) -${position}px ${position}px`,
 		)
 	}
 
@@ -74,7 +74,7 @@ const IndexPage = () => {
 	])
 	const primaryColorValue = useColorModeValue(
 		primaryLightToken,
-		primaryDarkToken
+		primaryDarkToken,
 	)
 
 	return (
@@ -152,7 +152,7 @@ const IndexPage = () => {
 										</Link>
 									</Box>
 								)
-							}
+							},
 						)}
 					</Flex>
 				</VStack>
