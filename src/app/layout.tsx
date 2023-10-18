@@ -3,7 +3,9 @@ import { type Metadata } from 'next'
 import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode } from 'react'
 
-import Providers from '~/app/Providers'
+import MainLayout from './MainLayout'
+import Providers from './Providers'
+
 import { UserConfig } from '~/user.config'
 
 const metadata: Metadata = {
@@ -42,7 +44,9 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 	<html lang="en" className={`${rubikFont.variable} ${karlaFont.variable}`}>
 		<body>
 			<ColorModeScript />
-			<Providers>{children}</Providers>
+			<Providers>
+				<MainLayout>{children}</MainLayout>
+			</Providers>
 		</body>
 	</html>
 )
