@@ -1,5 +1,6 @@
 import { ColorModeScript } from '@chakra-ui/react'
 import { type Metadata } from 'next'
+import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode } from 'react'
 
 import Providers from '~/app/Providers'
@@ -26,8 +27,19 @@ const metadata: Metadata = {
 	},
 }
 
+const rubikFont = Rubik({
+	subsets: ['latin'],
+	weight: ['400', '500', '700'],
+	variable: '--font-rubik',
+})
+const karlaFont = Karla({
+	subsets: ['latin'],
+	weight: ['400', '500', '700'],
+	variable: '--font-karla',
+})
+
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
-	<html lang="en">
+	<html lang="en" className={`${rubikFont.variable} ${karlaFont.variable}`}>
 		<body>
 			<ColorModeScript />
 			<Providers>{children}</Providers>
