@@ -1,5 +1,9 @@
-function HomePage() {
-	return <div>Hi there! I am using the Next.js App router</div>
+import { type FC } from 'react'
+
+import HomePage from './home-page'
+
+const Page: FC = () => {
+	return <HomePage />
 }
 
-export default HomePage
+export default Page
