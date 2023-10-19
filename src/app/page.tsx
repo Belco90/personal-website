@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 
-import HomePage from './home-page'
+import HomePage from './HomePage'
 
 const Page: FC = () => {
 	return <HomePage />
