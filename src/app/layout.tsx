@@ -19,14 +19,6 @@ const metadata: Metadata = {
 		type: 'website',
 		url: '/',
 		title: UserConfig.author.name,
-		images: [
-			{
-				url: 'https://1.gravatar.com/avatar/35503abe571959f5a279f3f84bf7c28a?size=256',
-				width: 200,
-				height: 200,
-				alt: 'Smiling Mario',
-			},
-		],
 	},
 }
 
