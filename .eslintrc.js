@@ -17,6 +17,8 @@ module.exports = {
 		'no-console': 'warn',
 
 		// TypeScript
+		'@typescript-eslint/prefer-nullish-coalescing': 'off',
+		'@typescript-eslint/unbound-method': 'off',
 		'@typescript-eslint/array-type': [
 			'warn',
 			{

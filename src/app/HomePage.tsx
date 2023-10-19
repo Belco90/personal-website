@@ -1,3 +1,5 @@
+'use client'
+
 import {
 	Box,
 	Flex,
@@ -67,7 +69,7 @@ const getCoolBoxShadow = (hexColor: string): string => {
 	return boxShadowElements.join(', ') + ';'
 }
 
-const IndexPage = () => {
+const HomePage = () => {
 	const [primaryLightToken, primaryDarkToken] = useToken('colors', [
 		'primary.500',
 		'primary.300',
@@ -161,4 +163,4 @@ const IndexPage = () => {
 	)
 }
 
-export default IndexPage
+export default HomePage
