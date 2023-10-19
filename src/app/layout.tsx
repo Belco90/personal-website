@@ -5,6 +5,7 @@ import { type FC, type ReactNode } from 'react'
 
 import MainLayout from './MainLayout'
 import Providers from './Providers'
+import VercelAnalytics from './VercelAnalytics'
 
 import { UserConfig } from '~/user.config'
 
@@ -44,6 +45,7 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 	<html lang="en" className={`${rubikFont.variable} ${karlaFont.variable}`}>
 		<body>
 			<ColorModeScript />
+			<VercelAnalytics />
 			<Providers>
 				<MainLayout>{children}</MainLayout>
 			</Providers>
