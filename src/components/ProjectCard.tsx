@@ -1,3 +1,5 @@
+'use client'
+
 import type { LinkBoxProps } from '@chakra-ui/react'
 import {
 	Box,
