@@ -1,7 +1,3 @@
-'use client'
-
-// TODO: can remove the use client?
-
 import { Container, Heading, VStack } from '@chakra-ui/react'
 
 import ProjectCard from '~/components/ProjectCard'
