@@ -1,5 +1,4 @@
 import { ColorModeScript } from '@chakra-ui/react'
-import { type Metadata } from 'next'
 import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode } from 'react'
 
@@ -7,19 +6,16 @@ import MainLayout from './MainLayout'
 import Providers from './Providers'
 import VercelAnalytics from './VercelAnalytics'
 
+import { openGraph } from '~/app/shared-metadata'
 import { UserConfig } from '~/user.config'
 
-const metadata: Metadata = {
+export const metadata = {
 	title: {
 		template: `%s | ${UserConfig.author.name}`,
 		default: UserConfig.author.name,
 	},
 	description: UserConfig.author.position,
-	openGraph: {
-		type: 'website',
-		url: '/',
-		title: UserConfig.author.name,
-	},
+	openGraph: { ...openGraph },
 }
 
 const rubikFont = Rubik({
@@ -46,4 +42,3 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 )
 
 export default RootLayout
-export { metadata }
