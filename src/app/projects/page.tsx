@@ -2,7 +2,9 @@ import { format, subDays } from 'date-fns'
 import { type FC } from 'react'
 
 import ProjectsPage from '~/app/projects/ProjectsPage'
+import { openGraph } from '~/app/shared-metadata'
 import { type GitHubRepo, type Project } from '~/models'
+import { UserConfig } from '~/user.config'
 
 const PROJECTS_META_INFO: Array<{ githubRepo: string; packageUrl?: string }> = [
 	{
@@ -15,11 +17,6 @@ const PROJECTS_META_INFO: Array<{ githubRepo: string; packageUrl?: string }> = [
 ]
 
 const NPM_STAT_DATE_FORMAT = 'y-MM-dd'
-
-// TODO: set metadata
-// title="Projects"
-// description={`${UserConfig.author.name}'s Projects`}
-// openGraph={{ description: `${UserConfig.author.name}'s Projects` }}
 
 function mapDataArrayToObjectCollection<DataType>(
 	arr: Array<{ url: string; data: DataType } | undefined>,
@@ -108,6 +105,17 @@ async function getProjects(): Promise<Array<Project>> {
 }
 
 export const revalidate = 5
+
+const metaDescription = `${UserConfig.author.name}'s OSS and side projects`
+export const metadata = {
+	title: 'Projects',
+	description: metaDescription,
+	openGraph: {
+		...openGraph,
+		url: '/projects',
+		title: metaDescription,
+	},
+}
 
 const Page: FC = async () => {
 	const projects = await getProjects()
