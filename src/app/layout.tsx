@@ -2,8 +2,8 @@ import { ColorModeScript } from '@chakra-ui/react'
 import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode } from 'react'
 
-import MainLayout from './MainLayout'
 import Providers from './Providers'
+import UILayout from './UILayout'
 import VercelAnalytics from './VercelAnalytics'
 
 import { openGraph } from '~/app/shared-metadata'
@@ -35,7 +35,7 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 			<ColorModeScript />
 			<VercelAnalytics />
 			<Providers>
-				<MainLayout>{children}</MainLayout>
+				<UILayout>{children}</UILayout>
 			</Providers>
 		</body>
 	</html>
