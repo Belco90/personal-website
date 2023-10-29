@@ -1,57 +1,53 @@
-import type { LinkProps as ChakraLinkProps, BoxProps } from '@chakra-ui/react'
+'use client'
+
+import { type LinkProps, Link } from '@chakra-ui/next-js'
 import {
 	Box,
-	Link,
-	HStack,
-	Flex,
+	type BoxProps,
 	Container,
+	Flex,
+	HStack,
 	Spacer,
 	useColorModeValue,
 	useToken,
 } from '@chakra-ui/react'
-import type { LinkProps as NextLinkProps } from 'next/link'
-import NextLink from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
+import { type FC } from 'react'
 
 import ColorModeButton from '~/components/ColorModeButton'
 
-interface HeaderLinkProps extends Omit<ChakraLinkProps, 'href'> {
-	href: NextLinkProps['href']
-}
-
-const HeaderLink = ({ href, children, ...remaining }: HeaderLinkProps) => {
-	const router = useRouter()
+const HeaderLink = ({ href, children, ...remaining }: LinkProps) => {
+	const pathname = usePathname()
 	const activeLinkColor = useColorModeValue('primary.600', 'primary.300')
 	const inactiveLinkColor = useColorModeValue('gray.700', 'gray.200')
 
-	const isActive = router.asPath === href
+	const isActive = pathname === href
 
 	return (
-		<NextLink href={href} passHref legacyBehavior>
-			<Link
-				{...remaining}
-				textDecorationLine={isActive ? 'underline' : 'none'}
-				textDecorationColor={isActive ? activeLinkColor : 'none'}
-				textDecorationThickness="2px"
-				textUnderlineOffset="2px"
-				color={isActive ? activeLinkColor : inactiveLinkColor}
-				fontSize="lg"
-				p={1}
-				_hover={{
-					color: 'primary.700',
-					textDecorationColor: 'current',
-					bgColor: 'primary.100',
-					borderRadius: 2,
-				}}
-				aria-current={isActive ? 'page' : undefined}
-			>
-				{children}
-			</Link>
-		</NextLink>
+		<Link
+			href={href}
+			{...remaining}
+			textDecorationLine={isActive ? 'underline' : 'none'}
+			textDecorationColor={isActive ? activeLinkColor : 'none'}
+			textDecorationThickness="2px"
+			textUnderlineOffset="2px"
+			color={isActive ? activeLinkColor : inactiveLinkColor}
+			fontSize="lg"
+			p={1}
+			_hover={{
+				color: 'primary.700',
+				textDecorationColor: 'current',
+				bgColor: 'primary.100',
+				borderRadius: 2,
+			}}
+			aria-current={isActive ? 'page' : undefined}
+		>
+			{children}
+		</Link>
 	)
 }
 
-const Header = (props: BoxProps) => {
+const Header: FC<BoxProps> = (props) => {
 	const bgColor = useColorModeValue('white', 'gray.700')
 	const [primaryFromLight, primaryToLight, primaryFromDark, primaryToDark] =
 		useToken('colors', [
