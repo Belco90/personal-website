@@ -3,7 +3,6 @@ import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode } from 'react'
 
 import Providers from './Providers'
-import UILayout from './UILayout'
 import VercelAnalytics from './VercelAnalytics'
 
 import { openGraph } from '~/app/shared-metadata'
@@ -36,9 +35,7 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 		<body>
 			<ColorModeScript />
 			<VercelAnalytics />
-			<Providers>
-				<UILayout>{children}</UILayout>
-			</Providers>
+			<Providers>{children}</Providers>
 		</body>
 	</html>
 )

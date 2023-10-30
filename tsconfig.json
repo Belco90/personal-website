@@ -3,6 +3,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"~/*": ["src/*"],
+			"@/styled-system/*": ["styled-system/*"],
+			"@/theme/*": ["theme/*"],
 			"@app-public/*": ["./public/*"]
 		},
 		"allowJs": true,
