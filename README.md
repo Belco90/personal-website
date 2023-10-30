@@ -4,4 +4,4 @@ Built with:
 
 - React
 - Next.js + Vercel
-- Chakra UI
+- [Panda](https://panda-css.com/) + [Ark](https://ark-ui.com/)
