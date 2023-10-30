@@ -9,6 +9,8 @@ import VercelAnalytics from './VercelAnalytics'
 import { openGraph } from '~/app/shared-metadata'
 import { UserConfig } from '~/user.config'
 
+import './global.css'
+
 export const metadata = {
 	title: {
 		template: `%s | ${UserConfig.author.name}`,
