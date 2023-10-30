@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { defineConfig } from '@pandacss/dev'
+
+import { globalCss } from '@/theme/global-css'
+import { textStyles } from '@/theme/text-styles'
 
 export default defineConfig({
 	// Whether to use css reset
@@ -15,14 +19,20 @@ export default defineConfig({
 
 	// Useful for theme customization
 	theme: {
-		extend: {},
+		extend: {
+			textStyles,
+			tokens: {
+				fonts: {
+					heading: { value: 'var(--font-rubik)' },
+					body: { value: 'var(--font-karla)' },
+				},
+			},
+		},
 	},
 
 	// The output directory for your css system
 	outdir: 'styled-system',
 
 	jsxFramework: 'react',
-	globalCss: {
-		'html, body': { height: '100%' },
-	},
+	globalCss,
 })
