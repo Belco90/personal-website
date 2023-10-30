@@ -1,18 +1,12 @@
 import { type FC } from 'react'
 
-import { css } from '@/styled-system/css'
+import { styled } from '@/styled-system/jsx'
 
 const HomePage: FC = () => {
 	return (
-		<div
-			className={css({
-				fontSize: '2xl',
-				fontWeight: 'bold',
-				color: 'amber.600',
-			})}
-		>
+		<styled.div fontSize="2xl" fontWeight="bold" color="emerald.500">
 			Hello 🐼!
-		</div>
+		</styled.div>
 	)
 }
 
