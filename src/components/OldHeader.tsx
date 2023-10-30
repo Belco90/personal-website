@@ -47,7 +47,7 @@ const HeaderLink = ({ href, children, ...remaining }: LinkProps) => {
 	)
 }
 
-const Header: FC<BoxProps> = (props) => {
+const OldHeader: FC<BoxProps> = (props) => {
 	const bgColor = useColorModeValue('white', 'gray.700')
 	const [primaryFromLight, primaryToLight, primaryFromDark, primaryToDark] =
 		useToken('colors', [
@@ -98,4 +98,4 @@ const Header: FC<BoxProps> = (props) => {
 	)
 }
 
-export default Header
+export default OldHeader

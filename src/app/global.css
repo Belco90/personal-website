@@ -1,1 +1,10 @@
 @layer reset, base, tokens, recipes, utilities;
+
+button,
+[role='button'] {
+	cursor: pointer;
+}
+
+:disabled {
+	cursor: default;
+}

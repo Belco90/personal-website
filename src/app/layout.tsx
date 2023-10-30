@@ -1,9 +1,10 @@
 import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode } from 'react'
 
+import Providers from './Providers'
 import VercelAnalytics from './VercelAnalytics'
+import { openGraph } from './shared-metadata'
 
-import { openGraph } from '~/app/shared-metadata'
 import UILayout from '~/components/UILayout'
 import { UserConfig } from '~/user.config'
 
@@ -30,10 +31,16 @@ const karlaFont = Karla({
 })
 
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
-	<html lang="en" className={`${rubikFont.variable} ${karlaFont.variable}`}>
+	<html
+		lang="en"
+		className={`${rubikFont.variable} ${karlaFont.variable}`}
+		suppressHydrationWarning
+	>
 		<body>
 			<VercelAnalytics />
-			<UILayout>{children}</UILayout>
+			<Providers>
+				<UILayout>{children}</UILayout>
+			</Providers>
 		</body>
 	</html>
 )
