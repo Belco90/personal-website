@@ -3,7 +3,7 @@ import { type FC, type ReactNode } from 'react'
 
 import Header from '~/components/Header'
 
-const UILayout: FC<{ children: ReactNode }> = ({ children }) => {
+const OldUILayout: FC<{ children: ReactNode }> = ({ children }) => {
 	return (
 		<Flex height="100%" direction="column">
 			<Header shadow="lg" width="full" />
@@ -14,4 +14,4 @@ const UILayout: FC<{ children: ReactNode }> = ({ children }) => {
 	)
 }
 
-export default UILayout
+export default OldUILayout

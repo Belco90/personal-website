@@ -1,11 +1,10 @@
-import { ColorModeScript } from '@chakra-ui/react'
 import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode } from 'react'
 
-import Providers from './Providers'
 import VercelAnalytics from './VercelAnalytics'
 
 import { openGraph } from '~/app/shared-metadata'
+import UILayout from '~/components/UILayout'
 import { UserConfig } from '~/user.config'
 
 import './global.css'
@@ -33,9 +32,8 @@ const karlaFont = Karla({
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 	<html lang="en" className={`${rubikFont.variable} ${karlaFont.variable}`}>
 		<body>
-			<ColorModeScript />
 			<VercelAnalytics />
-			<Providers>{children}</Providers>
+			<UILayout>{children}</UILayout>
 		</body>
 	</html>
 )

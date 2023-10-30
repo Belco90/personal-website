@@ -22,4 +22,7 @@ export default defineConfig({
 	outdir: 'styled-system',
 
 	jsxFramework: 'react',
+	globalCss: {
+		'html, body': { height: '100%' },
+	},
 })
