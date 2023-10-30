@@ -35,7 +35,7 @@
 		"lint:fix": "pnpm lint -- --fix",
 		"format": "prettier --write --ignore-unknown src \"*.{json,js,md}\"",
 		"gen:theme-typings": "chakra-cli tokens src/theme.ts --strict-component-types --strict-token-types",
-		"postinstall": "pnpm gen:theme-typings",
+		"postinstall": "pnpm gen:theme-typings && panda codegen",
 		"prepare": "is-ci || husky install"
 	},
 	"dependencies": {
@@ -56,6 +56,7 @@
 		"@chakra-ui/styled-system": "^2.9.1",
 		"@chakra-ui/theme-tools": "^2.1.1",
 		"@chakra-ui/utils": "^2.0.14",
+		"@pandacss/dev": "^0.17.3",
 		"@types/node": "^18.16.3",
 		"@types/react": "^18.2.29",
 		"@types/react-dom": "^18.2.13",

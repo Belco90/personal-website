@@ -58,6 +58,9 @@ typings/
 # Next files
 .next
 
+# Panda CSS output
+styled-system
+
 # Mac files
 .DS_Store
 
