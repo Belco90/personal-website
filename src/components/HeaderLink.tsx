@@ -32,7 +32,7 @@ const HeaderLink: FC<HeaderLinkProps> = ({ children, href }) => {
 					color: 'primary.700',
 					textDecorationColor: 'current',
 					bgColor: 'primary.100',
-					borderRadius: 'sm',
+					rounded: 'sm',
 				},
 			})}
 		>

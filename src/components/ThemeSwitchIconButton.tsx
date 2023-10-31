@@ -40,7 +40,7 @@ const ThemeSwitchIconButton: FC = () => {
 			display="inline-flex"
 			justifyContent="center"
 			alignItems="center"
-			borderRadius="md"
+			rounded="md"
 			height="10"
 			minWidth="10"
 			fontSize="2xl"
