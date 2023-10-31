@@ -1,10 +1,11 @@
 import { type FC } from 'react'
 
 import {
-	panda,
+	Box,
 	Container,
 	Flex,
-	Box,
+	HStack,
+	panda,
 	Spacer,
 	HStack,
 } from '@/styled-system/jsx'
@@ -18,7 +19,7 @@ const Header: FC = () => {
 			width="full"
 			bgColor={{ base: 'white', _dark: 'gray.700' }}
 		>
-			<Container py={2} maxWidth="breakpoint-md">
+			<Container py="2" maxWidth="breakpoint-md">
 				<Flex width="full" align="center">
 					<Box
 						fontWeight="bold"
@@ -36,10 +37,10 @@ const Header: FC = () => {
 
 					<Spacer />
 
-					<HStack gap={{ base: 2, lg: 8 }} alignItems="center">
+					<HStack gap={{ base: '2', lg: '8' }} alignItems="center">
 						<panda.nav
 							display="flex"
-							gap={[2, 4]}
+							gap={['2', '4']}
 							alignItems="center"
 							justifyContent="center"
 						>

@@ -5,9 +5,9 @@ import Header from '~/components/Header'
 
 const UILayout: FC<{ children: ReactNode }> = ({ children }) => {
 	return (
-		<Flex height="100%" direction="column">
+		<Flex height="screen" direction="column">
 			<Header />
-			<panda.main flex="1" mt={6} pb={8}>
+			<panda.main flex="1" mt="6" pb="8">
 				{children}
 			</panda.main>
 		</Flex>
