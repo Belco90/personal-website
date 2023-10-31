@@ -4,4 +4,4 @@ Built with:
 
 - React
 - Next.js + Vercel
-- [Panda](https://panda-css.com/) + [Ark](https://ark-ui.com/)
+- [Panda](https://panda-css.com/)
