@@ -44,8 +44,7 @@ const Header: FC = () => {
 							alignItems="center"
 							justifyContent="center"
 						>
-							<HeaderLink href="/home">Home</HeaderLink>
-							{/*TODO: revert url 👆*/}
+							<HeaderLink href="/">Home</HeaderLink>
 							<HeaderLink href="/projects">Projects</HeaderLink>
 						</panda.nav>
 						<ThemeSwitchIconButton />
