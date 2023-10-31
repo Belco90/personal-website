@@ -17,6 +17,14 @@ export default defineConfig({
 	// Files to exclude
 	exclude: [],
 
+	conditions: {
+		extend: {
+			// Enable dark theme
+			dark: '.dark &, [data-theme="dark"] &',
+			light: '.light &',
+		},
+	},
+
 	// Useful for theme customization
 	theme: {
 		extend: {
@@ -27,6 +35,7 @@ export default defineConfig({
 					heading: { value: 'var(--font-rubik)' },
 					body: { value: 'var(--font-karla)' },
 				},
+				// TODO: zIndex
 			},
 		},
 	},
@@ -35,5 +44,6 @@ export default defineConfig({
 	outdir: 'styled-system',
 
 	jsxFramework: 'react',
+	jsxFactory: 'panda',
 	globalCss,
 })

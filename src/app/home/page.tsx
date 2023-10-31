@@ -1,12 +1,12 @@
 import { type FC } from 'react'
 
-import { styled } from '@/styled-system/jsx'
+import { panda } from '@/styled-system/jsx'
 import ThemeSwitchIconButton from '~/components/ThemeSwitchIconButton'
 
 const HomePage: FC = () => {
 	return (
 		<div>
-			<styled.h1 color="emerald.500">Hello 🐼!</styled.h1>
+			<panda.h1 color="emerald.500">Hello 🐼!</panda.h1>
 			<ThemeSwitchIconButton />
 		</div>
 	)

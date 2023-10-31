@@ -9,7 +9,7 @@ import { useTheme } from 'next-themes'
 import { type FC } from 'react'
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi'
 
-import { styled } from '@/styled-system/jsx'
+import { panda } from '@/styled-system/jsx'
 
 function useThemeSwitch() {
 	const theme = useTheme()
@@ -24,18 +24,16 @@ function useThemeSwitch() {
 	return {
 		IconComponent,
 		iconSwitchText,
-		isDark,
 		toggleTheme,
 	}
 }
 
 const ThemeSwitchIconButton: FC = () => {
-	const { IconComponent, iconSwitchText, isDark, toggleTheme } =
-		useThemeSwitch()
+	const { IconComponent, iconSwitchText, toggleTheme } = useThemeSwitch()
 	const title = `Switch to ${iconSwitchText} mode`
 
 	return (
-		<styled.button
+		<panda.button
 			onClick={toggleTheme}
 			title={title}
 			aria-label={title}
@@ -48,11 +46,11 @@ const ThemeSwitchIconButton: FC = () => {
 			fontSize="2xl"
 			_hover={{
 				bgColor: 'primary.100',
-				color: isDark ? 'primary.600' : 'current',
+				color: { base: 'current', _dark: 'primary.600' },
 			}}
 		>
 			<IconComponent />
-		</styled.button>
+		</panda.button>
 	)
 }
 
