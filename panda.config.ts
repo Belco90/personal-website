@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { defineConfig } from '@pandacss/dev'
 
+import { colors } from '@/theme/colors'
 import { globalCss } from '@/theme/global-css'
 import { textStyles } from '@/theme/text-styles'
 
@@ -22,6 +22,7 @@ export default defineConfig({
 		extend: {
 			textStyles,
 			tokens: {
+				colors,
 				fonts: {
 					heading: { value: 'var(--font-rubik)' },
 					body: { value: 'var(--font-karla)' },

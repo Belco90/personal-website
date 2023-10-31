@@ -47,8 +47,8 @@ const ThemeSwitchIconButton: FC = () => {
 			minWidth="10"
 			fontSize="2xl"
 			_hover={{
-				bgColor: 'emerald.100',
-				color: isDark ? 'emerald.600' : 'current',
+				bgColor: 'primary.100',
+				color: isDark ? 'primary.600' : 'current',
 			}}
 		>
 			<IconComponent />
