@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { defineTextStyles } from '@pandacss/dev'
 
 export const textStyles = defineTextStyles({
