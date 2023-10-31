@@ -7,8 +7,8 @@ import {
 	HStack,
 	panda,
 	Spacer,
-	HStack,
 } from '@/styled-system/jsx'
+import HeaderLink from '~/components/HeaderLink'
 import ThemeSwitchIconButton from '~/components/ThemeSwitchIconButton'
 
 const Header: FC = () => {
@@ -44,8 +44,9 @@ const Header: FC = () => {
 							alignItems="center"
 							justifyContent="center"
 						>
-							<a href="/">Home</a>
-							<a href="/projects">Projects</a>
+							<HeaderLink href="/home">Home</HeaderLink>
+							{/*TODO: revert url 👆*/}
+							<HeaderLink href="/projects">Projects</HeaderLink>
 						</panda.nav>
 						<ThemeSwitchIconButton />
 					</HStack>
