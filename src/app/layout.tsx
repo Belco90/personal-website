@@ -1,3 +1,4 @@
+import { type Viewport } from 'next'
 import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode, Suspense } from 'react'
 
@@ -5,19 +6,11 @@ import Providers from './Providers'
 import VercelAnalytics from './VercelAnalytics'
 import { openGraph } from './shared-metadata'
 
+import { colors } from '@/theme/colors'
 import UILayout from '~/components/UILayout'
 import { UserConfig } from '~/user-config'
 
 import './global.css'
-
-export const metadata = {
-	title: {
-		template: `%s | ${UserConfig.author.name}`,
-		default: UserConfig.author.name,
-	},
-	description: UserConfig.author.position,
-	openGraph: { ...openGraph },
-}
 
 const rubikFont = Rubik({
 	subsets: ['latin'],
@@ -29,6 +22,26 @@ const karlaFont = Karla({
 	weight: ['400', '500', '700'],
 	variable: '--font-karla',
 })
+
+export const metadata = {
+	title: {
+		template: `%s | ${UserConfig.author.name}`,
+		default: UserConfig.author.name,
+	},
+	description: UserConfig.author.position,
+	openGraph: { ...openGraph },
+}
+
+export const viewport: Viewport = {
+	colorScheme: 'light dark',
+	themeColor: [
+		{
+			media: '(prefers-color-scheme: light)',
+			color: colors.primary[500].value,
+		},
+		{ media: '(prefers-color-scheme: dark)', color: colors.primary[700].value },
+	],
+}
 
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 	<html
