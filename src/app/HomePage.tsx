@@ -3,7 +3,7 @@ import { type IconType } from 'react-icons'
 
 import { Box, Flex, panda, VStack } from '@/styled-system/jsx'
 import ProfilePicture from '~/components/ProfilePicture'
-import { UserConfig } from '~/user.config'
+import { UserConfig } from '~/user-config'
 
 type SocialKey = keyof typeof UserConfig.social
 type SocialNetworksRecord = Record<

@@ -6,7 +6,7 @@ import VercelAnalytics from './VercelAnalytics'
 import { openGraph } from './shared-metadata'
 
 import UILayout from '~/components/UILayout'
-import { UserConfig } from '~/user.config'
+import { UserConfig } from '~/user-config'
 
 import './global.css'
 
