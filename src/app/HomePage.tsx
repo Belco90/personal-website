@@ -1,7 +1,8 @@
 import { type FC } from 'react'
 import { type IconType } from 'react-icons'
 
-import { Box, Flex, Circle, VStack, panda } from '@/styled-system/jsx'
+import { Box, Flex, panda, VStack } from '@/styled-system/jsx'
+import ProfilePicture from '~/components/ProfilePicture'
 import { UserConfig } from '~/user.config'
 
 type SocialKey = keyof typeof UserConfig.social
@@ -31,8 +32,7 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 						borderColor="primary.200"
 					>
 						<Box rounded="full" shadow="profile-picture-inner">
-							{/* <ProfilePicture priority /> */}
-							<Circle bgColor="primary.50" size="36" />
+							<ProfilePicture priority />
 						</Box>
 					</Box>
 				</Box>
