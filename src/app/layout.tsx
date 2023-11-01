@@ -1,13 +1,14 @@
-import { ColorModeScript } from '@chakra-ui/react'
 import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode } from 'react'
 
 import Providers from './Providers'
-import UILayout from './UILayout'
 import VercelAnalytics from './VercelAnalytics'
+import { openGraph } from './shared-metadata'
 
-import { openGraph } from '~/app/shared-metadata'
-import { UserConfig } from '~/user.config'
+import UILayout from '~/components/UILayout'
+import { UserConfig } from '~/user-config'
+
+import './global.css'
 
 export const metadata = {
 	title: {
@@ -30,9 +31,12 @@ const karlaFont = Karla({
 })
 
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
-	<html lang="en" className={`${rubikFont.variable} ${karlaFont.variable}`}>
+	<html
+		lang="en"
+		className={`${rubikFont.variable} ${karlaFont.variable}`}
+		suppressHydrationWarning
+	>
 		<body>
-			<ColorModeScript />
 			<VercelAnalytics />
 			<Providers>
 				<UILayout>{children}</UILayout>

@@ -1,6 +1,6 @@
 import { type Metadata } from 'next'
 
-import { UserConfig } from '~/user.config'
+import { UserConfig } from '~/user-config'
 
 export const openGraph: NonNullable<Metadata['openGraph']> = {
 	type: 'website',

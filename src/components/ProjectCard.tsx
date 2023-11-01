@@ -1,96 +1,79 @@
-'use client'
+import { HiDownload, HiOutlineStar } from 'react-icons/hi'
 
-import type { LinkBoxProps } from '@chakra-ui/react'
-import {
-	Box,
-	Flex,
-	Heading,
-	Link,
-	HStack,
-	Tag,
-	Text,
-	Icon,
-	useColorModeValue,
-	useToken,
-} from '@chakra-ui/react'
-import { FaRegStar, FaNpm } from 'react-icons/fa'
-
+import { Flex, HStack, panda } from '@/styled-system/jsx'
 import type { GitHubRepo, NpmPackage } from '~/models'
 
-interface CustomProps {
+interface ProjectCardProps {
 	repo: GitHubRepo
 	npmPackage?: NpmPackage
 }
 
-type ProjectCardProps = LinkBoxProps & CustomProps
-
-const ProjectCard = ({ repo, npmPackage, ...rest }: ProjectCardProps) => {
-	const [primaryLight, primaryDark] = useToken('colors', [
-		'primary.100',
-		'primary.600',
-	])
-	const headingColor = useColorModeValue('primary.500', 'primary.300')
-	const cardBgColor = useColorModeValue('gray.50', 'gray.700')
-	const cardShadowColor = useColorModeValue(primaryLight, primaryDark)
-
+const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 	const formattedDownloads = npmPackage
 		? new Intl.NumberFormat('en-US').format(npmPackage.downloads)
 		: null
 
 	return (
-		<Box
-			as="article"
-			w="full"
+		<panda.article
+			width="full"
 			display="flex"
 			flexDirection="column"
-			gap={4}
-			p={4}
-			shadow={`0.2rem 0.2em ${cardShadowColor}`}
+			gap="4"
+			p="4"
+			shadow="card"
 			borderRadius="lg"
-			bgColor={cardBgColor}
-			{...rest}
+			bgColor={{ base: 'gray.50', _dark: 'gray.700' }}
 		>
-			<Heading fontSize="xl">
-				<Link
+			<panda.h2 fontSize="xl">
+				<panda.a
 					href={repo.html_url}
 					textDecorationLine="underline"
-					_hover={{
-						textColor: headingColor,
-						textDecorationColor: headingColor,
-					}}
+					_hover={{ color: { base: 'primary.500', _dark: 'primary.300' } }}
 				>
 					{repo.name}
-				</Link>
-			</Heading>
-			<Text flex={1}>{repo.description}</Text>
-			<HStack spacing={8}>
-				<Tag size="md">{repo.language}</Tag>
-				<Flex align="center" gap={1}>
-					<Icon as={FaRegStar} aria-hidden />
-					<Text as="span" aria-label="GitHub stars">
-						{repo.stargazers_count}
-					</Text>
+				</panda.a>
+			</panda.h2>
+
+			<panda.p flex="1">{repo.description}</panda.p>
+
+			<HStack gap="8">
+				<panda.span
+					display="inline-flex"
+					verticalAlign="top"
+					alignItems="center"
+					minHeight="6"
+					maxWidth="full"
+					fontWeight="medium"
+					fontSize="xs"
+					lineHeight="tight"
+					bgColor={{ base: 'gray.200', _dark: 'gray.600' }}
+					px="2"
+					rounded="md"
+				>
+					{repo.language}
+				</panda.span>
+				<Flex align="center" gap="1" title="GitHub stars">
+					<HiOutlineStar aria-hidden focusable={false} />
+					<span>{repo.stargazers_count}</span>
 				</Flex>
 				{!!npmPackage && (
-					<Link
+					<panda.a
 						href={npmPackage.url}
+						title="npm weekly downloads"
 						display="flex"
-						gap={1}
-						px={2}
+						alignItems="center"
+						gap="1"
+						px="2"
 						textDecorationLine="underline"
-						borderRadius="sm"
-						_hover={{
-							bgColor: 'primary.100',
-						}}
+						rounded="sm"
+						_hover={{ bgColor: 'primary.100', color: 'primary.700' }}
 					>
-						<Icon as={FaNpm} aria-hidden boxSize={6} />
-						<Text as="span" aria-label="npm weekly downloads">
-							{formattedDownloads}
-						</Text>
-					</Link>
+						<HiDownload aria-hidden focusable={false} />
+						<span>{formattedDownloads}</span>
+					</panda.a>
 				)}
 			</HStack>
-		</Box>
+		</panda.article>
 	)
 }
 

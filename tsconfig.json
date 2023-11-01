@@ -3,6 +3,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"~/*": ["src/*"],
+			"@/styled-system/*": ["styled-system/*"],
+			"@/theme/*": ["theme/*"],
 			"@app-public/*": ["./public/*"]
 		},
 		"allowJs": true,
@@ -32,6 +34,7 @@
 	},
 	"exclude": ["node_modules"],
 	"include": [
+		"styled-system",
 		"next-env.d.ts",
 		"additional.d.ts",
 		"**/*.ts",
