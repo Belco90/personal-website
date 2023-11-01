@@ -1,7 +1,18 @@
+import { type FC } from 'react'
+import { type IconType } from 'react-icons'
+
 import { Box, Flex, Circle, VStack, panda } from '@/styled-system/jsx'
 import { UserConfig } from '~/user.config'
 
-const HomePage = () => {
+type SocialKey = keyof typeof UserConfig.social
+type SocialNetworksRecord = Record<
+	SocialKey,
+	{ title: string; extra?: Record<string, unknown>; Icon: IconType }
+>
+
+const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
+	socialNetworksRecord,
+}) => {
 	return (
 		<Flex justify="center" height="full">
 			<VStack
@@ -45,6 +56,36 @@ const HomePage = () => {
 						{UserConfig.author.position}
 					</panda.h2>
 				</Box>
+
+				<panda.ul
+					display="flex"
+					justifyContent="space-evenly"
+					alignItems="center"
+					width="full"
+					fontSize="2xl"
+					aria-label="Social networks"
+				>
+					{Object.entries(socialNetworksRecord).map(
+						([id, { title, Icon, extra }]) => {
+							const socialKey = id as SocialKey
+							const link = UserConfig.social[socialKey]
+							const href = socialKey === 'email' ? `mailto:${link}` : link
+							return (
+								<panda.li
+									key={socialKey}
+									// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+									// @ts-expect-error We want a custom transition here
+									transition="transform 0.3s"
+									_hover={{ transform: 'scale(1.3)' }}
+								>
+									<a href={href} title={title} aria-label={title} {...extra}>
+										<Icon />
+									</a>
+								</panda.li>
+							)
+						},
+					)}
+				</panda.ul>
 			</VStack>
 		</Flex>
 	)
