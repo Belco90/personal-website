@@ -1,5 +1,5 @@
 import { Karla, Rubik } from 'next/font/google'
-import { type FC, type ReactNode } from 'react'
+import { type FC, type ReactNode, Suspense } from 'react'
 
 import Providers from './Providers'
 import VercelAnalytics from './VercelAnalytics'
@@ -37,7 +37,11 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 		suppressHydrationWarning
 	>
 		<body>
-			<VercelAnalytics />
+			<Suspense>
+				{/* Avoid entire page deopted into client-side rendering */}
+				{/* https://nextjs.org/docs/messages/deopted-into-client-rendering */}
+				<VercelAnalytics />
+			</Suspense>
 			<Providers>
 				<UILayout>{children}</UILayout>
 			</Providers>
