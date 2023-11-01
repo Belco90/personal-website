@@ -45,7 +45,11 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 					py="5"
 				>
 					<panda.h1 mb="4">{UserConfig.author.name}</panda.h1>
-					<panda.h2 color="primary.500" fontSize="lg" fontWeight="normal">
+					<panda.h2
+						color={{ base: 'primary.600', _dark: 'primary.300' }}
+						fontSize="lg"
+						fontWeight="normal"
+					>
 						{UserConfig.author.position}
 					</panda.h2>
 				</Box>
