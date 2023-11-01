@@ -2,6 +2,7 @@ import { defineConfig } from '@pandacss/dev'
 
 import { colors } from '@/theme/colors'
 import { globalCss } from '@/theme/global-css'
+import { semanticTokens } from '@/theme/semantic-tokens'
 import { textStyles } from '@/theme/text-styles'
 
 export default defineConfig({
@@ -30,6 +31,7 @@ export default defineConfig({
 	theme: {
 		extend: {
 			textStyles,
+			semanticTokens,
 			tokens: {
 				colors,
 				fonts: {
