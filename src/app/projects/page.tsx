@@ -104,7 +104,7 @@ async function getProjects(): Promise<Array<Project>> {
 	return projects
 }
 
-export const revalidate = 5
+export const revalidate = 60 // revalidate at most every hour
 
 const metaDescription = `${UserConfig.author.name}'s OSS and side projects`
 export const metadata = {
