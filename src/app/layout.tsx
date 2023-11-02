@@ -6,7 +6,6 @@ import Providers from './Providers'
 import VercelAnalytics from './VercelAnalytics'
 import { openGraph } from './shared-metadata'
 
-import { colors } from '@/theme/colors'
 import UILayout from '~/components/UILayout'
 import { UserConfig } from '~/user-config'
 
