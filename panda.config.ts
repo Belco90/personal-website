@@ -18,7 +18,6 @@ export default defineConfig({
 	// Files to exclude
 	exclude: [],
 
-	strictTokens: true,
 	conditions: {
 		extend: {
 			// Enable dark theme
