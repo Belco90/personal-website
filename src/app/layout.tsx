@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { type Viewport } from 'next'
 import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode, Suspense } from 'react'
@@ -32,7 +33,7 @@ export const metadata = {
 }
 
 export const viewport: Viewport = {
-	colorScheme: 'light dark'
+	colorScheme: 'light dark',
 }
 
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
@@ -42,6 +43,7 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 		suppressHydrationWarning
 	>
 		<body>
+			<SpeedInsights />
 			<Suspense>
 				{/* Avoid entire page deopted into client-side rendering */}
 				{/* https://nextjs.org/docs/messages/deopted-into-client-rendering */}
