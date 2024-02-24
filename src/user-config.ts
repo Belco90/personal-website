@@ -7,7 +7,8 @@ const UserConfig = {
 		email: 'me@mario.dev',
 		mastodon: 'https://mas.to/@belco',
 		github: 'https://github.com/Belco90',
-		linkedin: 'https://www.linkedin.com/in/mario-ba-90/?locale=en_US',
+		bluesky: 'https://bsky.app/profile/mario.dev',
+		linkedin: 'https://www.linkedin.com/in/mario-ba-90',
 		stackoverflow: 'https://stackoverflow.com/users/6278737/mario-beltr%c3%a1n',
 	},
 } as const
