@@ -51,6 +51,9 @@ async function getProjects(): Promise<Array<Project>> {
 				if (response.ok) {
 					const repo: GitHubRepo = (await response.json()) as GitHubRepo
 					return { url: githubRepo, data: repo }
+				} else {
+					const responseJson = (await response.json()) as unknown
+					throw new Error(JSON.stringify(responseJson))
 				}
 			} catch (e) {
 				// eslint-disable-next-line no-console
