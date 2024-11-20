@@ -33,8 +33,7 @@
 		"lint": "next lint",
 		"lint:fix": "pnpm lint -- --fix",
 		"format": "prettier --write --ignore-unknown src \"*.{json,js,md}\"",
-		"postinstall": "panda codegen",
-		"prepare": "husky"
+		"prepare": "panda codegen & husky"
 	},
 	"dependencies": {
 		"@vercel/analytics": "^1.4.1",
