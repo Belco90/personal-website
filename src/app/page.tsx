@@ -1,21 +1,19 @@
 import { type FC } from 'react'
 import {
+	FaBluesky,
 	FaGithub,
 	FaLinkedin,
-	FaMastodon,
 	FaStackOverflow,
-} from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
-import { PiButterflyFill } from 'react-icons/pi'
+	FaEnvelope,
+} from 'react-icons/fa6'
 
 import HomePage from './HomePage'
 
 const SOCIAL_NETWORKS_RECORD = {
-	email: { title: 'Email', Icon: MdEmail },
+	email: { title: 'Email', Icon: FaEnvelope },
 	github: { title: 'GitHub', Icon: FaGithub },
 	linkedin: { title: 'LinkedIn', Icon: FaLinkedin },
-	bluesky: { title: 'Bluesky', Icon: PiButterflyFill },
-	mastodon: { title: 'Mastodon', Icon: FaMastodon, extra: { rel: 'me' } },
+	bluesky: { title: 'Bluesky', Icon: FaBluesky },
 	stackoverflow: { title: 'StackOverflow', Icon: FaStackOverflow },
 }
 

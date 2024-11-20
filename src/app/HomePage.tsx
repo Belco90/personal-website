@@ -6,10 +6,7 @@ import ProfilePicture from '~/components/ProfilePicture'
 import { UserConfig } from '~/user-config'
 
 type SocialKey = keyof typeof UserConfig.social
-type SocialNetworksRecord = Record<
-	SocialKey,
-	{ title: string; extra?: Record<string, unknown>; Icon: IconType }
->
+type SocialNetworksRecord = Record<SocialKey, { title: string; Icon: IconType }>
 
 const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 	socialNetworksRecord,
@@ -62,25 +59,23 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 					fontSize="2xl"
 					aria-label="Social networks"
 				>
-					{Object.entries(socialNetworksRecord).map(
-						([id, { title, Icon, extra }]) => {
-							const socialKey = id as SocialKey
-							const link = UserConfig.social[socialKey]
-							const href = socialKey === 'email' ? `mailto:${link}` : link
-							return (
-								<panda.li
-									key={socialKey}
-									transition="transform"
-									transitionDuration="social-network"
-									_hover={{ transform: 'scale(1.3)' }}
-								>
-									<a href={href} title={title} aria-label={title} {...extra}>
-										<Icon />
-									</a>
-								</panda.li>
-							)
-						},
-					)}
+					{Object.entries(socialNetworksRecord).map(([id, { title, Icon }]) => {
+						const socialKey = id as SocialKey
+						const link = UserConfig.social[socialKey]
+						const href = socialKey === 'email' ? `mailto:${link}` : link
+						return (
+							<panda.li
+								key={socialKey}
+								transition="transform"
+								transitionDuration="social-network"
+								_hover={{ transform: 'scale(1.3)' }}
+							>
+								<a href={href} title={title} aria-label={title}>
+									<Icon />
+								</a>
+							</panda.li>
+						)
+					})}
 				</panda.ul>
 			</VStack>
 		</Flex>
