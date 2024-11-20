@@ -8,14 +8,16 @@
 import { useTheme } from 'next-themes'
 import { type FC } from 'react'
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi'
+import { useIsClient } from 'usehooks-ts'
 
 import { styled } from '@/styled-system/jsx'
 
 function useThemeSwitch() {
 	const theme = useTheme()
+	const isClient = useIsClient()
 	const { setTheme, resolvedTheme } = theme
 
-	const isDark = resolvedTheme === 'dark'
+	const isDark = isClient && resolvedTheme === 'dark'
 	const toggleTheme = () => setTheme(isDark ? 'light' : 'dark')
 
 	const IconComponent = isDark ? HiOutlineSun : HiOutlineMoon
@@ -25,15 +27,18 @@ function useThemeSwitch() {
 		IconComponent,
 		iconSwitchText,
 		toggleTheme,
+		isReady: isClient,
 	}
 }
 
 const ThemeSwitchIconButton: FC = () => {
-	const { IconComponent, iconSwitchText, toggleTheme } = useThemeSwitch()
+	const { IconComponent, iconSwitchText, toggleTheme, isReady } =
+		useThemeSwitch()
 	const title = `Switch to ${iconSwitchText} mode`
 
 	return (
 		<styled.button
+			opacity={isReady ? 1 : 0}
 			onClick={toggleTheme}
 			title={title}
 			aria-label={title}
