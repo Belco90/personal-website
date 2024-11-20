@@ -26,10 +26,9 @@
 	},
 	"packageManager": "pnpm@9.14.2",
 	"scripts": {
-		"start": "pnpm dev",
-		"dev": "next",
+		"start": "next start",
+		"dev": "next dev",
 		"build": "next build",
-		"serve": "next start",
 		"type-check": "tsc --noEmit",
 		"lint": "next lint",
 		"lint:fix": "pnpm lint -- --fix",
