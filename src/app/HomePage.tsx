@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 import { type IconType } from 'react-icons'
 
-import { Box, Flex, panda, VStack } from '@/styled-system/jsx'
+import { Box, Flex, VStack, styled } from '@/styled-system/jsx'
 import ProfilePicture from '~/components/ProfilePicture'
 import { UserConfig } from '~/user-config'
 
@@ -41,17 +41,17 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 					px={{ base: '4', md: '16' }}
 					py="5"
 				>
-					<panda.h1 mb="4">{UserConfig.author.name}</panda.h1>
-					<panda.h2
+					<styled.h1 mb="4">{UserConfig.author.name}</styled.h1>
+					<styled.h2
 						color={{ base: 'primary.600', _dark: 'primary.300' }}
 						fontSize="lg"
 						fontWeight="normal"
 					>
 						{UserConfig.author.position}
-					</panda.h2>
+					</styled.h2>
 				</Box>
 
-				<panda.ul
+				<styled.ul
 					display="flex"
 					justifyContent="space-evenly"
 					alignItems="center"
@@ -64,7 +64,7 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 						const link = UserConfig.social[socialKey]
 						const href = socialKey === 'email' ? `mailto:${link}` : link
 						return (
-							<panda.li
+							<styled.li
 								key={socialKey}
 								transition="transform"
 								transitionDuration="social-network"
@@ -73,10 +73,10 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 								<a href={href} title={title} aria-label={title}>
 									<Icon />
 								</a>
-							</panda.li>
+							</styled.li>
 						)
 					})}
-				</panda.ul>
+				</styled.ul>
 			</VStack>
 		</Flex>
 	)

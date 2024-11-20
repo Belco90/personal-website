@@ -45,6 +45,5 @@ export default defineConfig({
 	outdir: 'styled-system',
 
 	jsxFramework: 'react',
-	jsxFactory: 'panda',
 	globalCss,
 })

@@ -5,7 +5,7 @@ import {
 	Container,
 	Flex,
 	HStack,
-	panda,
+	styled,
 	Spacer,
 } from '@/styled-system/jsx'
 import HeaderLink from '~/components/HeaderLink'
@@ -13,7 +13,7 @@ import ThemeSwitchIconButton from '~/components/ThemeSwitchIconButton'
 
 const Header: FC = () => {
 	return (
-		<panda.header
+		<styled.header
 			zIndex="banner"
 			shadow="lg"
 			width="full"
@@ -38,7 +38,7 @@ const Header: FC = () => {
 					<Spacer />
 
 					<HStack gap={{ base: '2', lg: '8' }} alignItems="center">
-						<panda.nav
+						<styled.nav
 							display="flex"
 							gap={['2', '4']}
 							alignItems="center"
@@ -46,12 +46,12 @@ const Header: FC = () => {
 						>
 							<HeaderLink href="/">Home</HeaderLink>
 							<HeaderLink href="/projects">Projects</HeaderLink>
-						</panda.nav>
+						</styled.nav>
 						<ThemeSwitchIconButton />
 					</HStack>
 				</Flex>
 			</Container>
-		</panda.header>
+		</styled.header>
 	)
 }
 

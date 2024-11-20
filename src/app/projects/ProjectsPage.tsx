@@ -1,4 +1,4 @@
-import { Container, panda, VStack } from '@/styled-system/jsx'
+import { Container, VStack, styled } from '@/styled-system/jsx'
 import ProjectCard from '~/components/ProjectCard'
 import type { Project } from '~/models'
 
@@ -9,9 +9,9 @@ interface ProjectsPageProps {
 const ProjectsPage = ({ projects }: ProjectsPageProps) => {
 	return (
 		<Container maxWidth="breakpoint-md">
-			<panda.h1 mb="4" fontSize="4xl" textGradient="heading">
+			<styled.h1 mb="4" fontSize="4xl" textGradient="heading">
 				Projects
-			</panda.h1>
+			</styled.h1>
 			<VStack gap="6">
 				{projects.map(({ repo, npmPackage }) => (
 					<ProjectCard key={repo.id} repo={repo} npmPackage={npmPackage} />

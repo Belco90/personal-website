@@ -1,6 +1,6 @@
 import { HiDownload, HiOutlineStar } from 'react-icons/hi'
 
-import { Flex, HStack, panda } from '@/styled-system/jsx'
+import { Flex, HStack, styled } from '@/styled-system/jsx'
 import type { GitHubRepo, NpmPackage } from '~/models'
 
 interface ProjectCardProps {
@@ -14,7 +14,7 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 		: null
 
 	return (
-		<panda.article
+		<styled.article
 			width="full"
 			display="flex"
 			flexDirection="column"
@@ -24,20 +24,20 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 			borderRadius="lg"
 			bgColor={{ base: 'gray.50', _dark: 'gray.700' }}
 		>
-			<panda.h2 fontSize="xl">
-				<panda.a
+			<styled.h2 fontSize="xl">
+				<styled.a
 					href={repo.html_url}
 					textDecorationLine="underline"
 					_hover={{ color: { base: 'primary.500', _dark: 'primary.300' } }}
 				>
 					{repo.name}
-				</panda.a>
-			</panda.h2>
+				</styled.a>
+			</styled.h2>
 
-			<panda.p flex="1">{repo.description}</panda.p>
+			<styled.p flex="1">{repo.description}</styled.p>
 
 			<HStack gap="8">
-				<panda.span
+				<styled.span
 					display="inline-flex"
 					verticalAlign="top"
 					alignItems="center"
@@ -51,13 +51,13 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 					rounded="md"
 				>
 					{repo.language}
-				</panda.span>
+				</styled.span>
 				<Flex align="center" gap="1" title="GitHub stars">
 					<HiOutlineStar aria-hidden focusable={false} />
 					<span>{repo.stargazers_count}</span>
 				</Flex>
 				{!!npmPackage && (
-					<panda.a
+					<styled.a
 						href={npmPackage.url}
 						title="npm weekly downloads"
 						display="flex"
@@ -70,10 +70,10 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 					>
 						<HiDownload aria-hidden focusable={false} />
 						<span>{formattedDownloads}</span>
-					</panda.a>
+					</styled.a>
 				)}
 			</HStack>
-		</panda.article>
+		</styled.article>
 	)
 }
 
