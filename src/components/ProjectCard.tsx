@@ -13,6 +13,11 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 		? new Intl.NumberFormat('en-US').format(npmPackage.downloads)
 		: null
 
+	const formattedStars = new Intl.NumberFormat('en-US', {
+		notation: 'compact',
+		compactDisplay: 'short',
+	}).format(repo.stargazers_count)
+
 	return (
 		<styled.article
 			width="full"
@@ -54,7 +59,7 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 				</styled.span>
 				<Flex align="center" gap="1" title="GitHub stars">
 					<HiOutlineStar aria-hidden focusable={false} />
-					<span>{repo.stargazers_count}</span>
+					<span>{formattedStars}</span>
 				</Flex>
 				{!!npmPackage && (
 					<styled.a
