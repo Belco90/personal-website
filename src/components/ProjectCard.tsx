@@ -9,7 +9,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
-	const formattedDownloads = npmPackage
+	const formattedDownloads = npmPackage?.downloads
 		? new Intl.NumberFormat('en-US').format(npmPackage.downloads)
 		: null
 
@@ -61,9 +61,9 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 					<HiOutlineStar aria-hidden focusable={false} />
 					<span>{formattedStars}</span>
 				</Flex>
-				{!!npmPackage && (
+				{!!formattedDownloads && (
 					<styled.a
-						href={npmPackage.url}
+						href={npmPackage?.url}
 						title="npm weekly downloads"
 						display="flex"
 						alignItems="center"
