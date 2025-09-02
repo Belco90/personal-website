@@ -31,8 +31,8 @@
 		"dev:turbo": "next dev --turbo",
 		"build": "next build",
 		"type-check": "tsc --noEmit",
-		"lint": "eslint .",
-		"lint:fix": "pnpm lint -- --fix",
+		"lint": "eslint . --report-unused-disable-directives",
+		"lint:fix": "pnpm lint --fix",
 		"format": "prettier --write --ignore-unknown src \"*.{json,js,md}\"",
 		"prepare": "panda codegen & husky"
 	},
