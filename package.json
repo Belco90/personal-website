@@ -55,7 +55,7 @@
 		"@typescript-eslint/parser": "^7.18.0",
 		"eslint": "^8.57.1",
 		"eslint-config-next": "15.1.6",
-		"eslint-config-prettier": "^9.1.0",
+		"eslint-config-prettier": "^10.1.8",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.6",
 		"prettier": "3.6.2",
