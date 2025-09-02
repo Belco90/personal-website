@@ -13,7 +13,6 @@ const ProfilePicture = (props: ProfilePictureProps) => {
 			<Image
 				width={150}
 				height={150}
-				quality={100}
 				{...props}
 				src={imgSrc}
 				alt="Smiling Mario"

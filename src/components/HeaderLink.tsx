@@ -6,9 +6,11 @@ import { type FC, type ReactNode } from 'react'
 
 import { css } from '@/styled-system/css'
 
-type HeaderLinkProps = Pick<LinkProps, 'href'> & { children: ReactNode }
+type HeaderLinkProps<Route extends string> = Pick<LinkProps<Route>, 'href'> & {
+	children: ReactNode
+}
 
-const HeaderLink: FC<HeaderLinkProps> = ({ children, href }) => {
+const HeaderLink: FC<HeaderLinkProps<string>> = ({ children, href }) => {
 	const pathname = usePathname()
 	const isActive = pathname === href
 

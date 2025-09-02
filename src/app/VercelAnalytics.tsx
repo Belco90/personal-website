@@ -1,6 +1,7 @@
 'use client'
 
 import { Analytics } from '@vercel/analytics/react'
+import { type Route } from 'next'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import { type FC, useEffect } from 'react'
 
@@ -31,7 +32,7 @@ const VercelAnalytics: FC = () => {
 				localStorage.setItem(VA_DISABLE_KEY, '1')
 				logToggleVercelAnalyticsAction('disabled')
 			}
-			replace(pathname, { scroll: false })
+			replace(pathname as Route, { scroll: false })
 		}
 	}, [pathname, replace])
 
