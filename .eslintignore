@@ -1,3 +1,4 @@
 node_modules
 public
 styled-system
+next-env.d.ts
