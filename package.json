@@ -31,7 +31,7 @@
 		"dev:turbo": "next dev --turbo",
 		"build": "next build",
 		"type-check": "tsc --noEmit",
-		"lint": "next lint",
+		"lint": "eslint .",
 		"lint:fix": "pnpm lint -- --fix",
 		"format": "prettier --write --ignore-unknown src \"*.{json,js,md}\"",
 		"prepare": "panda codegen & husky"
@@ -48,6 +48,7 @@
 		"usehooks-ts": "^3.1.1"
 	},
 	"devDependencies": {
+		"@eslint/eslintrc": "^3.3.1",
 		"@pandacss/dev": "^0.51.1",
 		"@types/node": "^22.10.10",
 		"@types/react": "^19.1.12",
