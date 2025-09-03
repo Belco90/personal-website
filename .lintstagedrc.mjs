@@ -1,5 +1,6 @@
-const path = require('node:path')
-const { ESLint } = require('eslint')
+import path from 'node:path'
+
+import { ESLint } from 'eslint'
 
 const removeIgnoredFiles = async (files) => {
 	const eslint = new ESLint()
@@ -13,13 +14,12 @@ const buildEslintCommand = async (filenames) => {
 	const filteredFilenames = await removeIgnoredFiles(filenames)
 	const filenamesFlag = filteredFilenames
 		.map((filename) => path.relative(process.cwd(), filename))
-		.map((filename) => `--file ${filename}`)
 		.join(' ')
 
-	return `next lint --fix ${filenamesFlag}`
+	return `eslint --fix --concurrency=auto ${filenamesFlag}`
 }
 
-module.exports = {
+export default {
 	'*.{js,jsx,ts,tsx}': [buildEslintCommand],
 	'*': 'prettier --write --ignore-unknown',
 }
