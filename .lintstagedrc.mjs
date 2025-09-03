@@ -19,7 +19,9 @@ const buildEslintCommand = async (filenames) => {
 	return `eslint --fix --concurrency=auto ${filenamesFlag}`
 }
 
-export default {
+const config = {
 	'*.{js,jsx,ts,tsx}': [buildEslintCommand],
 	'*': 'prettier --write --ignore-unknown',
 }
+
+export default config

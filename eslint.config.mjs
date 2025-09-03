@@ -31,19 +31,19 @@ export default defineConfig([
 		},
 
 		rules: {
+			// General
 			'no-console': 'warn',
+
+			// TypeScript
 			'@typescript-eslint/prefer-nullish-coalescing': 'off',
 			'@typescript-eslint/unbound-method': 'off',
-
 			'@typescript-eslint/array-type': [
 				'warn',
 				{
 					default: 'generic',
 				},
 			],
-
 			'@typescript-eslint/no-floating-promises': 'error',
-
 			'@typescript-eslint/consistent-type-exports': [
 				'error',
 				{
@@ -57,10 +57,10 @@ export default defineConfig([
 					fixStyle: 'inline-type-imports',
 				},
 			],
-
 			'@typescript-eslint/no-explicit-any': 'error',
-			'import/newline-after-import': 'error',
 
+			// Import
+			'import/newline-after-import': 'error',
 			'import/order': [
 				'error',
 				{
@@ -73,6 +73,7 @@ export default defineConfig([
 				},
 			],
 
+			// React
 			'react/self-closing-comp': 'warn',
 		},
 	},
