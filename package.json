@@ -50,6 +50,7 @@
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",
+		"@eslint/js": "^9.34.0",
 		"@pandacss/dev": "^1.2.0",
 		"@types/node": "^22.10.10",
 		"@types/react": "^19.1.12",
@@ -62,6 +63,7 @@
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.6",
 		"prettier": "3.6.2",
-		"typescript": "^5.9.2"
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.42.0"
 	}
 }
