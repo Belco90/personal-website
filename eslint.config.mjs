@@ -1,35 +1,33 @@
 // @ts-check
 
 import { FlatCompat } from '@eslint/eslintrc'
-import js from '@eslint/js'
-import tsParser from '@typescript-eslint/parser'
+import eslint from '@eslint/js'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import prettierRecommended from 'eslint-plugin-prettier/recommended'
 import tseslint from 'typescript-eslint'
 
 const compat = new FlatCompat({
 	baseDirectory: import.meta.dirname,
-	recommendedConfig: js.configs.recommended,
-	allConfig: js.configs.all,
 })
 
-export default defineConfig([
+export default defineConfig(
+	eslint.configs.recommended,
+	tseslint.configs.recommendedTypeChecked,
+	tseslint.configs.stylisticTypeChecked,
+	prettierRecommended,
 	{
-		extends: compat.extends(
-			'eslint:recommended',
-			'plugin:@typescript-eslint/recommended-type-checked',
-			'plugin:@typescript-eslint/stylistic-type-checked',
-			'next/core-web-vitals',
-			'prettier',
-		),
-
+		extends: compat.extends('next/core-web-vitals'),
+	},
+	{
 		languageOptions: {
-			parser: tsParser,
+			parser: tseslint.parser,
 			parserOptions: {
 				projectService: true,
 				tsconfigRootDir: import.meta.dirname,
 			},
 		},
-
+	},
+	{
 		rules: {
 			// General
 			'no-console': 'warn',
@@ -77,13 +75,9 @@ export default defineConfig([
 			'react/self-closing-comp': 'warn',
 		},
 	},
+	// Config files
 	{
-		files: ['**/*.js'],
-		extends: compat.extends('plugin:@typescript-eslint/disable-type-checked'),
-	},
-	{
-		// Config files
-		files: ['**/*.mjs', '**/*.cjs'],
+		files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
 		extends: [tseslint.configs.disableTypeChecked],
 	},
 	globalIgnores([
@@ -93,4 +87,4 @@ export default defineConfig([
 		'**/styled-system',
 		'**/next-env.d.ts',
 	]),
-])
+)
