@@ -43,9 +43,9 @@
 
 #### 1.2 Netlify Account Setup
 
-- [ ] Create/verify Netlify account
-- [ ] Link GitHub repository to Netlify
-- [ ] Review Netlify's Next.js Runtime documentation
+- [x] Create/verify Netlify account
+- [x] Link GitHub repository to Netlify
+- [x] Review Netlify's Next.js Runtime documentation
 
 ---
 
