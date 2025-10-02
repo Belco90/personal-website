@@ -1,10 +1,8 @@
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { type Viewport } from 'next'
 import { Karla, Rubik } from 'next/font/google'
-import { type FC, type ReactNode, Suspense } from 'react'
+import { type FC, type ReactNode } from 'react'
 
 import Providers from './Providers'
-import VercelAnalytics from './VercelAnalytics'
 import { openGraph } from './shared-metadata'
 
 import UILayout from '~/components/UILayout'
@@ -43,12 +41,6 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 		suppressHydrationWarning
 	>
 		<body>
-			<SpeedInsights />
-			<Suspense>
-				{/* Avoid entire page deopted into client-side rendering */}
-				{/* https://nextjs.org/docs/messages/deopted-into-client-rendering */}
-				<VercelAnalytics />
-			</Suspense>
 			<Providers>
 				<UILayout>{children}</UILayout>
 			</Providers>
