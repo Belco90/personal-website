@@ -51,22 +51,18 @@
 
 ### Phase 2: Configuration Updates 📝
 
-#### 2.1 Replace Analytics Services
+#### 2.1 Remove Analytics Services
 
 **Current**: Vercel Analytics & Speed Insights
-**Action**: Replace with Netlify Analytics or alternative
+**Action**: Remove for now (will be added in follow-up PR)
 
 **Tasks**:
 
 - [ ] Remove `@vercel/analytics` dependency
 - [ ] Remove `@vercel/speed-insights` dependency
-- [ ] Delete or refactor `src/app/VercelAnalytics.tsx`
+- [ ] Delete `src/app/VercelAnalytics.tsx`
 - [ ] Remove Analytics/SpeedInsights imports from `src/app/layout.tsx`
-- [ ] Decide on alternative:
-  - Option A: Use Netlify Analytics (server-side, privacy-focused)
-  - Option B: Use alternative like Plausible, Fathom, or Google Analytics
-  - Option C: No analytics initially
-- [ ] Implement chosen analytics solution
+- [ ] Clean up any analytics-related code
 
 #### 2.2 Create Netlify Configuration
 
@@ -80,7 +76,6 @@
   - Publish directory: `.next`
   - Node version: Match package.json engines
 - [ ] Configure environment variables section
-- [ ] Add any necessary redirects/headers
 - [ ] Configure Next.js Runtime plugin
 
 **Example structure**:
@@ -245,7 +240,8 @@
 
 - [ ] Update `README.md` to reflect Netlify deployment
 - [ ] Remove references to Vercel
-- [ ] Add Netlify deployment badge (optional)
+- [ ] Add Netlify deployment badge
+- [ ] Add Netlify badge to page footer
 - [ ] Document new deployment process
 - [ ] Update any CI/CD references
 
@@ -333,11 +329,11 @@ In case of critical issues during migration:
 
 ## Questions to Resolve
 
-- [ ] Which analytics solution to use after migration?
-- [ ] Any specific performance requirements to maintain?
-- [ ] Is there a preferred migration date/time?
-- [ ] Should we keep both deployments for a transition period?
-- [ ] Any custom headers or redirects to configure?
+- [x] Which analytics solution to use after migration? **→ Remove for now, add in follow-up PR**
+- [x] Any specific performance requirements to maintain? **→ No specific requirements**
+- [x] Is there a preferred migration date/time? **→ No preferred date/time**
+- [x] Should we keep both deployments for a transition period? **→ No, remove Vercel as soon as Netlify is ready**
+- [x] Any custom headers or redirects to configure? **→ No custom headers or redirects needed**
 
 ---
 
