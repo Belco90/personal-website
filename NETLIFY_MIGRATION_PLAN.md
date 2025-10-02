@@ -58,11 +58,11 @@
 
 **Tasks**:
 
-- [ ] Remove `@vercel/analytics` dependency
-- [ ] Remove `@vercel/speed-insights` dependency
-- [ ] Delete `src/app/VercelAnalytics.tsx`
-- [ ] Remove Analytics/SpeedInsights imports from `src/app/layout.tsx`
-- [ ] Clean up any analytics-related code
+- [x] Remove `@vercel/analytics` dependency
+- [x] Remove `@vercel/speed-insights` dependency
+- [x] Delete `src/app/VercelAnalytics.tsx`
+- [x] Remove Analytics/SpeedInsights imports from `src/app/layout.tsx`
+- [x] Clean up any analytics-related code
 
 #### 2.2 Create Netlify Configuration
 
@@ -70,13 +70,13 @@
 
 **Tasks**:
 
-- [ ] Create `netlify.toml` in project root
-- [ ] Configure build settings:
+- [x] Create `netlify.toml` in project root
+- [x] Configure build settings:
   - Build command: `pnpm build`
   - Publish directory: `.next`
   - Node version: Match package.json engines
-- [ ] Configure environment variables section
-- [ ] Configure Next.js Runtime plugin
+- [x] Configure environment variables section
+- [x] Configure Next.js Runtime plugin
 
 **Example structure**:
 
@@ -110,9 +110,9 @@
 
 **Tasks**:
 
-- [ ] Ensure `.npmrc` or equivalent pnpm config is present
-- [ ] Verify pnpm version compatibility with Netlify
-- [ ] Add `package-lock=false` to prevent npm lockfile generation
+- [x] Ensure `.npmrc` or equivalent pnpm config is present
+- [x] Verify pnpm version compatibility with Netlify
+- [x] Add `package-lock=false` to prevent npm lockfile generation
 
 #### 2.4 Environment Variables Migration
 
@@ -120,20 +120,20 @@
 
 **Tasks**:
 
-- [ ] Export environment variables from Vercel
-- [ ] Configure environment variables in Netlify:
+- [x] Export environment variables from Vercel
+- [x] Configure environment variables in Netlify:
   - Go to Site settings → Environment variables
   - Add `GITHUB_ACCESS_TOKEN`
-- [ ] Verify variable naming conventions (no changes needed)
-- [ ] Set appropriate scopes (production, preview, development)
+- [x] Verify variable naming conventions (no changes needed)
+- [x] Set appropriate scopes (production, preview, development)
 
 #### 2.5 Review and Update Dependencies
 
 **Tasks**:
 
-- [ ] Run `pnpm update` to ensure latest compatible versions
-- [ ] Review Next.js 15 compatibility with Netlify
-- [ ] Test build locally after removing Vercel packages
+- [x] Run `pnpm update` to ensure latest compatible versions
+- [x] Review Next.js 15 compatibility with Netlify
+- [x] Test build locally after removing Vercel packages
 
 ---
 
@@ -143,30 +143,30 @@
 
 **Tasks**:
 
-- [ ] Remove Vercel-specific packages: `pnpm remove @vercel/analytics @vercel/speed-insights`
-- [ ] Update code to remove Vercel Analytics references
-- [ ] Run `pnpm build` locally to verify successful build
-- [ ] Run `pnpm start` to test production build
-- [ ] Verify all pages render correctly
-- [ ] Test dynamic routes and API routes (if any)
-- [ ] Verify environment variables are loaded correctly
+- [x] Remove Vercel-specific packages: `pnpm remove @vercel/analytics @vercel/speed-insights`
+- [x] Update code to remove Vercel Analytics references
+- [x] Run `pnpm build` locally to verify successful build
+- [x] Run `pnpm start` to test production build
+- [x] Verify all pages render correctly
+- [x] Test dynamic routes and API routes (if any)
+- [x] Verify environment variables are loaded correctly
 
 #### 3.2 Netlify Deploy Preview
 
 **Tasks**:
 
-- [ ] Create new site in Netlify (don't connect domain yet)
-- [ ] Configure build settings in Netlify UI
-- [ ] Trigger initial deployment
-- [ ] Review build logs for errors/warnings
-- [ ] Test deployed preview site thoroughly:
-  - [ ] Homepage functionality
-  - [ ] Projects page (GitHub API integration)
-  - [ ] Theme switching
-  - [ ] All routes and navigation
-  - [ ] Image optimization
-  - [ ] Performance metrics
-- [ ] Compare with current Vercel deployment
+- [x] Create new site in Netlify (don't connect domain yet)
+- [x] Configure build settings in Netlify UI
+- [x] Trigger initial deployment
+- [x] Review build logs for errors/warnings
+- [x] Test deployed preview site thoroughly:
+  - [x] Homepage functionality
+  - [x] Projects page (GitHub API integration)
+  - [x] Theme switching
+  - [x] All routes and navigation
+  - [x] Image optimization
+  - [x] Performance metrics
+- [x] Compare with current Vercel deployment
 
 #### 3.3 Performance Comparison
 
@@ -191,36 +191,36 @@
 
 **Tasks**:
 
-- [ ] Document current DNS records from domain registrar
-- [ ] Lower TTL values 24-48 hours before migration (recommended)
-- [ ] Prepare for potential downtime/propagation period
+- [x] Document current DNS records from domain registrar
+- [x] Lower TTL values 24-48 hours before migration (recommended)
+- [x] Prepare for potential downtime/propagation period
 
 #### 4.2 Configure Domain in Netlify
 
 **Tasks**:
 
-- [ ] Add custom domain `mario.dev` in Netlify
-- [ ] Configure `www.mario.dev` redirect (if applicable)
-- [ ] Enable HTTPS/SSL certificate provisioning
-- [ ] Wait for SSL certificate to be issued
+- [x] Add custom domain `mario.dev` in Netlify
+- [x] Configure `www.mario.dev` redirect (if applicable)
+- [x] Enable HTTPS/SSL certificate provisioning
+- [x] Wait for SSL certificate to be issued
 
 #### 4.3 Update DNS Records
 
 **Tasks**:
 
-- [ ] Update DNS A record to point to Netlify's load balancer IP
+- [x] Update DNS A record to point to Netlify's load balancer IP
   - Or use Netlify DNS (transfer nameservers)
-- [ ] Verify DNS propagation using tools like `dig` or online checkers
-- [ ] Monitor for propagation completion (can take up to 48 hours)
+- [x] Verify DNS propagation using tools like `dig` or online checkers
+- [x] Monitor for propagation completion (can take up to 48 hours)
 
 #### 4.4 Post-Migration Verification
 
 **Tasks**:
 
-- [ ] Verify `mario.dev` resolves to Netlify
-- [ ] Test HTTPS certificate
-- [ ] Verify all pages load correctly on production domain
-- [ ] Check that redirects work as expected
+- [x] Verify `mario.dev` resolves to Netlify
+- [x] Test HTTPS certificate
+- [x] Verify all pages load correctly on production domain
+- [x] Check that redirects work as expected
 
 ---
 
@@ -230,9 +230,8 @@
 
 **Tasks**:
 
-- [ ] Remove or archive the project from Vercel
-- [ ] Cancel Vercel subscription if no longer needed
-- [ ] Export any analytics data from Vercel (if needed)
+- [x] Remove or archive the project from Vercel
+- [x] Export any analytics data from Vercel (if needed)
 
 #### 5.2 Update Documentation
 
@@ -240,8 +239,7 @@
 
 - [ ] Update `README.md` to reflect Netlify deployment
 - [ ] Remove references to Vercel
-- [ ] Add Netlify deployment badge
-- [ ] Add Netlify badge to page footer
+- [x] Add Netlify deployment badge
 - [ ] Document new deployment process
 - [ ] Update any CI/CD references
 
@@ -260,8 +258,8 @@ Built with:
 **Tasks**:
 
 - [ ] Update repository description if needed
-- [ ] Update homepage URL in `package.json` (if changed)
-- [ ] Close GitHub issue #76
+- [x] Update homepage URL in `package.json` (if changed)
+- [x] Close GitHub issue #76
 
 ---
 
