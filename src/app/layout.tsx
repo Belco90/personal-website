@@ -5,6 +5,7 @@ import { type FC, type ReactNode } from 'react'
 import Providers from './Providers'
 import { openGraph } from './shared-metadata'
 
+import { PirschAnalytics } from '~/app/PirschAnalytics'
 import UILayout from '~/components/UILayout'
 import { UserConfig } from '~/user-config'
 
@@ -41,6 +42,7 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
 		suppressHydrationWarning
 	>
 		<body>
+			<PirschAnalytics />
 			<Providers>
 				<UILayout>{children}</UILayout>
 			</Providers>
