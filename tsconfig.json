@@ -2,10 +2,10 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"~/*": ["src/*"],
-			"@/styled-system/*": ["styled-system/*"],
-			"@/theme/*": ["theme/*"],
-			"@app-public/*": ["./public/*"]
+			"#/*": ["src/*"],
+			"#/styled-system/*": ["styled-system/*"],
+			"#/theme/*": ["theme/*"],
+			"#app-public/*": ["./public/*"]
 		},
 		"allowJs": true,
 		"alwaysStrict": true,

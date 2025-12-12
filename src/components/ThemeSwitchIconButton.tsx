@@ -10,7 +10,7 @@ import { type FC } from 'react'
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi'
 import { useIsClient } from 'usehooks-ts'
 
-import { styled } from '@/styled-system/jsx'
+import { styled } from '#/styled-system/jsx'
 
 function useThemeSwitch() {
 	const theme = useTheme()

@@ -1,7 +1,7 @@
 import { HiDownload, HiOutlineStar } from 'react-icons/hi'
 
-import { Flex, HStack, styled } from '@/styled-system/jsx'
-import type { GitHubRepo, NpmPackage } from '~/models'
+import type { GitHubRepo, NpmPackage } from '#/models'
+import { Flex, HStack, styled } from '#/styled-system/jsx'
 
 interface ProjectCardProps {
 	repo: GitHubRepo

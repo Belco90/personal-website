@@ -2,12 +2,12 @@ import { type Viewport } from 'next'
 import { Karla, Rubik } from 'next/font/google'
 import { type FC, type ReactNode } from 'react'
 
+import { PirschAnalytics } from '#/app/PirschAnalytics'
+import UILayout from '#/components/UILayout'
+import { UserConfig } from '#/user-config'
+
 import Providers from './Providers'
 import { openGraph } from './shared-metadata'
-
-import { PirschAnalytics } from '~/app/PirschAnalytics'
-import UILayout from '~/components/UILayout'
-import { UserConfig } from '~/user-config'
 
 import './global.css'
 

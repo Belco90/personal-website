@@ -1,9 +1,9 @@
 import { type FC } from 'react'
 import { type IconType } from 'react-icons'
 
-import { Box, Flex, VStack, styled } from '@/styled-system/jsx'
-import ProfilePicture from '~/components/ProfilePicture'
-import { UserConfig } from '~/user-config'
+import ProfilePicture from '#/components/ProfilePicture'
+import { Box, Flex, VStack, styled } from '#/styled-system/jsx'
+import { UserConfig } from '#/user-config'
 
 type SocialKey = keyof typeof UserConfig.social
 type SocialNetworksRecord = Record<SocialKey, { title: string; Icon: IconType }>

@@ -1,9 +1,11 @@
-import type { ImageProps } from 'next/image'
 import Image from 'next/image'
 
-import { css } from '@/styled-system/css'
-import { Box } from '@/styled-system/jsx'
-import imgSrc from '@app-public/profile-picture.jpg'
+import imgSrc from '#app-public/profile-picture.jpg'
+
+import { css } from '#/styled-system/css'
+import { Box } from '#/styled-system/jsx'
+
+import type { ImageProps } from 'next/image'
 
 type ProfilePictureProps = Omit<ImageProps, 'src' | 'alt'>
 

@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
-import { colors } from '@/theme/colors'
-import { UserConfig } from '~/user-config'
+import { colors } from '#/theme/colors'
+import { UserConfig } from '#/user-config'
 
 // Route segment config
 export const runtime = 'edge'

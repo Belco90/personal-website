@@ -4,7 +4,7 @@ import Link, { type LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 import { type FC, type ReactNode } from 'react'
 
-import { css } from '@/styled-system/css'
+import { css } from '#/styled-system/css'
 
 type HeaderLinkProps<Route extends string> = Pick<LinkProps<Route>, 'href'> & {
 	children: ReactNode

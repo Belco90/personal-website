@@ -1,5 +1,7 @@
 import { type FC } from 'react'
 
+import HeaderLink from '#/components/HeaderLink'
+import ThemeSwitchIconButton from '#/components/ThemeSwitchIconButton'
 import {
 	Box,
 	Container,
@@ -7,9 +9,7 @@ import {
 	HStack,
 	styled,
 	Spacer,
-} from '@/styled-system/jsx'
-import HeaderLink from '~/components/HeaderLink'
-import ThemeSwitchIconButton from '~/components/ThemeSwitchIconButton'
+} from '#/styled-system/jsx'
 
 const Header: FC = () => {
 	return (

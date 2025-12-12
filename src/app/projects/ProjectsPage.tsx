@@ -1,6 +1,6 @@
-import { Container, VStack, styled } from '@/styled-system/jsx'
-import ProjectCard from '~/components/ProjectCard'
-import type { Project } from '~/models'
+import ProjectCard from '#/components/ProjectCard'
+import type { Project } from '#/models'
+import { Container, VStack, styled } from '#/styled-system/jsx'
 
 interface ProjectsPageProps {
 	projects: Array<Project>

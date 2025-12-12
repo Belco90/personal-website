@@ -1,10 +1,10 @@
 import { format, subDays } from 'date-fns'
 import { type FC } from 'react'
 
-import ProjectsPage from '~/app/projects/ProjectsPage'
-import { openGraph } from '~/app/shared-metadata'
-import { type GitHubRepo, type Project } from '~/models'
-import { UserConfig } from '~/user-config'
+import ProjectsPage from '#/app/projects/ProjectsPage'
+import { openGraph } from '#/app/shared-metadata'
+import { type GitHubRepo, type Project } from '#/models'
+import { UserConfig } from '#/user-config'
 
 const PROJECTS_META_INFO: Array<{ githubRepo: string; packageUrl?: string }> = [
 	{

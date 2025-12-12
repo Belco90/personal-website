@@ -1,7 +1,7 @@
 import { type FC, type ReactNode } from 'react'
 
-import { Flex, styled } from '@/styled-system/jsx'
-import Header from '~/components/Header'
+import Header from '#/components/Header'
+import { Flex, styled } from '#/styled-system/jsx'
 
 const UILayout: FC<{ children: ReactNode }> = ({ children }) => {
 	return (
