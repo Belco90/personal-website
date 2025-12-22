@@ -23,39 +23,37 @@ async function OpengraphImage() {
 	).then((res) => res.arrayBuffer())
 
 	return new ImageResponse(
-		(
-			// ImageResponse JSX element
+		// ImageResponse JSX element
+		<div
+			style={{
+				background: 'white',
+				width: '100%',
+				height: '100%',
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'space-around',
+				padding: 30,
+			}}
+		>
+			<img
+				src="https://mario.dev/circle-logo.png"
+				width={200}
+				height={200}
+				alt=""
+			/>
 			<div
 				style={{
-					background: 'white',
-					width: '100%',
-					height: '100%',
 					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'space-around',
-					padding: 30,
+					flexDirection: 'column',
+					alignItems: 'flex-end',
 				}}
 			>
-				<img
-					src="https://mario.dev/circle-logo.png"
-					width={200}
-					height={200}
-					alt=""
-				/>
-				<div
-					style={{
-						display: 'flex',
-						flexDirection: 'column',
-						alignItems: 'flex-end',
-					}}
-				>
-					<div style={{ fontSize: 112 }}>Projects</div>
-					<div style={{ fontSize: 40, color: colors.primary['500'].value }}>
-						{UserConfig.author.name}
-					</div>
+				<div style={{ fontSize: 112 }}>Projects</div>
+				<div style={{ fontSize: 40, color: colors.primary['500'].value }}>
+					{UserConfig.author.name}
 				</div>
 			</div>
-		),
+		</div>,
 		// ImageResponse options
 		{
 			// For convenience, we can re-use the exported opengraph-image
