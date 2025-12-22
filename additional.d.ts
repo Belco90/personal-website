@@ -1,3 +1,0 @@
-/**
- * @fileoverview Keep additional types
- */

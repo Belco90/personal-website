@@ -26,12 +26,10 @@
 	},
 	"packageManager": "pnpm@10.26.1",
 	"scripts": {
-		"start": "next start",
-		"dev": "next dev",
-		"dev:turbo": "next dev --turbo",
-		"build": "next build",
-		"type-gen": "next typegen",
-		"type-check": "pnpm type-gen && tsc --noEmit",
+		"dev": "vite dev",
+		"build": "vite build",
+		"start": "node .output/server/index.mjs",
+		"type-check": "tsc --noEmit",
 		"lint": "eslint . --report-unused-disable-directives",
 		"lint:fix": "pnpm lint --fix",
 		"format": "prettier --write --ignore-unknown src \"*.{json,js,md}\"",
@@ -47,7 +45,6 @@
 		"usehooks-ts": "^3.1.1"
 	},
 	"devDependencies": {
-		"@eslint/eslintrc": "^3.3.3",
 		"@eslint/js": "^9.39.2",
 		"@pandacss/dev": "^1.7.1",
 		"@types/node": "^22.19.3",

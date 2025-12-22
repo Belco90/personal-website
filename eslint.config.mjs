@@ -1,23 +1,14 @@
 // @ts-check
-
-import { FlatCompat } from '@eslint/eslintrc'
 import eslint from '@eslint/js'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
 import tseslint from 'typescript-eslint'
 
-const compat = new FlatCompat({
-	baseDirectory: import.meta.dirname,
-})
-
 export default defineConfig(
 	eslint.configs.recommended,
 	tseslint.configs.recommendedTypeChecked,
 	tseslint.configs.stylisticTypeChecked,
-	prettierRecommended,
-	{
-		extends: compat.extends('next/core-web-vitals'),
-	},
+	// TODO: enable equivalent to eslint-config-next
 	{
 		languageOptions: {
 			parser: tseslint.parser,
@@ -58,38 +49,38 @@ export default defineConfig(
 			'@typescript-eslint/no-explicit-any': 'error',
 
 			// Import
-			'import/newline-after-import': 'error',
-			'import/order': [
-				'error',
-				{
-					'newlines-between': 'always',
-
-					alphabetize: {
-						order: 'asc',
-						caseInsensitive: false,
-					},
-
-					groups: [
-						'builtin',
-						'external',
-						'internal',
-						['parent', 'sibling', 'index'],
-						'object',
-						'type',
-					],
-
-					pathGroups: [
-						{
-							pattern: '#/**',
-							group: 'internal',
-							position: 'after',
-						},
-					],
-				},
-			],
+			// 'import/newline-after-import': 'error',
+			// 'import/order': [
+			// 	'error',
+			// 	{
+			// 		'newlines-between': 'always',
+			//
+			// 		alphabetize: {
+			// 			order: 'asc',
+			// 			caseInsensitive: false,
+			// 		},
+			//
+			// 		groups: [
+			// 			'builtin',
+			// 			'external',
+			// 			'internal',
+			// 			['parent', 'sibling', 'index'],
+			// 			'object',
+			// 			'type',
+			// 		],
+			//
+			// 		pathGroups: [
+			// 			{
+			// 				pattern: '#/**',
+			// 				group: 'internal',
+			// 				position: 'after',
+			// 			},
+			// 		],
+			// 	},
+			// ],
 
 			// React
-			'react/self-closing-comp': 'warn',
+			// 'react/self-closing-comp': 'warn',
 		},
 	},
 	// Config files
@@ -97,6 +88,7 @@ export default defineConfig(
 		files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
 		extends: [tseslint.configs.disableTypeChecked],
 	},
+	prettierRecommended,
 	globalIgnores([
 		'**/node_modules',
 		'**/.next',
