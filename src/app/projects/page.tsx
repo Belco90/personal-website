@@ -2,7 +2,7 @@ import { format, subDays } from 'date-fns'
 import { type FC } from 'react'
 
 import ProjectsPage from '#/app/projects/ProjectsPage'
-import { openGraph } from '#/app/shared-metadata'
+import { openGraph } from '#/routes/shared-metadata'
 import { type GitHubRepo, type Project } from '#/models'
 import { UserConfig } from '#/user-config'
 

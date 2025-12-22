@@ -7,9 +7,9 @@ import UILayout from '#/components/UILayout'
 import { UserConfig } from '#/user-config'
 
 import Providers from './Providers'
-import { openGraph } from './shared-metadata'
+import { openGraph } from '../routes/shared-metadata'
 
-import './global.css'
+import '../routes/global.css'
 
 const rubikFont = Rubik({
 	subsets: ['latin'],

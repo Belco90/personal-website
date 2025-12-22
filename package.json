@@ -21,6 +21,7 @@
 	],
 	"author": "Mario Beltrán",
 	"license": "ISC",
+	"type": "module",
 	"engines": {
 		"pnpm": "^10.26.0"
 	},
