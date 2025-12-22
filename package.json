@@ -22,9 +22,9 @@
 	"author": "Mario Beltrán",
 	"license": "ISC",
 	"engines": {
-		"pnpm": "^9.14.0"
+		"pnpm": "^10.26.0"
 	},
-	"packageManager": "pnpm@9.14.2",
+	"packageManager": "pnpm@10.26.1",
 	"scripts": {
 		"start": "next start",
 		"dev": "next dev",
