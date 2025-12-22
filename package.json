@@ -31,11 +31,11 @@
 		"dev:turbo": "next dev --turbo",
 		"build": "next build",
 		"type-gen": "next typegen",
-		"type-check": "pnpm type-gen & tsc --noEmit",
+		"type-check": "pnpm type-gen && tsc --noEmit",
 		"lint": "eslint . --report-unused-disable-directives",
 		"lint:fix": "pnpm lint --fix",
 		"format": "prettier --write --ignore-unknown src \"*.{json,js,md}\"",
-		"prepare": "panda codegen & husky"
+		"prepare": "panda codegen && husky"
 	},
 	"dependencies": {
 		"date-fns": "^4.1.0",
