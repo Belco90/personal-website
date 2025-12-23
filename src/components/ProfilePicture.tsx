@@ -12,9 +12,9 @@ export function ProfilePicture(props: ProfilePictureProps) {
 	return (
 		<Box>
 			<Image
-				width={715}
-				height={715}
-				className={css({ rounded: 'full', width: '150px' })}
+				width={150}
+				height={150}
+				className={css({ rounded: 'full' })}
 				{...props}
 				src={profilePicture}
 				alt="Smiling Mario"
