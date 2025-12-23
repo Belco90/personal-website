@@ -6,6 +6,7 @@ import {
 } from '@tanstack/react-router'
 
 import './global.css'
+import { seo } from '#/seo'
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -15,7 +16,21 @@ export const Route = createRootRoute({
 				name: 'viewport',
 				content: 'width=device-width, initial-scale=1',
 			},
-			{ title: 'TanStack Start Starter' },
+			...seo(),
+		],
+		links: [
+			{
+				rel: 'apple-touch-icon',
+				sizes: '180x180',
+				href: '/apple-icon.png',
+			},
+			{
+				rel: 'icon',
+				type: 'image/png',
+				sizes: '192x192',
+				href: '/icon.png',
+			},
+			{ rel: 'icon', href: '/favicon.ico' },
 		],
 		scripts: [
 			{

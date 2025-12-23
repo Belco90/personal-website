@@ -3,9 +3,9 @@ import { type IconType } from 'react-icons'
 
 import ProfilePicture from '#/components/ProfilePicture'
 import { Box, Flex, VStack, styled } from '#/styled-system/jsx'
-import { UserConfig } from '#/user-config'
+import { USER_CONFIG } from '#/user-config'
 
-type SocialKey = keyof typeof UserConfig.social
+type SocialKey = keyof typeof USER_CONFIG.social
 type SocialNetworksRecord = Record<SocialKey, { title: string; Icon: IconType }>
 
 const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
@@ -41,13 +41,13 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 					px={{ base: '4', md: '16' }}
 					py="5"
 				>
-					<styled.h1 mb="4">{UserConfig.author.name}</styled.h1>
+					<styled.h1 mb="4">{USER_CONFIG.author.name}</styled.h1>
 					<styled.h2
 						color={{ base: 'primary.600', _dark: 'primary.300' }}
 						fontSize="lg"
 						fontWeight="normal"
 					>
-						{UserConfig.author.position}
+						{USER_CONFIG.author.position}
 					</styled.h2>
 				</Box>
 
@@ -61,7 +61,7 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 				>
 					{Object.entries(socialNetworksRecord).map(([id, { title, Icon }]) => {
 						const socialKey = id as SocialKey
-						const link = UserConfig.social[socialKey]
+						const link = USER_CONFIG.social[socialKey]
 						const href = socialKey === 'email' ? `mailto:${link}` : link
 						return (
 							<styled.li

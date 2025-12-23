@@ -4,7 +4,7 @@ import { type FC } from 'react'
 import ProjectsPage from '#/app/projects/ProjectsPage'
 import { openGraph } from '#/routes/shared-metadata'
 import { type GitHubRepo, type Project } from '#/models'
-import { UserConfig } from '#/user-config'
+import { USER_CONFIG } from '#/user-config'
 
 const PROJECTS_META_INFO: Array<{ githubRepo: string; packageUrl?: string }> = [
 	{
@@ -109,7 +109,7 @@ async function getProjects(): Promise<Array<Project>> {
 
 export const revalidate = 60 // revalidate at most every hour
 
-const metaDescription = `${UserConfig.author.name}'s OSS and side projects`
+const metaDescription = `${USER_CONFIG.author.name}'s OSS and side projects`
 export const metadata = {
 	title: 'Projects',
 	description: metaDescription,

@@ -4,7 +4,7 @@ import { type FC, type ReactNode } from 'react'
 
 import { PirschAnalytics } from '#/app/PirschAnalytics'
 import UILayout from '#/components/UILayout'
-import { UserConfig } from '#/user-config'
+import { USER_CONFIG } from '#/user-config'
 
 import Providers from './Providers'
 import { openGraph } from '../routes/shared-metadata'
@@ -24,10 +24,10 @@ const karlaFont = Karla({
 
 export const metadata = {
 	title: {
-		template: `%s | ${UserConfig.author.name}`,
-		default: UserConfig.author.name,
+		template: `%s | ${USER_CONFIG.author.name}`,
+		default: USER_CONFIG.author.name,
 	},
-	description: UserConfig.author.position,
+	description: USER_CONFIG.author.position,
 	openGraph: { ...openGraph },
 }
 

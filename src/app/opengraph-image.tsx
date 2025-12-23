@@ -1,13 +1,13 @@
 import { ImageResponse } from 'next/og'
 
 import { colors } from '#/theme/colors'
-import { UserConfig } from '#/user-config'
+import { USER_CONFIG } from '#/user-config'
 
 // Route segment config
 export const runtime = 'edge'
 
 // Image metadata
-export const alt = `${UserConfig.author.name} - ${UserConfig.author.position}`
+export const alt = `${USER_CONFIG.author.name} - ${USER_CONFIG.author.position}`
 export const size = {
 	width: 1200,
 	height: 630,
@@ -48,9 +48,9 @@ async function OpengraphImage() {
 					alignItems: 'flex-end',
 				}}
 			>
-				<div style={{ fontSize: 112 }}>{UserConfig.author.name}</div>
+				<div style={{ fontSize: 112 }}>{USER_CONFIG.author.name}</div>
 				<div style={{ fontSize: 40, color: colors.primary['500'].value }}>
-					{UserConfig.author.position}
+					{USER_CONFIG.author.position}
 				</div>
 			</div>
 		</div>,
