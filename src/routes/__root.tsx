@@ -6,7 +6,7 @@ import {
 } from '@tanstack/react-router'
 
 import { seo } from '#/seo'
-import UILayout from '#/components/UILayout'
+import { MainLayout } from '#/components/MainLayout'
 import { Providers } from '#/components/Providers'
 
 import globalCss from '../global.css?url'
@@ -61,9 +61,9 @@ function RootLayout() {
 			</head>
 			<body>
 				<Providers>
-					<UILayout>
+					<MainLayout>
 						<Outlet />
-					</UILayout>
+					</MainLayout>
 				</Providers>
 				<Scripts />
 			</body>
