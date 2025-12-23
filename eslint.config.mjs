@@ -89,11 +89,5 @@ export default defineConfig(
 		extends: [tseslint.configs.disableTypeChecked],
 	},
 	prettierRecommended,
-	globalIgnores([
-		'**/node_modules',
-		'**/.next',
-		'**/public',
-		'**/styled-system',
-		'**/next-env.d.ts',
-	]),
+	globalIgnores(['**/node_modules', '**/public', '**/styled-system']),
 )

@@ -1,5 +1,6 @@
 verifyDepsBeforeRun: 'warn'
 allowBuilds:
+  '@parcel/watcher': true
   esbuild: true
   sharp: true
   unrs-resolver: true

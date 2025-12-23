@@ -55,8 +55,8 @@ typings/
 # dotenv environment variables file
 .env*.local
 
-# Next files
-.next
+# Bundle
+dist/
 
 # Panda CSS output
 styled-system
