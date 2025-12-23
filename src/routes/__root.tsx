@@ -9,6 +9,8 @@ import { seo } from '#/seo'
 import { MainLayout } from '#/components/MainLayout'
 import { Providers } from '#/components/Providers'
 
+import '@fontsource-variable/rubik'
+import '@fontsource-variable/karla'
 import globalCss from '../global.css?url'
 
 export const Route = createRootRoute({
