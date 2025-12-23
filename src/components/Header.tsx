@@ -1,7 +1,5 @@
-import { type FC } from 'react'
-
-import HeaderLink from '#/components/HeaderLink'
-import ThemeSwitchIconButton from '#/components/ThemeSwitchIconButton'
+// import HeaderLink from '#/components/HeaderLink'
+// import ThemeSwitchIconButton from '#/components/ThemeSwitchIconButton'
 import {
 	Box,
 	Container,
@@ -10,6 +8,8 @@ import {
 	styled,
 	Spacer,
 } from '#/styled-system/jsx'
+
+import type { FC } from 'react'
 
 const Header: FC = () => {
 	return (
@@ -44,10 +44,12 @@ const Header: FC = () => {
 							alignItems="center"
 							justifyContent="center"
 						>
-							<HeaderLink href="/">Home</HeaderLink>
-							<HeaderLink href="/projects">Projects</HeaderLink>
+							{/*<HeaderLink href="/">Home</HeaderLink>*/}
+							{/*<HeaderLink href="/projects">Projects</HeaderLink>*/}
+							TODO: Header Links
 						</styled.nav>
-						<ThemeSwitchIconButton />
+						<div>TODO: theme toggle</div>
+						{/*<ThemeSwitchIconButton />*/}
 					</HStack>
 				</Flex>
 			</Container>

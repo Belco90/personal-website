@@ -1,14 +1,14 @@
 import { type FC } from 'react'
 import { type IconType } from 'react-icons'
 
-import ProfilePicture from '#/components/ProfilePicture'
+// import ProfilePicture from '#/components/ProfilePicture'
 import { Box, Flex, VStack, styled } from '#/styled-system/jsx'
-import { USER_CONFIG } from '#/user-config'
+import { USER_CONFIG } from '#/seo'
 
 type SocialKey = keyof typeof USER_CONFIG.social
 type SocialNetworksRecord = Record<SocialKey, { title: string; Icon: IconType }>
 
-const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
+export const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 	socialNetworksRecord,
 }) => {
 	return (
@@ -29,7 +29,8 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 						borderColor="primary.200"
 					>
 						<Box rounded="full" shadow="profile-picture-inner">
-							<ProfilePicture priority />
+							{/*<ProfilePicture priority />*/}
+							TODO
 						</Box>
 					</Box>
 				</Box>
@@ -81,5 +82,3 @@ const HomePage: FC<{ socialNetworksRecord: SocialNetworksRecord }> = ({
 		</Flex>
 	)
 }
-
-export default HomePage

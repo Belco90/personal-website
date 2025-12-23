@@ -7,7 +7,7 @@ import {
 	FaEnvelope,
 } from 'react-icons/fa6'
 
-import HomePage from './HomePage'
+import HomePage from '../routes/HomePage'
 
 const SOCIAL_NETWORKS_RECORD = {
 	email: { title: 'Email', Icon: FaEnvelope },

@@ -7,6 +7,7 @@ import {
 
 import './global.css'
 import { seo } from '#/seo'
+import UILayout from '#/components/UILayout'
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -52,7 +53,9 @@ function RootLayout() {
 				<HeadContent />
 			</head>
 			<body>
-				<Outlet />
+				<UILayout>
+					<Outlet />
+				</UILayout>
 				<Scripts />
 			</body>
 		</html>
