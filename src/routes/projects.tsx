@@ -3,7 +3,7 @@ import { seo, USER_CONFIG } from '#/seo'
 import { Container, styled, VStack } from '#/styled-system/jsx'
 import ProjectCard from '#/components/ProjectCard'
 
-import type { Project } from '#/models'
+import { getProjects } from '#/utils/projects'
 
 export const Route = createFileRoute('/projects')({
 	head: () => ({
@@ -12,12 +12,13 @@ export const Route = createFileRoute('/projects')({
 			description: `${USER_CONFIG.author.name}'s OSS and side projects`,
 		}),
 	}),
+	loader: getProjects,
+	staleTime: 3_600_000, // 1 hour
 	component: ProjectsPage,
 })
 
 function ProjectsPage() {
-	// TODO: handle error fetching projects
-	const projects: Array<Project> = []
+	const projects = Route.useLoaderData()
 
 	return (
 		<Container maxWidth="breakpoint-md">
