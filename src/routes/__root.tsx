@@ -5,9 +5,11 @@ import {
 	Scripts,
 } from '@tanstack/react-router'
 
-import globalCss from '../global.css?url'
 import { seo } from '#/seo'
 import UILayout from '#/components/UILayout'
+import { Providers } from '#/components/Providers'
+
+import globalCss from '../global.css?url'
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -16,6 +18,10 @@ export const Route = createRootRoute({
 			{
 				name: 'viewport',
 				content: 'width=device-width, initial-scale=1',
+			},
+			{
+				name: 'color-scheme',
+				content: 'light dark',
 			},
 			...seo(),
 		],
@@ -54,9 +60,11 @@ function RootLayout() {
 				<HeadContent />
 			</head>
 			<body>
-				<UILayout>
-					<Outlet />
-				</UILayout>
+				<Providers>
+					<UILayout>
+						<Outlet />
+					</UILayout>
+				</Providers>
 				<Scripts />
 			</body>
 		</html>

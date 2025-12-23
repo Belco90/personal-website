@@ -1,5 +1,5 @@
 import { HeaderLink } from '#/components/HeaderLink'
-// import ThemeSwitchIconButton from '#/components/ThemeSwitchIconButton'
+import { ThemeSwitchButton } from '#/components/ThemeSwitchButton'
 import {
 	Box,
 	Container,
@@ -47,8 +47,7 @@ const Header: FC = () => {
 							<HeaderLink to="/">Home</HeaderLink>
 							<HeaderLink to="/projects">Projects</HeaderLink>
 						</styled.nav>
-						<div>ThemeToggle</div>
-						{/*<ThemeSwitchIconButton />*/}
+						<ThemeSwitchButton />
 					</HStack>
 				</Flex>
 			</Container>
