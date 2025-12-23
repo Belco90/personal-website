@@ -45,7 +45,7 @@ const Header: FC = () => {
 							justifyContent="center"
 						>
 							<HeaderLink to="/">Home</HeaderLink>
-							{/*<HeaderLink to="/projects">Projects</HeaderLink>*/}
+							<HeaderLink to="/projects">Projects</HeaderLink>
 						</styled.nav>
 						<div>ThemeToggle</div>
 						{/*<ThemeSwitchIconButton />*/}

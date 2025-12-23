@@ -9,7 +9,7 @@ import { USER_CONFIG } from '#/user-config'
 import Providers from './Providers'
 import { openGraph } from '../routes/shared-metadata'
 
-import '../routes/global.css'
+import '../global.css'
 
 const rubikFont = Rubik({
 	subsets: ['latin'],

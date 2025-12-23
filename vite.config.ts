@@ -11,6 +11,8 @@ export default defineConfig({
 		// Enables Vite to resolve imports using path aliases.
 		tsconfigPaths(),
 		tanstackStart(),
+
+		// React's vite plugin must come after Start's vite plugin
 		viteReact(),
 	],
 })

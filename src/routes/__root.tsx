@@ -5,7 +5,7 @@ import {
 	Scripts,
 } from '@tanstack/react-router'
 
-import './global.css'
+import globalCss from '../global.css?url'
 import { seo } from '#/seo'
 import UILayout from '#/components/UILayout'
 
@@ -20,6 +20,7 @@ export const Route = createRootRoute({
 			...seo(),
 		],
 		links: [
+			{ rel: 'stylesheet', href: globalCss },
 			{
 				rel: 'apple-touch-icon',
 				sizes: '180x180',
