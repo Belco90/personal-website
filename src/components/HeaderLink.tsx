@@ -1,33 +1,29 @@
-'use client'
-
-import Link, { type LinkProps } from 'next/link'
-import { usePathname } from 'next/navigation'
-import { type FC, type ReactNode } from 'react'
-
 import { css } from '#/styled-system/css'
 
-type HeaderLinkProps<Route extends string> = Pick<LinkProps<Route>, 'href'> & {
-	children: ReactNode
-}
+import type { FC } from 'react'
 
-const HeaderLink: FC<HeaderLinkProps<string>> = ({ children, href }) => {
-	const pathname = usePathname()
-	const isActive = pathname === href
+import { Link } from '@tanstack/react-router'
+import type { LinkProps } from '@tanstack/react-router'
 
+type HeaderLinkProps = Pick<LinkProps, 'children' | 'to'>
+
+export const HeaderLink: FC<HeaderLinkProps> = ({ children, to }) => {
 	return (
 		<Link
-			href={href}
-			aria-current={isActive ? 'page' : undefined}
+			to={to}
+			activeProps={{
+				className: css({
+					textDecorationLine: 'underline',
+					textDecorationColor: { base: 'primary.600', _dark: 'primary.300' },
+					color: { base: 'primary.600', _dark: 'primary.300' },
+				}),
+			}}
+			inactiveProps={{
+				className: css({ color: { base: 'gray.700', _dark: 'gray.200' } }),
+			}}
 			className={css({
-				textDecorationLine: isActive ? 'underline' : 'none',
-				textDecorationColor: isActive
-					? { base: 'primary.600', _dark: 'primary.300' }
-					: undefined,
 				textDecorationThickness: '2px',
 				textUnderlineOffset: '2px',
-				color: isActive
-					? { base: 'primary.600', _dark: 'primary.300' }
-					: { base: 'gray.700', _dark: 'gray.200' },
 				fontSize: 'lg',
 				p: '1',
 				_hover: {
@@ -42,5 +38,3 @@ const HeaderLink: FC<HeaderLinkProps<string>> = ({ children, href }) => {
 		</Link>
 	)
 }
-
-export default HeaderLink

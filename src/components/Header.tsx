@@ -1,4 +1,4 @@
-// import HeaderLink from '#/components/HeaderLink'
+import { HeaderLink } from '#/components/HeaderLink'
 // import ThemeSwitchIconButton from '#/components/ThemeSwitchIconButton'
 import {
 	Box,
@@ -44,11 +44,10 @@ const Header: FC = () => {
 							alignItems="center"
 							justifyContent="center"
 						>
-							{/*<HeaderLink href="/">Home</HeaderLink>*/}
-							{/*<HeaderLink href="/projects">Projects</HeaderLink>*/}
-							TODO: Header Links
+							<HeaderLink to="/">Home</HeaderLink>
+							{/*<HeaderLink to="/projects">Projects</HeaderLink>*/}
 						</styled.nav>
-						<div>TODO: theme toggle</div>
+						<div>ThemeToggle</div>
 						{/*<ThemeSwitchIconButton />*/}
 					</HStack>
 				</Flex>
