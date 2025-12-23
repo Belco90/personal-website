@@ -7,7 +7,7 @@ import {
 	FaStackOverflow,
 } from 'react-icons/fa6'
 
-// import ProfilePicture from '#/components/ProfilePicture'
+import { ProfilePicture } from '#/components/ProfilePicture'
 import { Box, Flex, VStack, styled } from '#/styled-system/jsx'
 import { USER_CONFIG } from '#/seo'
 
@@ -47,8 +47,7 @@ function HomePage() {
 						borderColor="primary.200"
 					>
 						<Box rounded="full" shadow="profile-picture-inner">
-							{/*<ProfilePicture priority />*/}
-							TODO
+							<ProfilePicture />
 						</Box>
 					</Box>
 				</Box>
