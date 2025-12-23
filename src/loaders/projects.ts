@@ -3,14 +3,14 @@ import { format, subDays } from 'date-fns'
 import type { GitHubRepo, Project } from '#/models'
 
 export const PROJECTS_META_INFO: Array<{
-	githubRepo: string
+	githubRepo: `${string}/${string}`
 	packageUrl?: string
 }> = [
 	{
 		githubRepo: 'testing-library/eslint-plugin-testing-library',
 		packageUrl: 'https://www.npmjs.com/package/eslint-plugin-testing-library',
 	},
-	{ githubRepo: 'octochangelog/octochangelog-webapp' },
+	{ githubRepo: 'Belco90/octochangelog' },
 	{ githubRepo: 'Belco90/mastodonte-js' },
 ]
 
