@@ -3,7 +3,7 @@ import { seo, USER_CONFIG } from '#/seo'
 import { Container, styled, VStack } from '#/styled-system/jsx'
 import ProjectCard from '#/components/ProjectCard'
 
-import { getProjects } from '#/utils/projects'
+import { getProjects } from '#/loaders/projects'
 
 export const Route = createFileRoute('/projects')({
 	head: () => ({
