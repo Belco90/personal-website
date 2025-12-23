@@ -17,7 +17,16 @@ export const Route = createRootRoute({
 			},
 			{ title: 'TanStack Start Starter' },
 		],
+		scripts: [
+			{
+				defer: true,
+				src: 'https://api.pirsch.io/pa.js',
+				id: 'pianjs',
+				'data-code': import.meta.env.VITE_PIRSCH_CODE,
+			},
+		],
 	}),
+
 	component: RootLayout,
 })
 
