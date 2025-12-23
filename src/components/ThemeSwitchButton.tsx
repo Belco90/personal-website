@@ -5,7 +5,7 @@ import { styled } from '#/styled-system/jsx'
 
 import type { ThemeMode } from '#/components/ThemeProvider'
 
-type ThemeOption = {
+interface ThemeOption {
 	value: ThemeMode
 	label: string
 }
@@ -68,7 +68,6 @@ export function ThemeSwitchButton() {
 					color: { base: 'current', _dark: 'primary.600' },
 				}}
 			>
-				{resolvedTheme}
 				<Icon />
 			</styled.button>
 
