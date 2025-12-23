@@ -1,31 +1,38 @@
 {
 	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"#/*": ["src/*"],
-			"#/styled-system/*": ["styled-system/*"],
-			"#/theme/*": ["theme/*"],
-			"#app-public/*": ["./public/*"]
-		},
-		"allowJs": true,
-		"alwaysStrict": true,
+		/* Base options */
 		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"lib": ["dom", "es2019"],
-		"moduleResolution": "bundler",
-		"noEmit": true,
-		"noFallthroughCasesInSwitch": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"resolveJsonModule": true,
 		"skipLibCheck": true,
+		"target": "ES2022",
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"moduleDetection": "force",
+		"isolatedModules": true,
+		"incremental": true,
+
+		/* Strictness */
 		"strict": true,
-		"target": "esnext",
-		"allowSyntheticDefaultImports": true,
-		"incremental": true
+		"alwaysStrict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+
+		/* TanStack Start suggestions */
+		"jsx": "react-jsx",
+		"moduleResolution": "Bundler",
+		"module": "ESNext",
+		"noEmit": true,
+		"strictNullChecks": true,
+
+		/* Code runs in the DOM */
+		"lib": ["es2022", "dom", "dom.iterable"],
+
+		/* Other */
+		"paths": {
+			"#/*": ["./src/*"],
+			"#/styled-system/*": ["./styled-system/*"],
+			"#/theme/*": ["./theme/*"],
+			"#app-public/*": ["./public/*"]
+		}
 	},
-	"exclude": ["node_modules"],
 	"include": ["styled-system", "**/*.ts", "**/*.tsx"]
 }
