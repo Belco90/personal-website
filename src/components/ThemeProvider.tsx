@@ -1,6 +1,6 @@
 import { ScriptOnce } from '@tanstack/react-router'
 import { createClientOnlyFn, createIsomorphicFn } from '@tanstack/react-start'
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, use, useEffect, useState } from 'react'
 
 import type { ReactNode } from 'react'
 
@@ -130,16 +130,16 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 	}
 
 	return (
-		<ThemeContext.Provider value={{ themeMode, resolvedTheme, setTheme }}>
+		<ThemeContext value={{ themeMode, resolvedTheme, setTheme }}>
 			<ScriptOnce children={themeDetectorScript} />
 			{children}
-		</ThemeContext.Provider>
+		</ThemeContext>
 	)
 }
 
 // useTheme hook
 export const useTheme = () => {
-	const context = useContext(ThemeContext)
+	const context = use(ThemeContext)
 	if (!context) {
 		throw new Error('useTheme must be used within a ThemeProvider')
 	}

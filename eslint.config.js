@@ -1,5 +1,6 @@
 // @ts-check
 import eslint from '@eslint/js'
+import eslintReact from '@eslint-react/eslint-plugin'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import prettierConfig from 'eslint-config-prettier/flat'
 import { importX } from 'eslint-plugin-import-x'
@@ -13,6 +14,7 @@ export default defineConfig(
 	importX.flatConfigs.recommended,
 	importX.flatConfigs.typescript,
 	importX.flatConfigs.react,
+	eslintReact.configs['recommended-type-checked'],
 	{
 		files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
 		languageOptions: {
