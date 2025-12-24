@@ -1,7 +1,5 @@
 import { Image } from '@unpic/react'
 
-import profilePicture from '#app-public/profile-picture.jpg'
-
 import { css } from '#/styled-system/css'
 import { Box } from '#/styled-system/jsx'
 
@@ -17,7 +15,7 @@ export function ProfilePicture(props: ProfilePictureProps) {
 				height={150}
 				className={css({ rounded: 'full' })}
 				{...props}
-				src={profilePicture}
+				src="profile-picture.jpg"
 				alt="Smiling Mario"
 			/>
 		</Box>

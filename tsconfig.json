@@ -30,8 +30,7 @@
 		"paths": {
 			"#/*": ["./src/*"],
 			"#/styled-system/*": ["./styled-system/*"],
-			"#/theme/*": ["./theme/*"],
-			"#app-public/*": ["./public/*"]
+			"#/theme/*": ["./theme/*"]
 		}
 	},
 	"include": ["styled-system", "**/*.ts", "**/*.tsx"]
