@@ -1,8 +1,8 @@
 // @ts-check
 import eslint from '@eslint/js'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import prettierConfig from 'eslint-config-prettier/flat'
 import { importX } from 'eslint-plugin-import-x'
-import prettierRecommended from 'eslint-plugin-prettier/recommended'
 import * as tseslint from 'typescript-eslint'
 
 export default defineConfig(
@@ -91,11 +91,11 @@ export default defineConfig(
 		files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
 		extends: [tseslint.configs.disableTypeChecked],
 	},
-	prettierRecommended,
 	globalIgnores([
 		'**/node_modules',
 		'**/public',
 		'**/styled-system',
 		'**/dist',
 	]),
+	prettierConfig, // must always be the last one
 )
