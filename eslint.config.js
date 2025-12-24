@@ -5,6 +5,7 @@ import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import prettierConfig from 'eslint-config-prettier/flat'
 import { importX } from 'eslint-plugin-import-x'
+import reactHooks from 'eslint-plugin-react-hooks'
 import globals from 'globals'
 import * as tsEslint from 'typescript-eslint'
 
@@ -16,6 +17,7 @@ export default defineConfig(
 	importX.flatConfigs.typescript,
 	importX.flatConfigs.react,
 	eslintReact.configs['recommended-type-checked'],
+	reactHooks.configs.flat.recommended,
 	{
 		files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
 		languageOptions: {
