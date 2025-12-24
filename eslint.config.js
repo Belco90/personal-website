@@ -3,19 +3,24 @@ import eslint from '@eslint/js'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import prettierConfig from 'eslint-config-prettier/flat'
 import { importX } from 'eslint-plugin-import-x'
-import * as tseslint from 'typescript-eslint'
+import globals from 'globals'
+import * as tsEslint from 'typescript-eslint'
 
 export default defineConfig(
 	eslint.configs.recommended,
-	tseslint.configs.recommendedTypeChecked,
-	tseslint.configs.stylisticTypeChecked,
+	tsEslint.configs.recommendedTypeChecked,
+	tsEslint.configs.stylisticTypeChecked,
 	importX.flatConfigs.recommended,
 	importX.flatConfigs.typescript,
 	importX.flatConfigs.react,
 	{
 		files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
 		languageOptions: {
-			parser: tseslint.parser,
+			globals: {
+				...globals.nodeBuiltin,
+				...globals.browser,
+			},
+			parser: tsEslint.parser,
 			ecmaVersion: 'latest',
 			sourceType: 'module',
 			parserOptions: {
@@ -89,7 +94,7 @@ export default defineConfig(
 	// Plain JS files
 	{
 		files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
-		extends: [tseslint.configs.disableTypeChecked],
+		extends: [tsEslint.configs.disableTypeChecked],
 	},
 	globalIgnores([
 		'**/node_modules',
