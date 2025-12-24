@@ -5,6 +5,7 @@ import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import prettierConfig from 'eslint-config-prettier/flat'
 import { importX } from 'eslint-plugin-import-x'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 import reactHooks from 'eslint-plugin-react-hooks'
 import globals from 'globals'
 import * as tsEslint from 'typescript-eslint'
@@ -18,6 +19,7 @@ export default defineConfig(
 	importX.flatConfigs.react,
 	eslintReact.configs['recommended-type-checked'],
 	reactHooks.configs.flat.recommended,
+	jsxA11y.flatConfigs.recommended,
 	{
 		files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
 		languageOptions: {
@@ -92,6 +94,15 @@ export default defineConfig(
 							position: 'after',
 						},
 					],
+				},
+			],
+
+			// JSX A11Y
+			'jsx-a11y/alt-text': [
+				'warn',
+				{
+					elements: ['img'],
+					img: ['Image'],
 				},
 			],
 
