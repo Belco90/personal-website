@@ -13,8 +13,15 @@ export default defineConfig({
 		tsconfigPaths(),
 		tanstackStart({
 			prerender: {
-				// @ts-expect-error No idea why routes is not typed correctly
-				routes: ['/projects'],
+				enabled: process.env.NODE_ENV === 'production',
+				filter: ({ path }) => {
+					// Only prerender project pages
+					if (path.includes('/projects')) {
+						return true
+					}
+
+					return false
+				},
 				crawlLinks: true,
 			},
 		}),
