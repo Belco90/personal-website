@@ -51,8 +51,10 @@ const getSystemTheme = createIsomorphicFn()
 			: 'light'
 	})
 
-const updateThemeClass = createClientOnlyFn((themeMode: ThemeMode) => {
+const updateThemeAttributes = createClientOnlyFn((themeMode: ThemeMode) => {
 	const root = document.documentElement
+
+	// CSS class
 	root.classList.remove(...THEME_MODES)
 	const newTheme = themeMode === 'system' ? getSystemTheme() : themeMode
 	root.classList.add(newTheme)
@@ -60,11 +62,17 @@ const updateThemeClass = createClientOnlyFn((themeMode: ThemeMode) => {
 	if (themeMode === 'system') {
 		root.classList.add('system')
 	}
+
+	// data-theme attribute
+	root.setAttribute('data-theme', newTheme)
+
+	// Style color-scheme
+	root.style.setProperty('color-scheme', newTheme)
 })
 
 const setupPreferredListener = createClientOnlyFn(() => {
 	const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-	const handler = () => updateThemeClass('system')
+	const handler = () => updateThemeAttributes('system')
 
 	mediaQuery.addEventListener('change', handler)
 	return () => mediaQuery.removeEventListener('change', handler)
@@ -73,6 +81,7 @@ const setupPreferredListener = createClientOnlyFn(() => {
 // Everything must be hardcoded inside this script
 const themeDetectorScript = (function () {
 	function themeFn() {
+		const root = document.documentElement
 		try {
 			const storedTheme = localStorage.getItem('theme-mode') || 'system'
 			const validTheme = ['light', 'dark', 'system'].includes(storedTheme)
@@ -84,16 +93,22 @@ const themeDetectorScript = (function () {
 					.matches
 					? 'dark'
 					: 'light'
-				document.documentElement.classList.add(autoTheme, 'system')
+				root.classList.add(autoTheme, 'system')
+				root.setAttribute('data-theme', autoTheme)
+				root.style.setProperty('color-scheme', autoTheme)
 			} else {
-				document.documentElement.classList.add(validTheme)
+				root.classList.add(validTheme)
+				root.setAttribute('data-theme', validTheme)
+				root.style.setProperty('color-scheme', validTheme)
 			}
 		} catch {
 			const autoTheme = window.matchMedia('(prefers-color-scheme: dark)')
 				.matches
 				? 'dark'
 				: 'light'
-			document.documentElement.classList.add(autoTheme, 'system')
+			root.classList.add(autoTheme, 'system')
+			root.setAttribute('data-theme', autoTheme)
+			root.style.setProperty('color-scheme', autoTheme)
 		}
 	}
 	return `(${themeFn.toString()})();`
@@ -126,7 +141,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 	const setTheme = (newTheme: ThemeMode) => {
 		setThemeMode(newTheme)
 		setStoredThemeMode(newTheme)
-		updateThemeClass(newTheme)
+		updateThemeAttributes(newTheme)
 	}
 
 	return (

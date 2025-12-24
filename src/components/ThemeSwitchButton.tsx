@@ -3,6 +3,7 @@ import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 
 import { useTheme } from '#/components/ThemeProvider'
 import type { ThemeMode } from '#/components/ThemeProvider'
+import { css } from '#/styled-system/css'
 import { styled } from '#/styled-system/jsx'
 
 interface ThemeOption {
@@ -17,7 +18,7 @@ const OPTIONS: Array<ThemeOption> = [
 ]
 
 export function ThemeSwitchButton() {
-	const { themeMode, resolvedTheme, setTheme } = useTheme()
+	const { themeMode, setTheme } = useTheme()
 	const [isOpen, setIsOpen] = useState(false)
 	const popoverRef = useRef<HTMLDivElement | null>(null)
 
@@ -46,8 +47,6 @@ export function ThemeSwitchButton() {
 		}
 	}, [isOpen])
 
-	const Icon = resolvedTheme === 'dark' ? HiOutlineMoon : HiOutlineSun
-
 	return (
 		<styled.div position="relative" ref={popoverRef}>
 			<styled.button
@@ -68,7 +67,12 @@ export function ThemeSwitchButton() {
 					color: { base: 'current', _dark: 'primary.600' },
 				}}
 			>
-				<Icon />
+				<HiOutlineSun
+					className={css({ display: { base: 'none', _light: 'initial' } })}
+				/>
+				<HiOutlineMoon
+					className={css({ display: { base: 'none', _dark: 'initial' } })}
+				/>
 			</styled.button>
 
 			{isOpen ? (
