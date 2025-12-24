@@ -1,6 +1,7 @@
 // @ts-check
 import eslint from '@eslint/js'
 import eslintReact from '@eslint-react/eslint-plugin'
+import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import prettierConfig from 'eslint-config-prettier/flat'
 import { importX } from 'eslint-plugin-import-x'
@@ -31,6 +32,9 @@ export default defineConfig(
 		},
 	},
 	{
+		plugins: {
+			'@stylistic': stylistic,
+		},
 		rules: {
 			// General
 			'no-console': 'warn',
@@ -89,8 +93,9 @@ export default defineConfig(
 				},
 			],
 
-			// React
-			// 'react/self-closing-comp': 'warn',
+			// Stylistic (JSX)
+			'@stylistic/jsx-self-closing-comp': 'warn',
+			'@stylistic/jsx-quotes': 'warn',
 		},
 	},
 	// Plain JS files
