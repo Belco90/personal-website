@@ -1,5 +1,3 @@
-import { format, subDays } from 'date-fns'
-
 import type { GitHubRepo, Project } from '#/models'
 
 export const PROJECTS_META_INFO: Array<{
@@ -14,9 +12,12 @@ export const PROJECTS_META_INFO: Array<{
 	{ githubRepo: 'Belco90/mastodonte-js' },
 ]
 
-type PackageDownloads = Record<string, Record<string, number>>
-
-const NPM_STAT_DATE_FORMAT = 'y-MM-dd'
+type NpmDownloadsResponse = {
+	downloads: number
+	start: string // YYYY-MM-DD
+	end: string // YYYY-MM-DD
+	package: string
+}
 
 function mapDataArrayToObjectCollection<DataType>(
 	arr: Array<{ url: string; data: DataType } | undefined>,
@@ -63,30 +64,25 @@ export async function getProjects(): Promise<Array<Project>> {
 		}),
 	)
 
-	const downloadsFromDate = format(subDays(new Date(), 7), NPM_STAT_DATE_FORMAT)
-	const downloadsToDate = format(new Date(), NPM_STAT_DATE_FORMAT)
-
 	const packages = await Promise.all(
 		PROJECTS_META_INFO.filter((project) => project.packageUrl != null).map(
 			async (project) => {
 				const packageName = project.packageUrl?.split('/').pop() ?? ''
 				try {
 					const response = await fetch(
-						`https://npm-stat.com/api/download-counts?package=${packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`,
+						`https://api.npmjs.org/downloads/point/last-week/${packageName}`,
 					)
 
 					if (response.ok) {
-						const packageDownloads: PackageDownloads =
-							(await response.json()) as PackageDownloads
-
-						const packageData = packageDownloads[packageName]
-						if (!packageData) return
-
-						const total = Object.values(packageData).reduce((a, b) => a + b, 0)
+						const packageDownloads =
+							(await response.json()) as NpmDownloadsResponse
 
 						return {
 							url: project.githubRepo,
-							data: { downloads: total, url: project.packageUrl ?? '' },
+							data: {
+								downloads: packageDownloads.downloads,
+								url: project.packageUrl ?? '',
+							},
 						}
 					} else {
 						const responseJson = (await response.json()) as unknown
