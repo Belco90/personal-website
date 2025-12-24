@@ -11,7 +11,13 @@ export default defineConfig({
 	plugins: [
 		// Enables Vite to resolve imports using path aliases.
 		tsconfigPaths(),
-		tanstackStart(),
+		tanstackStart({
+			prerender: {
+				// @ts-expect-error No idea why routes is not typed correctly
+				routes: ['/projects'],
+				crawlLinks: true,
+			},
+		}),
 
 		// React's vite plugin must come after Start's vite plugin
 		viteReact(),

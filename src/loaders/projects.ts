@@ -31,8 +31,9 @@ function mapDataArrayToObjectCollection<DataType>(
 	return collection
 }
 
+const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN
+
 export async function getProjects(): Promise<Array<Project>> {
-	const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN
 	const repos = await Promise.all(
 		PROJECTS_META_INFO.map(async ({ githubRepo }) => {
 			const [owner, repo] = githubRepo.split('/')
@@ -57,7 +58,7 @@ export async function getProjects(): Promise<Array<Project>> {
 				}
 			} catch (e) {
 				// eslint-disable-next-line no-console
-				console.warn(`Problem fetching ${githubRepo}: ${String(e)}`)
+				console.warn(`Problem fetching "${githubRepo}" repo: ${String(e)}`)
 			}
 		}),
 	)
@@ -69,23 +70,33 @@ export async function getProjects(): Promise<Array<Project>> {
 		PROJECTS_META_INFO.filter((project) => project.packageUrl != null).map(
 			async (project) => {
 				const packageName = project.packageUrl?.split('/').pop() ?? ''
-				const response = await fetch(
-					`https://npm-stat.com/api/download-counts?package=${packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`,
-				)
+				try {
+					const response = await fetch(
+						`https://npm-stat.com/api/download-counts?package=${packageName}&from=${downloadsFromDate}&until=${downloadsToDate}`,
+					)
 
-				if (response.ok) {
-					const packageDownloads: PackageDownloads =
-						(await response.json()) as PackageDownloads
+					if (response.ok) {
+						const packageDownloads: PackageDownloads =
+							(await response.json()) as PackageDownloads
 
-					const packageData = packageDownloads[packageName]
-					if (!packageData) return
+						const packageData = packageDownloads[packageName]
+						if (!packageData) return
 
-					const total = Object.values(packageData).reduce((a, b) => a + b, 0)
+						const total = Object.values(packageData).reduce((a, b) => a + b, 0)
 
-					return {
-						url: project.githubRepo,
-						data: { downloads: total, url: project.packageUrl ?? '' },
+						return {
+							url: project.githubRepo,
+							data: { downloads: total, url: project.packageUrl ?? '' },
+						}
+					} else {
+						const responseJson = (await response.json()) as unknown
+						throw new Error(JSON.stringify(responseJson))
 					}
+				} catch (e) {
+					// eslint-disable-next-line no-console
+					console.warn(
+						`Problem fetching "${packageName}" npm package: ${String(e)}`,
+					)
 				}
 			},
 		),

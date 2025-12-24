@@ -13,7 +13,12 @@ export const Route = createFileRoute('/projects')({
 		}),
 	}),
 	loader: getProjects,
-	staleTime: 3_600_000, // 1 hour
+	headers: () => ({
+		// Cache at CDN for 1 hour, allow stale content for up to 1 day
+		'Cache-Control':
+			'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400',
+	}),
+	staleTime: 5 * 60_000, // 5 minutes client-side
 	component: ProjectsPage,
 })
 
