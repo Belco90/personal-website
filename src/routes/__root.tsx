@@ -5,9 +5,9 @@ import {
 	Scripts,
 } from '@tanstack/react-router'
 
-import { seo } from '#/seo'
 import { MainLayout } from '#/components/MainLayout'
 import { Providers } from '#/components/Providers'
+import { seo } from '#/seo'
 
 import '@fontsource-variable/rubik'
 import '@fontsource-variable/karla'

@@ -8,8 +8,8 @@ import {
 } from 'react-icons/fa6'
 
 import { ProfilePicture } from '#/components/ProfilePicture'
-import { Box, Flex, VStack, styled } from '#/styled-system/jsx'
 import { USER_CONFIG } from '#/seo'
+import { Box, Flex, VStack, styled } from '#/styled-system/jsx'
 
 import type { IconType } from 'react-icons'
 

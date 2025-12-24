@@ -4,6 +4,7 @@ import profilePicture from '#app-public/profile-picture.jpg'
 
 import { css } from '#/styled-system/css'
 import { Box } from '#/styled-system/jsx'
+
 import type { ImageProps } from '@unpic/react'
 
 type ProfilePictureProps = Pick<ImageProps, 'priority'>

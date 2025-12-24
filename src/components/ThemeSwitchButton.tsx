@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
-import { useTheme } from '#/components/ThemeProvider'
-import { styled } from '#/styled-system/jsx'
 
+import { useTheme } from '#/components/ThemeProvider'
 import type { ThemeMode } from '#/components/ThemeProvider'
+import { styled } from '#/styled-system/jsx'
 
 interface ThemeOption {
 	value: ThemeMode

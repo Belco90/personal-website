@@ -1,9 +1,9 @@
+import { Link } from '@tanstack/react-router'
+
 import { css } from '#/styled-system/css'
 
-import type { FC } from 'react'
-
-import { Link } from '@tanstack/react-router'
 import type { LinkProps } from '@tanstack/react-router'
+import type { FC } from 'react'
 
 type HeaderLinkProps = Pick<LinkProps, 'children' | 'to'>
 

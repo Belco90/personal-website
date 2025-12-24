@@ -1,15 +1,23 @@
 // @ts-check
 import eslint from '@eslint/js'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import { importX } from 'eslint-plugin-import-x'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
-import tseslint from 'typescript-eslint'
+import * as tseslint from 'typescript-eslint'
 
 export default defineConfig(
 	eslint.configs.recommended,
 	tseslint.configs.recommendedTypeChecked,
 	tseslint.configs.stylisticTypeChecked,
+	importX.flatConfigs.recommended,
+	importX.flatConfigs.typescript,
+	importX.flatConfigs.react,
 	{
+		files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
 		languageOptions: {
+			parser: tseslint.parser,
+			ecmaVersion: 'latest',
+			sourceType: 'module',
 			parserOptions: {
 				projectService: true,
 			},
@@ -37,35 +45,42 @@ export default defineConfig(
 			'@typescript-eslint/consistent-type-definitions': 'off',
 
 			// Import
-			// 'import/newline-after-import': 'error',
-			// 'import/order': [
-			// 	'error',
-			// 	{
-			// 		'newlines-between': 'always',
-			//
-			// 		alphabetize: {
-			// 			order: 'asc',
-			// 			caseInsensitive: false,
-			// 		},
-			//
-			// 		groups: [
-			// 			'builtin',
-			// 			'external',
-			// 			'internal',
-			// 			['parent', 'sibling', 'index'],
-			// 			'object',
-			// 			'type',
-			// 		],
-			//
-			// 		pathGroups: [
-			// 			{
-			// 				pattern: '#/**',
-			// 				group: 'internal',
-			// 				position: 'after',
-			// 			},
-			// 		],
-			// 	},
-			// ],
+			// Rules enabled by `import-x/recommended` but are better handled by
+			// TypeScript and typescript-eslint.
+			'import-x/default': 'off',
+			'import-x/export': 'off',
+			'import-x/namespace': 'off',
+			'import-x/no-unresolved': 'off',
+
+			'import-x/newline-after-import': 'error',
+			'import-x/order': [
+				'error',
+				{
+					'newlines-between': 'always',
+
+					alphabetize: {
+						order: 'asc',
+						caseInsensitive: false,
+					},
+
+					groups: [
+						'builtin',
+						'external',
+						'internal',
+						['parent', 'sibling', 'index'],
+						'object',
+						'type',
+					],
+
+					pathGroups: [
+						{
+							pattern: '#/**',
+							group: 'internal',
+							position: 'after',
+						},
+					],
+				},
+			],
 
 			// React
 			// 'react/self-closing-comp': 'warn',

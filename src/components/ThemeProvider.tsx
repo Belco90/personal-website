@@ -1,6 +1,7 @@
 import { ScriptOnce } from '@tanstack/react-router'
 import { createClientOnlyFn, createIsomorphicFn } from '@tanstack/react-start'
 import { createContext, useContext, useEffect, useState } from 'react'
+
 import type { ReactNode } from 'react'
 
 const THEME_KEY = 'theme-mode'
