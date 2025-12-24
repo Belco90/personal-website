@@ -3,4 +3,7 @@
 
 [build]
   command = "pnpm build"
-  publish = ".next"
+  publish = "dist/client"
+[dev]
+    command = "pnpm dev"
+    port = 3000

@@ -1,27 +1,23 @@
-import Image from 'next/image'
-
-import imgSrc from '#app-public/profile-picture.jpg'
+import { Image } from '@unpic/react'
 
 import { css } from '#/styled-system/css'
 import { Box } from '#/styled-system/jsx'
 
-import type { ImageProps } from 'next/image'
+import type { ImageProps } from '@unpic/react'
 
-type ProfilePictureProps = Omit<ImageProps, 'src' | 'alt'>
+type ProfilePictureProps = Pick<ImageProps, 'priority'>
 
-const ProfilePicture = (props: ProfilePictureProps) => {
+export function ProfilePicture(props: ProfilePictureProps) {
 	return (
 		<Box>
 			<Image
 				width={150}
 				height={150}
-				{...props}
-				src={imgSrc}
-				alt="Smiling Mario"
 				className={css({ rounded: 'full' })}
+				{...props}
+				src="profile-picture.jpg"
+				alt="Smiling Mario"
 			/>
 		</Box>
 	)
 }
-
-export default ProfilePicture

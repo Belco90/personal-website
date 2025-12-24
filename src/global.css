@@ -1,5 +1,10 @@
 @layer reset, base, tokens, recipes, utilities;
 
+:root {
+	--font-rubik: 'Rubik Variable', sans-serif;
+	--font-karla: 'Karla Variable', sans-serif;
+}
+
 button,
 [role='button'] {
 	cursor: pointer;

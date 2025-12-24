@@ -4,6 +4,6 @@ Just [my personal website](https://mario.dev 'My Personal website').
 
 Built with:
 
-- React
-- Next.js + Netlify
+- [React](https://react.dev/) + [TanStack Start](https://tanstack.com/start/latest)
+- [Netlify](https://www.netlify.com/)
 - [Panda](https://panda-css.com/)

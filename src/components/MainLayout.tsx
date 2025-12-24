@@ -1,9 +1,9 @@
-import { type FC, type ReactNode } from 'react'
-
 import Header from '#/components/Header'
 import { Flex, styled } from '#/styled-system/jsx'
 
-const UILayout: FC<{ children: ReactNode }> = ({ children }) => {
+import type { ReactNode } from 'react'
+
+export function MainLayout({ children }: { children: ReactNode }) {
 	return (
 		<Flex height="full" direction="column">
 			<Header />
@@ -13,5 +13,3 @@ const UILayout: FC<{ children: ReactNode }> = ({ children }) => {
 		</Flex>
 	)
 }
-
-export default UILayout

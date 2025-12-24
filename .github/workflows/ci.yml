@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  code_validation:
+    strategy:
+      fail-fast: false
+      matrix:
+        validation_script: ['lint', 'type-check', 'format:check']
+
+    name: 'Code Validation: ${{ matrix.validation_script }}'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Run script
+        run: pnpm run ${{ matrix.validation_script }}

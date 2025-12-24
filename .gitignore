@@ -55,8 +55,8 @@ typings/
 # dotenv environment variables file
 .env*.local
 
-# Next files
-.next
+# Bundle
+dist/
 
 # Panda CSS output
 styled-system
@@ -74,3 +74,6 @@ yarn-error.log
 # Code editor
 .idea
 .vscode
+
+# Local Netlify folder
+.netlify
