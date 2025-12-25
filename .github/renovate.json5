@@ -8,6 +8,10 @@
 		// https://docs.renovatebot.com/presets-helpers/#helperspingithubactiondigests
 		'helpers:pinGitHubActionDigestsToSemver',
 
+		// Preserve existing SemVer ranges in package.json
+		// https://docs.renovatebot.com/presets-default/#preservesemverranges
+		':preserveSemverRanges',
+
 		// Update automatically if tests pass
 		':automergeLinters',
 		// https://docs.renovatebot.com/presets-default/#automergelinters
