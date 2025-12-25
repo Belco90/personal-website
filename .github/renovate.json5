@@ -38,9 +38,5 @@
 			extends: ['schedule:monthly'],
 		},
 	],
-	lockFileMaintenance: {
-		enabled: true,
-		automerge: true,
-	},
 	platformAutomerge: true,
 }
