@@ -8,6 +8,10 @@
 		// https://docs.renovatebot.com/presets-helpers/#helperspingithubactiondigests
 		'helpers:pinGitHubActionDigestsToSemver',
 
+		// Preserve existing SemVer ranges in package.json
+		// https://docs.renovatebot.com/presets-default/#preservesemverranges
+		':preserveSemverRanges',
+
 		// Update automatically if tests pass
 		':automergeLinters',
 		// https://docs.renovatebot.com/presets-default/#automergelinters
@@ -24,19 +28,9 @@
 		// Migrate deprecated config options automatically
 		// https://docs.renovatebot.com/presets-default/#configmigration
 		':configMigration',
+
+		// Apply monthly schedule to all updates
+		'schedule:monthly',
 	],
-	packageRules: [
-		// Avoid updating pnpm too often
-		{
-			description: 'Get pnpm updates once a month',
-			matchDepTypes: ['packageManager'],
-			matchPackageNames: ['pnpm'],
-			extends: ['schedule:monthly'],
-		},
-	],
-	lockFileMaintenance: {
-		enabled: true,
-		automerge: true,
-	},
 	platformAutomerge: true,
 }
