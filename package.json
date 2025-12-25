@@ -3,10 +3,7 @@
 	"private": true,
 	"version": "1.0.0",
 	"description": "Mario Beltrán - Frontend Software Engineer",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Belco90/mario-web"
-	},
+	"repository": "Belco90/personal-website",
 	"homepage": "https://mario.dev",
 	"main": "index.js",
 	"keywords": [
@@ -16,11 +13,11 @@
 		"developer",
 		"engineer",
 		"react",
-		"nextjs",
+		"tanstack",
 		"frontend"
 	],
 	"author": "Mario Beltrán",
-	"license": "ISC",
+	"license": "MIT",
 	"type": "module",
 	"engines": {
 		"pnpm": "^10.26.0"
