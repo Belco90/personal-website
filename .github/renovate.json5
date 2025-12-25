@@ -28,15 +28,9 @@
 		// Migrate deprecated config options automatically
 		// https://docs.renovatebot.com/presets-default/#configmigration
 		':configMigration',
-	],
-	packageRules: [
-		// Avoid updating pnpm too often
-		{
-			description: 'Get pnpm updates once a month',
-			matchDepTypes: ['packageManager'],
-			matchPackageNames: ['pnpm'],
-			extends: ['schedule:monthly'],
-		},
+
+		// Apply monthly schedule to all updates
+		'schedule:monthly',
 	],
 	platformAutomerge: true,
 }
