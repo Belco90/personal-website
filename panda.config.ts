@@ -1,10 +1,5 @@
 import { defineConfig } from '@pandacss/dev'
 
-import { colors } from '#/theme/colors'
-import { globalCss } from '#/theme/global-css'
-import { semanticTokens } from '#/theme/semantic-tokens'
-import { textStyles } from '#/theme/text-styles'
-
 export default defineConfig({
 	// Whether to use css reset
 	preflight: true,
@@ -23,24 +18,8 @@ export default defineConfig({
 		},
 	},
 
-	// Useful for theme customization
-	theme: {
-		extend: {
-			textStyles,
-			semanticTokens,
-			tokens: {
-				colors,
-				fonts: {
-					heading: { value: 'var(--font-rubik)' },
-					body: { value: 'var(--font-karla)' },
-				},
-			},
-		},
-	},
-
 	// The output directory for your css system
 	outdir: 'styled-system',
 
 	jsxFramework: 'react',
-	globalCss,
 })
