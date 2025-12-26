@@ -1,8 +1,10 @@
 import { defineConfig } from '@pandacss/dev'
 
 import { animationStyles } from '#/theme/animation-styles'
+import { green } from '#/theme/colors/green'
 import { lime } from '#/theme/colors/lime'
 import { olive } from '#/theme/colors/olive'
+import { red } from '#/theme/colors/red'
 import { conditions } from '#/theme/conditions'
 import { globalCss } from '#/theme/global-css'
 import { keyframes } from '#/theme/keyframes'
@@ -90,6 +92,8 @@ export default defineConfig({
 
 					lime: lime,
 					gray: olive,
+					red: red,
+					green: green,
 					accent: lime,
 				},
 
