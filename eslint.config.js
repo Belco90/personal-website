@@ -121,6 +121,7 @@ export default defineConfig(
 		'**/public',
 		'**/styled-system',
 		'**/dist',
+		'**/.netlify',
 	]),
 	prettierConfig, // must always be the last one
 )
