@@ -1,6 +1,19 @@
 import { defineTextStyles } from '@pandacss/dev'
 
 export const textStyles = defineTextStyles({
+	heading: {
+		value: {
+			fontFamily: 'heading',
+			fontWeight: 'bold',
+			fontSize: '4xl',
+		},
+	},
+	body: {
+		value: {
+			fontFamily: 'body',
+		},
+	},
+
 	xs: { value: { fontSize: 'xs', lineHeight: '1.125rem' } },
 	sm: { value: { fontSize: 'sm', lineHeight: '1.25rem' } },
 	md: { value: { fontSize: 'md', lineHeight: '1.5rem' } },

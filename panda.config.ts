@@ -11,6 +11,7 @@ import { slotRecipes, recipes } from '#/theme/recipes'
 import { textStyles } from '#/theme/text-styles'
 import { colors } from '#/theme/tokens/colors'
 import { durations } from '#/theme/tokens/durations'
+import { fonts } from '#/theme/tokens/fonts'
 import { shadows } from '#/theme/tokens/shadows'
 import { zIndex } from '#/theme/tokens/z-index'
 
@@ -24,13 +25,12 @@ export default defineConfig({
 	// Files to exclude
 	exclude: [],
 
-	conditions,
-
 	// The output directory for your css system
 	outdir: 'styled-system',
-
 	jsxFramework: 'react',
+
 	globalCss: globalCss,
+	conditions,
 
 	theme: {
 		extend: {
@@ -45,6 +45,7 @@ export default defineConfig({
 			tokens: {
 				colors: colors,
 				durations: durations,
+				fonts: fonts,
 				zIndex: zIndex,
 			},
 
