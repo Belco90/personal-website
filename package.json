@@ -33,9 +33,7 @@
 		"prettier-base": "prettier . --ignore-unknown --cache --log-level warn",
 		"format": "pnpm prettier-base --write",
 		"format:check": "pnpm prettier-base --check",
-		"panda:codegen": "panda codegen",
-		"park": "park-ui",
-		"park:add": "park-ui add",
+		"park:add": "pnpx @park-ui/cli add",
 		"prepare": "panda codegen && husky"
 	},
 	"dependencies": {
@@ -54,7 +52,6 @@
 		"@eslint/js": "9.39.2",
 		"@netlify/vite-plugin-tanstack-start": "^1.2.6",
 		"@pandacss/dev": "^1.7.1",
-		"@park-ui/cli": "^1.0.1",
 		"@stylistic/eslint-plugin": "^5.6.1",
 		"@types/node": "^22.19.3",
 		"@types/react": "^19.2.7",
