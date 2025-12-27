@@ -28,6 +28,7 @@ export const button = defineRecipe({
 			layerStyle: 'disabled',
 		},
 		focusVisibleRing: 'outside',
+		focusRingColor: 'accent.outline.border',
 	},
 	defaultVariants: {
 		variant: 'solid',
