@@ -29,8 +29,8 @@ export default defineConfig({
 
 	// The output directory for your css system
 	outdir: 'styled-system',
-	jsxFramework: 'react',
 
+	jsxFramework: 'react',
 	globalCss: globalCss,
 	conditions,
 
@@ -52,6 +52,15 @@ export default defineConfig({
 			},
 
 			semanticTokens: {
+				gradients: {
+					heading: {
+						value: {
+							base: 'linear-gradient(to bottom right, {colors.accent.400}, {colors.accent.700})',
+							_dark:
+								'linear-gradient(to bottom right, {colors.accent.200}, {colors.accent.400})',
+						},
+					},
+				},
 				colors: {
 					fg: {
 						default: {
