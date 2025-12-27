@@ -55,9 +55,9 @@ export default defineConfig({
 				gradients: {
 					heading: {
 						value: {
-							base: 'linear-gradient(to bottom right, {colors.accent.400}, {colors.accent.700})',
+							base: 'linear-gradient(to bottom right, {colors.accent.5}, {colors.accent.8})',
 							_dark:
-								'linear-gradient(to bottom right, {colors.accent.200}, {colors.accent.400})',
+								'linear-gradient(to bottom right, {colors.accent.3}, {colors.accent.5})',
 						},
 					},
 				},
