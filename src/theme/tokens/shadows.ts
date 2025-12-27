@@ -62,8 +62,8 @@ export const shadows = defineSemanticTokens.shadows({
 	},
 	card: {
 		value: {
-			base: '0.2rem 0.2em {colors.accent.100}',
-			_dark: '0.2rem 0.2em {colors.accent.600}',
+			base: '-0.1rem 0.1em {colors.accent.11/50}',
+			_dark: '-0.1rem 0.1em {colors.accent.a8}',
 		},
 	},
 })

@@ -1,5 +1,6 @@
 import { HiDownload, HiOutlineStar } from 'react-icons/hi'
 
+import { Heading, Link, Text } from '#/components/ui'
 import type { GitHubRepo, NpmPackage } from '#/models'
 import { Flex, HStack, styled } from '#/styled-system/jsx'
 
@@ -27,19 +28,15 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 			p="4"
 			shadow="card"
 			borderRadius="lg"
-			bgColor={{ base: 'gray.50', _dark: 'gray.700' }}
+			bgColor={{ base: 'gray.subtle.bg/70', _dark: 'gray.subtle.bg' }}
 		>
-			<styled.h2 fontSize="xl">
-				<styled.a
-					href={repo.html_url}
-					textDecorationLine="underline"
-					_hover={{ color: { base: 'primary.500', _dark: 'primary.300' } }}
-				>
+			<Heading fontSize="xl">
+				<Link href={repo.html_url} variant="underline">
 					{repo.name}
-				</styled.a>
-			</styled.h2>
+				</Link>
+			</Heading>
 
-			<styled.p flex="1">{repo.description}</styled.p>
+			<Text>{repo.description}</Text>
 
 			<HStack gap="8">
 				<styled.span
@@ -51,7 +48,7 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 					fontWeight="medium"
 					fontSize="xs"
 					lineHeight="tight"
-					bgColor={{ base: 'gray.200', _dark: 'gray.600' }}
+					bgColor="accent.plain.bg.active"
 					px="2"
 					rounded="md"
 				>
@@ -62,20 +59,19 @@ const ProjectCard = ({ repo, npmPackage }: ProjectCardProps) => {
 					<span>{formattedStars}</span>
 				</Flex>
 				{!!formattedDownloads && (
-					<styled.a
+					<Link
 						href={npmPackage?.url}
 						title="npm weekly downloads"
+						variant="underline"
 						display="flex"
 						alignItems="center"
 						gap="1"
 						px="2"
-						textDecorationLine="underline"
 						rounded="sm"
-						_hover={{ bgColor: 'primary.100', color: 'primary.700' }}
 					>
 						<HiDownload aria-hidden focusable={false} />
 						<span>{formattedDownloads}</span>
-					</styled.a>
+					</Link>
 				)}
 			</HStack>
 		</styled.article>
