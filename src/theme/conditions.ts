@@ -2,7 +2,7 @@ export const conditions = {
 	extend: {
 		// Enable dark theme
 		dark: '.dark &, [data-theme="dark"] &',
-		light: ':root &, .light &',
+		light: '.light &',
 
 		// Park-ui built-in conditions
 		invalid: '&:is(:user-invalid, [data-invalid], [aria-invalid=true])',
