@@ -3,9 +3,8 @@ import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 import { useTheme } from '#/components/ThemeProvider'
 import type { ThemeMode } from '#/components/ThemeProvider'
 import { css } from '#/styled-system/css'
-import { styled } from '#/styled-system/jsx'
 
-import { Menu } from './ui'
+import { IconButton, Menu } from './ui'
 
 interface ThemeOption {
 	value: ThemeMode
@@ -24,19 +23,10 @@ export function ThemeSwitchMenu() {
 	return (
 		<Menu.Root lazyMount>
 			<Menu.Trigger asChild>
-				<styled.button
+				<IconButton
 					aria-label={`Select theme mode (current: ${themeMode})`}
-					display="inline-flex"
-					justifyContent="center"
-					alignItems="center"
-					rounded="md"
-					height="10"
-					minWidth="10"
-					fontSize="2xl"
-					_hover={{
-						bgColor: 'primary.100',
-						color: { base: 'current', _dark: 'primary.600' },
-					}}
+					variant="plain"
+					borderRadius="full"
 				>
 					<HiOutlineSun
 						className={css({ display: { base: 'none', _light: 'initial' } })}
@@ -44,7 +34,7 @@ export function ThemeSwitchMenu() {
 					<HiOutlineMoon
 						className={css({ display: { base: 'none', _dark: 'initial' } })}
 					/>
-				</styled.button>
+				</IconButton>
 			</Menu.Trigger>
 
 			<Menu.Positioner>
