@@ -52,15 +52,6 @@ export default defineConfig({
 			},
 
 			semanticTokens: {
-				gradients: {
-					heading: {
-						value: {
-							base: 'linear-gradient(to bottom right, {colors.accent.5}, {colors.accent.8})',
-							_dark:
-								'linear-gradient(to bottom right, {colors.accent.3}, {colors.accent.5})',
-						},
-					},
-				},
 				colors: {
 					fg: {
 						default: {
