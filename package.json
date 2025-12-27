@@ -33,9 +33,11 @@
 		"prettier-base": "prettier . --ignore-unknown --cache --log-level warn",
 		"format": "pnpm prettier-base --write",
 		"format:check": "pnpm prettier-base --check",
+		"park:add": "pnpx @park-ui/cli add",
 		"prepare": "panda codegen && husky"
 	},
 	"dependencies": {
+		"@ark-ui/react": "^5.30.0",
 		"@fontsource-variable/karla": "^5.2.8",
 		"@fontsource-variable/rubik": "^5.2.8",
 		"@tanstack/react-router": "^1.143.4",

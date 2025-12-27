@@ -6,4 +6,4 @@ Built with:
 
 - [React](https://react.dev/) + [TanStack Start](https://tanstack.com/start/latest)
 - [Netlify](https://www.netlify.com/)
-- [Panda](https://panda-css.com/)
+- [Panda](https://panda-css.com/) + [Park UI](https://park-ui.com/)

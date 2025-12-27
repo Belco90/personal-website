@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
 		/* Base options */
+		"baseUrl": ".",
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"target": "ES2022",
@@ -28,9 +29,8 @@
 
 		/* Other */
 		"paths": {
-			"#/*": ["./src/*"],
 			"#/styled-system/*": ["./styled-system/*"],
-			"#/theme/*": ["./theme/*"]
+			"#/*": ["./src/*"]
 		}
 	},
 	"include": ["styled-system", "**/*.ts", "**/*.tsx"]

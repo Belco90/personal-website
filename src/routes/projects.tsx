@@ -1,9 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import ProjectCard from '#/components/ProjectCard'
+import { Heading } from '#/components/ui'
 import { getProjects } from '#/loaders/projects'
 import { seo, USER_CONFIG } from '#/seo'
-import { Container, styled, VStack } from '#/styled-system/jsx'
+import { Container, VStack } from '#/styled-system/jsx'
 
 export const Route = createFileRoute('/projects')({
 	head: () => ({
@@ -27,9 +28,15 @@ function ProjectsPage() {
 
 	return (
 		<Container maxWidth="breakpoint-md">
-			<styled.h1 mb="4" fontSize="4xl" textGradient="heading">
+			<Heading
+				mb="4"
+				textGradient="to-tr"
+				gradientFrom="accent.outline.fg"
+				gradientTo="accent.plain.bg.hover"
+			>
 				Projects
-			</styled.h1>
+			</Heading>
+
 			<VStack gap="6">
 				{projects.map(({ repo, npmPackage }) => (
 					<ProjectCard key={repo.id} repo={repo} npmPackage={npmPackage} />

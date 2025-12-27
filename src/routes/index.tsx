@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fa6'
 
 import { ProfilePicture } from '#/components/ProfilePicture'
+import { Heading } from '#/components/ui'
 import { USER_CONFIG } from '#/seo'
 import { Box, Flex, VStack, styled } from '#/styled-system/jsx'
 
@@ -44,7 +45,7 @@ function HomePage() {
 					<Box
 						rounded="full"
 						shadow="profile-picture-outer"
-						borderColor="primary.200"
+						borderColor="accent.200"
 					>
 						<Box rounded="full" shadow="profile-picture-inner">
 							<ProfilePicture />
@@ -59,14 +60,13 @@ function HomePage() {
 					px={{ base: '4', md: '16' }}
 					py="5"
 				>
-					<styled.h1 mb="4">{USER_CONFIG.author.name}</styled.h1>
-					<styled.h2
-						color={{ base: 'primary.600', _dark: 'primary.300' }}
-						fontSize="lg"
-						fontWeight="normal"
-					>
+					<Heading as="h1" mb="4">
+						{USER_CONFIG.author.name}
+					</Heading>
+
+					<Heading color="accent.plain.fg" fontSize="lg" fontWeight="normal">
 						{USER_CONFIG.author.position}
-					</styled.h2>
+					</Heading>
 				</Box>
 
 				<styled.ul
@@ -86,7 +86,7 @@ function HomePage() {
 								<styled.li
 									key={socialKey}
 									transition="transform"
-									transitionDuration="social-network"
+									transitionDuration="slower"
 									_hover={{ transform: 'scale(1.3)' }}
 								>
 									<a href={href} title={title} aria-label={title}>
