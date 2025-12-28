@@ -1,23 +1,16 @@
-import { Image } from '@unpic/react'
-
+import { OptimizedImage } from '#/components/OptimizedImage'
 import { css } from '#/styled-system/css'
-import { Box } from '#/styled-system/jsx'
 
-import type { ImageProps } from '@unpic/react'
-
-type ProfilePictureProps = Pick<ImageProps, 'priority'>
-
-export function ProfilePicture(props: ProfilePictureProps) {
+export function ProfilePicture() {
 	return (
-		<Box>
-			<Image
-				width={150}
-				height={150}
-				className={css({ rounded: 'full' })}
-				{...props}
-				src="profile-picture.jpg"
-				alt="Smiling Mario"
-			/>
-		</Box>
+		<OptimizedImage
+			width={150}
+			height={150}
+			className={css({ rounded: 'full' })}
+			src="profile-picture.jpg"
+			alt="Smiling Mario"
+			priority
+			operations={{ q: 100 }}
+		/>
 	)
 }
