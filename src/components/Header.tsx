@@ -19,7 +19,6 @@ const Header: FC = () => {
 					<Box
 						fontWeight="bold"
 						fontSize="2xl"
-						fontFamily="heading"
 						bgGradient="to-r"
 						gradientFrom={{ base: 'accent.a3', _dark: 'accent.a4' }}
 						gradientTo={{ base: 'accent.a9', _dark: 'accent.a8' }}

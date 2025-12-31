@@ -1,6 +1,5 @@
 import { defineTokens } from '@pandacss/dev'
 
 export const fonts = defineTokens.fonts({
-	heading: { value: 'var(--font-rubik)' },
-	body: { value: 'var(--font-karla)' },
+	body: { value: 'var(--font-rubik), sans-serif' },
 })

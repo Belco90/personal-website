@@ -24,12 +24,18 @@ export default defineConfig({
 				},
 				crawlLinks: true,
 			},
+			sitemap: {
+				host: 'https://mario.dev',
+			},
 		}),
 
 		// React's vite plugin must come after Start's vite plugin
 		viteReact(),
 
 		// Netlify adapter for TanStack Start (anywhere in the array is fine)
-		netlify(),
+		// Only enable Netlify plugin during build or when NETLIFY env is set
+		...(process.env.NETLIFY || process.env.NODE_ENV === 'production'
+			? [netlify()]
+			: []),
 	],
 })

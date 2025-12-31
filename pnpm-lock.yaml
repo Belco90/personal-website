@@ -11,9 +11,6 @@ importers:
       '@ark-ui/react':
         specifier: ^5.30.0
         version: 5.30.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@fontsource-variable/karla':
-        specifier: ^5.2.8
-        version: 5.2.8
       '@fontsource-variable/rubik':
         specifier: ^5.2.8
         version: 5.2.8
@@ -704,9 +701,6 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
-
-  '@fontsource-variable/karla@5.2.8':
-    resolution: {integrity: sha512-JuJZVY/r5InCfkKb3jp5XCwuypIvc62barKaxzSAYnxzHo9YnCfZDWDjL+gbSYrUI+lVxhEyS+7QkOuVBvWcOA==}
 
   '@fontsource-variable/rubik@5.2.8':
     resolution: {integrity: sha512-vGDExLzB4a2Fj9mca5LqNoA2ZKcU9o+x5FEBLte/nxYkCB9hOQwZS6ZlItUv+Ssn7YMzKauGuI/Po+YueFuZbg==}
@@ -5654,8 +5648,6 @@ snapshots:
       '@floating-ui/utils': 0.2.10
 
   '@floating-ui/utils@0.2.10': {}
-
-  '@fontsource-variable/karla@5.2.8': {}
 
   '@fontsource-variable/rubik@5.2.8': {}
 

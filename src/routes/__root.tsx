@@ -1,3 +1,4 @@
+import rubikWoff2 from '@fontsource-variable/rubik/files/rubik-latin-ext-wght-normal.woff2?url'
 import {
 	Outlet,
 	createRootRoute,
@@ -10,7 +11,6 @@ import { Providers } from '#/components/Providers'
 import { seo } from '#/seo'
 
 import '@fontsource-variable/rubik'
-import '@fontsource-variable/karla'
 import globalCss from '../global.css?url'
 
 export const Route = createRootRoute({
@@ -41,6 +41,13 @@ export const Route = createRootRoute({
 				href: '/icon.png',
 			},
 			{ rel: 'icon', href: '/favicon.ico' },
+			{
+				rel: 'preload',
+				href: rubikWoff2,
+				as: 'font',
+				type: 'font/woff2',
+				crossOrigin: '',
+			},
 		],
 		scripts: [
 			{
@@ -57,7 +64,7 @@ export const Route = createRootRoute({
 
 function RootLayout() {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<head>
 				<HeadContent />
 			</head>
