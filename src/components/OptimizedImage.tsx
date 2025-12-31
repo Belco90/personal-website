@@ -36,7 +36,7 @@ export function OptimizedImage({
 			alt={alt}
 			width={width}
 			height={height}
-			cdn="netlify"
+			cdn={import.meta.env.PROD ? 'netlify' : undefined}
 			operations={{
 				netlify: netlifyOperations,
 			}}
