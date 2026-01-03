@@ -1,10 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { createServerFn } from '@tanstack/react-start'
 
 import ProjectCard from '#/components/ProjectCard'
 import { Heading } from '#/components/ui'
 import { getProjects } from '#/loaders/projects'
 import { seo, USER_CONFIG } from '#/seo'
 import { Container, VStack } from '#/styled-system/jsx'
+
+const retrieveProjectsSecurely = createServerFn().handler(() => getProjects())
 
 export const Route = createFileRoute('/projects')({
 	head: () => ({
@@ -13,7 +16,7 @@ export const Route = createFileRoute('/projects')({
 			description: `${USER_CONFIG.author.name}'s OSS and side projects`,
 		}),
 	}),
-	loader: getProjects,
+	loader: () => retrieveProjectsSecurely(),
 	headers: () => ({
 		// Cache at CDN for 1 hour, allow stale content for up to 1 day
 		'Cache-Control':
