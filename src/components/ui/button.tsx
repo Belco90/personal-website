@@ -90,7 +90,6 @@ export const ButtonGroup = function ButtonGroup({
 	)
 }
 
-// eslint-disable-next-line @eslint-react/naming-convention/context-name
 const [ButtonPropsProvider, useButtonPropsContext] =
 	createContext<ButtonVariantProps>({
 		name: 'ButtonPropsContext',
