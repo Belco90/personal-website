@@ -12,11 +12,14 @@ type OptimizedImageProps = BaseImageProps & {
 	operations?: NetlifyOperations
 }
 
+const isNetlify = Boolean(import.meta.env.VITE_NETLIFY)
+
 export function OptimizedImage({
 	alt,
 	operations,
 	width,
 	height,
+	priority,
 	...remainingProps
 }: OptimizedImageProps) {
 	const netlifyOperations = Object.assign(
@@ -36,7 +39,8 @@ export function OptimizedImage({
 			alt={alt}
 			width={width}
 			height={height}
-			cdn={import.meta.env.PROD ? 'netlify' : undefined}
+			priority={isNetlify ? priority : undefined} // priority is not transformed if not cdn setup, so the boolean value sent to the DOM is incorrect
+			cdn={isNetlify ? 'netlify' : undefined}
 			operations={{
 				netlify: netlifyOperations,
 			}}

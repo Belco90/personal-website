@@ -1,5 +1,14 @@
 @layer reset, base, tokens, recipes, utilities;
 
+/* rubik-latin-wght-normal */
+@font-face {
+	font-family: 'Rubik Variable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 700;
+	src: url('/fonts/rubik.woff2') format('woff2-variations');
+}
+
 :root {
 	--font-rubik: 'Rubik Variable', sans-serif;
 }

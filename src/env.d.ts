@@ -3,6 +3,9 @@
 interface ImportMetaEnv {
 	// Client-side environment variables
 	readonly VITE_PIRSCH_ID_CODE: string
+
+	// Re-export some Netlify env vars to the client-side (done the `.env` file)
+	readonly VITE_NETLIFY: string | undefined
 }
 
 interface ImportMeta {
