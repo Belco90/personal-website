@@ -1,4 +1,3 @@
-import rubikWoff2 from '@fontsource-variable/rubik/files/rubik-latin-ext-wght-normal.woff2?url'
 import {
 	Outlet,
 	createRootRoute,
@@ -10,7 +9,6 @@ import { MainLayout } from '#/components/MainLayout'
 import { Providers } from '#/components/Providers'
 import { seo } from '#/seo'
 
-import '@fontsource-variable/rubik'
 import globalCss from '../global.css?url'
 
 export const Route = createRootRoute({
@@ -43,7 +41,7 @@ export const Route = createRootRoute({
 			{ rel: 'icon', href: '/favicon.ico' },
 			{
 				rel: 'preload',
-				href: rubikWoff2,
+				href: '/fonts/rubik.woff2',
 				as: 'font',
 				type: 'font/woff2',
 				crossOrigin: '',
