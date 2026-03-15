@@ -4,7 +4,7 @@ export const USER_CONFIG = {
 		position: 'Frontend Software Engineer',
 	},
 	social: {
-		email: 'me@mario.dev',
+		email: 'me@belco.dev',
 		github: 'https://github.com/Belco90',
 		bluesky: 'https://bsky.app/profile/belco.dev',
 		linkedin: 'https://www.linkedin.com/in/mario-ba-90',

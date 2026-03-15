@@ -25,7 +25,7 @@ export default defineConfig({
 				crawlLinks: true,
 			},
 			sitemap: {
-				host: 'https://mario.dev',
+				host: 'https://belco.dev',
 			},
 		}),
 

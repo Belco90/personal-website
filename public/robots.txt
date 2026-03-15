@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mario.dev/sitemap.xml
+Sitemap: https://belco.dev/sitemap.xml
