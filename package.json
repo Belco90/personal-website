@@ -22,7 +22,7 @@
 	"engines": {
 		"pnpm": "^10.26.0"
 	},
-	"packageManager": "pnpm@10.34.1",
+	"packageManager": "pnpm@10.34.4",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
